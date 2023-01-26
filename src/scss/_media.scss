@@ -1,0 +1,80 @@
+// Media
+
+/** <-------------------------------- [ Supper large screens ] --------------------------------> **/
+@media only screen and (min-width: 1824px) {
+	/* стили */
+}
+
+
+
+/** <-------------------------------- [ Big screens ] --------------------------------> **/
+@media only screen and (max-width: 1824px) {
+	/* стили */
+}
+
+
+
+
+
+/** <--------------------------- [ Computers and laptops ] ---------------------------> **/
+@media only screen and (max-width: 1280px) {
+	/* стили */
+}
+
+
+
+/** <-------------------------------- [ Plane tables ] --------------------------------> **/
+
+/* Планшеты (вертикальная и горизонтальная) ----------- */
+@media only screen and (max-width: 1075px)  {
+	/* стили */
+}
+
+/* Планшеты (горизонтальная) ----------- */
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+	/* стили */
+}
+
+/* Планшеты (вертикальная) ----------- */
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+	/* стили */
+}
+
+
+/** <-------------------------------- [ Smartphones ] <--------------------------------> **/
+
+/* Smartphones (вертикальная и горизонтальная) ----------- */
+@media only screen and (max-width: 736px) {
+	/* стили */
+}
+
+/* Smartphones (горизонтальная) ----------- */
+@media only screen and (max-width: 736px) and (orientation: landscape) {
+	/* стили */
+}
+
+/* Smartphones (вертикальная) ----------- */
+@media only screen and (max-width: 736px) and (orientation: portrait) {
+	/* стили */
+}
+
+
+// Retina more dpi in screens (Apple) //
+
+/* Retina (горизонтальная) ----------- */
+@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1.5){
+	/* стили */
+}
+
+/* Retina (вертикальная) ----------- */
+@media only screen and (max-width: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1.5){
+	/* стили */
+}
+
+
+/** <------------------------------ [ Little smartphones] ------------------------------> **/
+
+// Маленькие мобилки
+@media only screen and (max-width: 768px) {
+	/* стили */
+}

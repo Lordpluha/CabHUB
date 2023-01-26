@@ -1,0 +1,57 @@
+{
+	"source": {
+        "include": [
+			"gulpfile.js",
+			"gulp/",
+			"src/",
+			"package.json",
+			"README.md",
+			"SECURITY.md",
+			"CODE_OF_CONDUCT.md"
+		],
+		"exculde": [],
+        "includePattern": ".js$",
+        "excludePattern": "(node_modules/|docs)"
+    },
+	"sourceType": "module",
+	"opts": {
+		"encoding": "utf8",
+        "readme": "./readme.md",
+        "destination": "./docs/",
+        "recurse": true,
+        "verbose": true,
+        "template": "./node_modules/clean-jsdoc-theme",
+        "theme_opts": {
+			"create_style": ".details ul {display: block; list-style: square;} .details ul li {word-break: break-word; display: block;} ",
+			"includeFilesListInHomepage": true,
+            "default_theme": "dark",
+			"favicon": false,
+			"title": "GULP 2022",
+			"cleverLinks": true,
+			"monospaceLinks": true,
+			"meta" : [
+				{
+				  "name": "author",
+				  "content": "Lordpluha"
+				},
+				{
+				  "name": "description",
+				  "content": "Documentation theme"
+				}
+			],
+			"codepen": {
+				"enable_for": ["examples"],
+				"options": {
+					"js_external": "https://code.jquery.com/jquery-3.6.0.min.js",
+					"js_pre_processor": "babel"
+				}
+			},
+			"search": true,
+			"footer": "Chat me on Telegram: @Lordpluha<br>Instagram: @def.__init__<br>Twitter: @VLTesla<br>Email: Tesluakevlad@gmail.com"
+        }
+	},
+	"markdown": {
+        "hardwrap": false,
+        "idInHeadings": true
+    }
+}

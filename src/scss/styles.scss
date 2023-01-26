@@ -1,0 +1,99 @@
+@charset 'UTF-8';
+// @use "sass:math";
+@use "sass:list";
+
+// Ширина макета
+$SiteMaxWidth: 1366;
+// Ширина контентного блока
+$ContentMaxWidth: 1000;
+
+@import "_zer0.scss";
+@import "_mixins.scss";
+@import "_fonts.scss";
+@import "_media.scss";
+@import "_preloader.scss";
+
+* {}
+
+html {
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+body {}
+
+#wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#content {
+	display: block;
+	margin: 0 auto;
+	max-width: $ContentMaxWidth+px;
+}
+
+header, nav, aside, article, section, footer {
+	font-family: 'Roboto-Medium';
+}
+
+// Красивая загрузка элементов (см. так же в app.js и _mixins.scss)
+$AnimTime: 1s;
+$AnimDelay: 0s;
+.anim-elem {
+	-webkit-transition: margin, padding .0s linear;
+	   -moz-transition: margin, padding .0s linear;
+	    -ms-transition: margin, padding .0s linear;
+	     -o-transition: margin, padding .0s linear;
+	        transition: margin, padding .0s linear;
+
+	-webkit-transform: translate(0, -100%);
+	   -moz-transform: translate(0, -100%);
+		-ms-transform: translate(0, -100%);
+		 -o-transform: translate(0, -100%);
+			transform: translate(0, -100%);
+
+	opacity: 0;
+
+	-webkit-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+						transform $AnimTime ease-in-out $AnimDelay;
+	   -moz-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+	   					transform $AnimTime ease-in-out $AnimDelay;
+	    -ms-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+	    				transform $AnimTime ease-in-out $AnimDelay;
+	     -o-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+	     				transform $AnimTime ease-in-out $AnimDelay;
+	        transition: opacity   $AnimTime ease-in-out $AnimDelay,
+	        			transform $AnimTime ease-in-out $AnimDelay;
+
+	&.active-fx {
+		transform: translate(0px, 0px);
+		opacity: 1;
+	}
+}
+
+.ibg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.ibg img {
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+@import "_header.scss";
+@import "_nav.scss";
+@import "_article.scss";
+@import "_aside.scss";
+@import "_footer.scss";

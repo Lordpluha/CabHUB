@@ -1,0 +1,67 @@
+// Mixins
+@mixin adaptive-value ($property, $minSize:0, $maxSize:0, $type:3) {
+	$addSize: $maxSize - $minSize;
+	// Только если меньше контейнера
+	@if $type == 1 {
+		#{$property}: $maxSize + px;
+		@media (max-width: #{$ContentMaxWidth + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$ContentMaxWidth - 320px}));
+		}
+	// Только если больше контейнера
+	} @else if $type == 2 {
+		#{$property}: $maxSize + px;
+		@media (min-width: #{$ContentMaxWidth + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$SiteMaxWidth - 320}));
+		}
+	// Всегда
+	} @else {
+		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$SiteMaxWidth - 320}));
+	}
+}
+
+// Последвательная крассивая прогрузка для наследников .anim-elem
+@mixin beaut_blocks($NumOfElems, $DelayCoof, $AnimDelay) {
+	$AnimDelayV: $AnimDelay+.1;
+
+	@for $i from 1 through $NumOfElems {
+		&:nth-child(#{$i}) {
+			-webkit-transition-delay: $AnimDelayV;
+	   		   -moz-transition-delay: $AnimDelayV;
+	   		    -ms-transition-delay: $AnimDelayV;
+	   		     -o-transition-delay: $AnimDelayV;
+	   		        transition-delay: $AnimDelayV;
+		}
+
+		$AnimDelayV: $AnimDelayV+$DelayCoof;
+	}
+}
+
+@mixin font($font_name, $file_dir, $weight:normal, $style:normal, $formats...) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		$source: '';
+		@each $format in $formats {
+			$format_full: $format;
+			@if ($format == 'eot') {
+				src: url($file_dir+$font_name+'.'+$format);
+			} @else {
+				@if ($format == 'eot?#iefix') {
+					$format_full: 'embedded-opentype';
+				} @else if ( $format == 'ttf') {
+					$format_full: 'truetype';
+				} @else if ( $format == 'otf') {
+					$format_full: 'opentype';
+				}
+				@if ($format == list.nth($formats, -1)) {
+					$source: #{$source+url($file_dir+'/'+$font_name+'.'+$format) format("#{$format_full}")};
+				} @else {
+					$source: #{$source+url($file_dir+'/'+$font_name+'.'+$format) format("#{$format_full}")+', '};
+				}
+			}
+		}
+		src: $source;
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
