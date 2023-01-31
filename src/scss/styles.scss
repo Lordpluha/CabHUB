@@ -3,15 +3,22 @@
 @use "sass:list";
 
 // Ширина макета
-$SiteMaxWidth: 1366;
+$SiteMaxWidth: 1600;
 // Ширина контентного блока
-$ContentMaxWidth: 1000;
+$ContentMaxWidth: 1210;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+// font-family: 'Lato', sans-serif;
 
 @import "_zer0.scss";
 @import "_mixins.scss";
 @import "_fonts.scss";
 @import "_media.scss";
 @import "_preloader.scss";
+
+// Color variables
+$yellow_dark: #ffc61a;
 
 * {}
 
@@ -37,7 +44,7 @@ body {}
 }
 
 header, nav, aside, article, section, footer {
-	font-family: 'Roboto-Medium';
+	font-family: 'Lato', sans-serif;
 }
 
 // Красивая загрузка элементов (см. так же в app.js и _mixins.scss)
@@ -83,13 +90,11 @@ $AnimDelay: 0s;
 }
 
 .ibg img {
-	width: 0;
-	height: 0;
+	width: 100%;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
-	opacity: 0;
-	visibility: hidden;
 }
 
 @import "_header.scss";
