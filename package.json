@@ -1,7 +1,7 @@
 {
-  "name": "gulp-2022",
+  "name": "CabHUB",
   "version": "1.0.0",
-  "description": "Gulp example project for web-dev",
+  "description": "",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
@@ -11,23 +11,7 @@
     "deploy": "gulp deploy --build",
     "docs": "jsdoc --configure jsdoc.json"
   },
-  "keywords": [
-    "gulp",
-    "2022",
-    "2023",
-    "node.js",
-    "web-dev",
-    "front-end",
-    "gulpfile.js",
-    "gulpfile",
-    "node",
-    "javascript",
-    "js",
-    "html",
-    "css",
-    "scss",
-    "jsdoc"
-  ],
+  "keywords": [],
   "author": "Lordpluha",
   "license": "ISC",
   "devDependencies": {
