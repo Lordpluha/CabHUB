@@ -23,5 +23,5 @@ function ibg(){
 	}
 }
 
-export { ibg }
+export { ibg };
 export { testWebP };
