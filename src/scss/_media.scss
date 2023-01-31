@@ -41,6 +41,9 @@
 }
 
 
+@media only screen and (min-width: 768px) {
+}
+
 /** <-------------------------------- [ Smartphones ] <--------------------------------> **/
 
 /* Smartphones (вертикальная и горизонтальная) ----------- */
@@ -75,6 +78,10 @@
 /** <------------------------------ [ Little smartphones] ------------------------------> **/
 
 // Маленькие мобилки
-@media only screen and (max-width: 768px) {
-	/* стили */
+@media only screen and (max-width: 840px) {
+	.header {
+		#content {
+			justify-content: space-around !important;
+		}
+	}
 }
