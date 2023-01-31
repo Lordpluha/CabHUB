@@ -3,13 +3,13 @@
 	$addSize: $maxSize - $minSize;
 	// Только если меньше контейнера
 	@if $type == 1 {
-		#{$property}: $maxSize + px;
+		#{$property}: $minSize + px;
 		@media (max-width: #{$ContentMaxWidth + px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$ContentMaxWidth - 320px}));
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$ContentMaxWidth - 320}));
 		}
 	// Только если больше контейнера
 	} @else if $type == 2 {
-		#{$property}: $maxSize + px;
+		#{$property}: $minSize + px;
 		@media (min-width: #{$ContentMaxWidth + px}) {
 			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$SiteMaxWidth - 320}));
 		}
