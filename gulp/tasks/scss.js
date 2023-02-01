@@ -50,6 +50,10 @@ export const scss = () => {
             }))
         )
         .pipe(app.plugins.replace(/@img\//g, '../img/'))
+        .pipe(app.plugins.if(
+            app.isDev,
+            app.plugins.sourcemaps.init())
+        )
         .pipe(sass({
             outputStyle: 'expanded'
         }))
@@ -86,6 +90,10 @@ export const scss = () => {
             )
         )
         .pipe(app.plugins.rename({extname: '.min.css'}))
+        .pipe(app.plugins.if(
+            app.isDev,
+            app.plugins.sourcemaps.write('./'))
+        )
         .pipe(app.gulp.dest(app.path.build.css))
         .pipe(app.plugins.browsersync.stream())
 }

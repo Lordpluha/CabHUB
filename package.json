@@ -21,7 +21,8 @@
     "gulp-html-bem-validator": "^1.0.5",
     "gulp-newer": "^1.4.0",
     "gulp-notify": "^4.0.0",
-    "gulp-plumber": "^1.2.1"
+    "gulp-plumber": "^1.2.1",
+    "gulp-sourcemaps": "^3.0.0"
   },
   "dependencies": {
     "del": "^7.0.0",
