@@ -27,7 +27,18 @@
 
 /* Планшеты (вертикальная и горизонтальная) ----------- */
 @media only screen and (max-width: 1075px)  {
-	/* стили */
+	// Article About
+	.about {
+		#content {
+			flex-direction: column !important;
+		}
+		.booking {
+			@include adaptive-value('margin-top', 20, 120);
+		}
+		.about-us {
+			margin-right: 0;
+		}
+	}
 }
 
 /* Планшеты (горизонтальная) ----------- */
@@ -82,6 +93,21 @@
 	.header {
 		#content {
 			justify-content: space-around !important;
+		}
+	}
+}
+
+// Specific adaptations
+
+@media only screen and (orientation: landscape) and
+						(((min-aspect-ratio: 19/10) and
+						(max-width: 1210px))
+						or
+						((min-aspect-ratio: 14/5) and
+						(min-width: 1210px))) {
+	.header {
+		&__illustration {
+			display: none;
 		}
 	}
 }
