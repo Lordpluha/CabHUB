@@ -115,7 +115,10 @@
 		margin: 0 2.5px;
 	}
 	&__link {
-		padding: 10px 20px;
+		display: inline-block;
+		padding: 10px 0;
+		@include adaptive-value('padding-left', 20, 25);
+		@include adaptive-value('padding-right', 20, 25);
 		color: white;
 		border-radius: 25px;
 		text-transform: uppercase;
