@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Burger menu
 	switchBurger();
-	// ? Как получить ::before
+
 	let burger__button = document.querySelector(".menu--burger.nav__menu .menu__button");
 	if (burger__button) {burger__button.addEventListener('click', ToggleBurger);}
 });
