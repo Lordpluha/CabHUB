@@ -8,18 +8,18 @@
         <div id="wrapper">
             @@include('blocks/nav.html')
             @@include('blocks/header.html')
-
             <!-- Контент -->
-            <article class="article">
+
+            <main class="main">
                 <section class="about">
                     <div id="content">
-                        <section class="about-us">
+                        <article class="article about-us">
                             <div class="about-us__intro">
-                                <h3 class="article__suptitle about-us__suptitle">Best In City</h3>
-                                <h1 class="about-us__title">Trusted Cab Servies in New York</h1>
+                                <h3 class="article__suptitle about-us__suptitle" tabindex="0">Best In City</h3>
+                                <h1 class="about-us__title" tabindex="0">Trusted Cab Servies in New York</h1>
                             </div>
                             <div class="about-us__content content-box">
-                                <p class="content-box__paragraph">
+                                <p class="content-box__paragraph" tabindex="0">
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                     Quam cupiditate corporis vero quo nihil enim eius dolorum esse ipsa,
                                     quisquam id odit veritatis delectus cum excepturi labore non adipisci aliquam,
@@ -30,11 +30,11 @@
                                     Porro sint cupiditate unde et dolore placeat explicabo culpa quod minus voluptatum iste sunt perspiciatis quidem rem,
                                     nam ex eum odit iusto magni. Libero, perspiciatis animi?</p>
                             </div>
-                            <a href="#" class="about-us__read-more">Read more</a>
-                        </section>
+                            <a href="#" class="about-us__read-more" tabindex="0">Read more</a>
+                        </article>
 
                         <form action="#" method="POST" class="booking">
-                            <h1 class="booking__title article__suptitle">Book a <span class="yellow">cab</span></h1>
+                            <h1 class="booking__title">Book a <span class="yellow">cab</span></h1>
                             <div class="booking__content">
                                 <input class="booking__input booking__input--a" type="text" name="name" id="name" placeholder="Name">
                                 <input class="booking__input booking__input--b" type="phone" name="phone" id="phone" placeholder="Phone">
@@ -54,7 +54,8 @@
                         </form>
                     </div>
                 </section>
-            </article>
+            </main>
+
 
             <aside>
                 Aside

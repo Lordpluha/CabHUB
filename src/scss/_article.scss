@@ -1,3 +1,11 @@
-article {
-    
+.article {
+	// .article__suptitle
+	&__suptitle {
+		font-size: 35px;
+		color: $yellow_dark;
+	}
+	// article__title
+	&__title {
+		font-size: 44px;
+	}
 }
