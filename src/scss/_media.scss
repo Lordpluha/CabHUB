@@ -29,7 +29,7 @@
 @media only screen and (max-width: 1075px)  {
 	// Article About
 	.about {
-		#content {
+		.container {
 			flex-direction: column !important;
 		}
 		.booking {
@@ -91,7 +91,7 @@
 // Маленькие мобилки
 @media only screen and (max-width: 840px) {
 	.header {
-		#content {
+		.container {
 			justify-content: space-around !important;
 		}
 	}

@@ -4,7 +4,7 @@
 .about {
 	width: 100%;
 	background-color: $yellow_dark;
-	#content {
+	.container {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: row;
