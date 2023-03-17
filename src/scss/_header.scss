@@ -27,7 +27,9 @@
 		color: $yellow_dark;
 	}
 
-	&__title {
+	&__title,
+	&__title>* {
+		color: inherit;
 		display: block;
 		font-weight: 900;
 		@include adaptive-value('font-size', 35, 72);
@@ -36,7 +38,9 @@
 		@include adaptive-value('margin-top', 15, 22);
 	}
 
-	&__subtitle {
+	&__subtitle,
+	&__subtitle>* {
+		color: inherit;
 		font-family: 'Yu Gothic Light';
 		@include adaptive-value('margin-top', 10, 30);
 		font-weight: 600;

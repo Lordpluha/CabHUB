@@ -13,12 +13,14 @@ export const switchBurger = () => {
 	if (current_width <= 840) {
 		burger__menu.classList.remove('menu--default')
 		burger__menu.classList.add('menu--burger')
+
 		burger__menu.classList.add('closed')
 	} else {
 		burger__menu.classList.remove('menu--burger')
 		burger__menu.classList.remove('open')
 		burger__menu.classList.remove('closed')
 		document.querySelector('html').classList.remove('lock')
+
 		burger__menu.classList.add('menu--default')
 	}
 }
