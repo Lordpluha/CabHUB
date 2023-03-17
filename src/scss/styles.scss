@@ -42,7 +42,7 @@ body {}
 	flex-direction: column;
 }
 
-#content {
+.container {
 	display: block;
 	margin: 0 auto;
 	max-width: $ContentMaxWidth+px;
