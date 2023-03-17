@@ -101,3 +101,4 @@ desktop.ini
 
 # Dependency file
 package-lock.json
+.prettierrc.json
