@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    @@include('blocks/head.html', {
-        "title": "CabHUB"
-    })
+@@include('blocks/head.html', {
+"title": "CabHUB"
+})
 
-    <body>
-        <div id="wrapper">
-            @@include('blocks/nav.html')
-            @@include('blocks/header.html')
-            <!-- Контент -->
+<body>
+    <div id="wrapper">
+        @@include('blocks/nav.html')
+        @@include('blocks/header.html')
+        <!-- Контент -->
 
-            <main class="main">
-                <section class="about">
-                    <div class="container">
-                        <article class="article about-us">
-                            <div class="about-us__intro">
-                                <h3 class="article__suptitle about-us__suptitle">Best In City</h3>
-                                <h1 class="about-us__title">Trusted Cab Servies in New York</h1>
-                            </div>
-                            <div class="about-us__content content-box">
-                                <p class="content-box__paragraph">
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                    Quam cupiditate corporis vero quo nihil enim eius dolorum esse ipsa,
-                                    quisquam id odit veritatis delectus cum excepturi labore non adipisci aliquam,
-                                    natus aut sed dolore!
-                                    Libero ullam dolorem quasi culpa optio odio aut dolores qui vel sint?
-                                    Nostrum, minima exercitationem hic sapiente numquam pariatur amet dicta expedita odit perspiciatis dolor deleniti,
-                                    vel voluptates dolores dignissimos.
-                                    Porro sint cupiditate unde et dolore placeat explicabo culpa quod minus voluptatum iste sunt perspiciatis quidem rem,
-                                    nam ex eum odit iusto magni. Libero, perspiciatis animi?</p>
-                            </div>
-                            <a href="#" class="about-us__read-more">Read more</a>
-                        </article>
+        <main class="main">
+            <section class="about">
+                <div class="container">
+                    <article class="article about-us">
+                        <div class="about-us__intro">
+                            <h3 class="article__suptitle about-us__suptitle">Best In City</h3>
+                            <h1 class="about-us__title">Trusted Cab Servies in New York</h1>
+                        </div>
+                        <div class="about-us__content content-box">
+                            <p class="content-box__paragraph">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Quam cupiditate corporis vero quo nihil enim eius dolorum esse ipsa,
+                                quisquam id odit veritatis delectus cum excepturi labore non adipisci aliquam,
+                                natus aut sed dolore!
+                                Libero ullam dolorem quasi culpa optio odio aut dolores qui vel sint?
+                                Nostrum, minima exercitationem hic sapiente numquam pariatur amet dicta expedita odit
+                                perspiciatis dolor deleniti,
+                                vel voluptates dolores dignissimos.
+                                Porro sint cupiditate unde et dolore placeat explicabo culpa quod minus voluptatum iste
+                                sunt perspiciatis quidem rem,
+                                nam ex eum odit iusto magni. Libero, perspiciatis animi?</p>
+                        </div>
+                        <a href="#" class="about-us__read-more">Read more</a>
+                    </article>
 
-                        <form action="#" method="POST" class="booking">
-                            <h1 class="booking__title">Book a <span class="yellow">cab</span></h1>
-                            <div class="booking__content">
-                                <input class="booking__input booking__input--a" type="text" name="name" id="name" placeholder="Name">
-                                <input class="booking__input booking__input--b" type="phone" name="phone" id="phone" placeholder="Phone">
-                                <input class="booking__input booking__input--a" type="date" name="data" id="data" placeholder="When">
-                                <input class="booking__input booking__input--b" type="time" name="time" id="time" placeholder="Time">
-                                <input class="booking__input booking__input--a" type="time" name="start" id="start" placeholder="Start">
-                                <input class="booking__input booking__input--b" type="time" name="end" id="end" placeholder="End">
-                                <select class="booking__input booking__input" name="vehicle" id="vehicle">
-                                    <option value="none" selected>No value</option>
-                                    <option value="labmorgini">labmorgini</option>
-                                    <option value="mercedes">mercedes</option>
-                                    <option value="bmw">bmw</option>
-                                    <option value="audi">audi</option>
-                                </select>
-                                <input type="submit" value="submit">
-                            </div>
-                        </form>
-                    </div>
-                </section>
-            </main>
+                    <form action="#" method="GET" class="booking">
+                        <h1 class="booking__title">Book a <span class="yellow">cab</span></h1>
+                        <div class="booking__content">
+                            <input class="booking__input booking__input--a" type="text" name="name" id="name"
+                                placeholder="Name" required maxlength="50" minlength="2">
+                            <input class="booking__input booking__input--b" type="phone" name="phone" id="phone"
+                                placeholder="Phone" required maxlength="15" minlength="10">
+                            <input class="booking__input booking__input--a" type="date" name="data" id="data"
+                                placeholder="When" required>
+                            <input class="booking__input booking__input--b" type="time" name="time" id="time"
+                                placeholder="Time" required>
+                            <input class="booking__input booking__input--a" type="time" name="start" id="start"
+                                placeholder="Start" required>
+                            <input class="booking__input booking__input--b" type="time" name="end" id="end"
+                                placeholder="End" required>
+
+                            <select class="booking__input booking__input" name="vehicle" id="vehicle">
+                                <option value="none" selected>No value</option>
+                                <option value="labmorgini">labmorgini</option>
+                                <option value="mercedes">mercedes</option>
+                                <option value="bmw">bmw</option>
+                                <option value="audi">audi</option>
+                            </select>
+                            <input type="submit" value="submit">
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
 
 
-            <aside>
-                Aside
-            </aside>
+        <aside>
+            Aside
+        </aside>
 
-            @@include('blocks/footer.html')
-        </div>
-    </body>
+        @@include('blocks/footer.html')
+    </div>
+</body>
 
-    <script src="js/app.min.js"></script>
+<script src="js/app.min.js"></script>
 
 </html>

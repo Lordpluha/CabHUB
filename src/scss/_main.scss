@@ -1,120 +1,119 @@
 .main {
-
 }
 .about {
-	width: 100%;
-	background-color: $yellow_dark;
-	.container {
-		display: flex;
-		justify-content: space-between;
-		flex-direction: row;
-		height: 100%;
-		padding: 0 20px;
-		// padding: 150px 20px 80px;
-		@include adaptive-value('padding-top', 50, 150);
-		@include adaptive-value('padding-bottom', 30, 80);
+    width: 100%;
+    background-color: $yellow_dark;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 100%;
+        padding: 0 20px;
+        // padding: 150px 20px 80px;
+        @include adaptive-value('padding-top', 50, 150);
+        @include adaptive-value('padding-bottom', 30, 80);
 
-		*:only-child {
-			min-width: 50%;
-		}
-	}
+        *:only-child {
+            min-width: 50%;
+        }
+    }
 }
 .about-us {
-	flex-shrink: 1;
-	@include adaptive-value('margin-right', 20, 190);
-	// .about-us__intro
-	&__intro {
-		text-transform: uppercase;
-	}
-	// .about-us__suptitle
-	&__suptitle {
-		font-weight: 900;
-		color: black;
-	}
-	// .about-us__title
-	&__title {
-		margin-top: 25px;
-		font-size: 50px;
-		font-weight: 900;
-	}
-	// .about-us__content
-	&__content {
-		margin-top: 45px;
-	}
-	// about-us__read-more
-	&__read-more {
-		text-transform: uppercase;
-		background-color: black;
-		color: white;
-		font-family: 'Bebas Neue', cursive;
-		font-weight: 800;
-		font-size: 30px;
-		padding: 15px 35px;
-		border-radius: 10px;
-		margin-top: 60px;
-		display: inline-block;
-	}
+    flex-shrink: 1;
+    @include adaptive-value('margin-right', 20, 190);
+    // .about-us__intro
+    &__intro {
+        text-transform: uppercase;
+    }
+    // .about-us__suptitle
+    &__suptitle {
+        font-weight: 900;
+        color: black;
+    }
+    // .about-us__title
+    &__title {
+        margin-top: 25px;
+        font-size: 50px;
+        font-weight: 900;
+    }
+    // .about-us__content
+    &__content {
+        margin-top: 45px;
+    }
+    // about-us__read-more
+    &__read-more {
+        text-transform: uppercase;
+        background-color: black;
+        color: white;
+        font-family: 'Bebas Neue', cursive;
+        font-weight: 800;
+        font-size: 30px;
+        padding: 15px 35px;
+        border-radius: 10px;
+        margin-top: 60px;
+        display: inline-block;
+    }
 }
 .content-box {
-	// .content-box__paragraph
-	&__paragraph {
-		font-weight: 400;
-		font-size: 18px;
-	}
+    // .content-box__paragraph
+    &__paragraph {
+        font-weight: 400;
+        font-size: 18px;
+    }
 }
 .booking {
-	&:hover {
-		cursor: auto;
-	}
-	background-color: white;
-	// min-width: 422px;
-	// min-height: 472px;
-	// .booking__content
-	&__content {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-auto-rows: none;
-		grid-gap: 20px;
-		padding: 35px;
-	}
-	// .booking__title
-	&__title {
-		padding: 25px 35px;
-		text-transform: uppercase;
-		color: white;
-		background-color: #171717;
-	}
-	// .booking__input
-	&__input {
-		display: block;
-		width: 100%;
-		font-family: 'Lato', sans-serif;
-		font-weight: 600;
-		@include adaptive-value('font-size', 15, 20);
-		// font-size: 20px;
-		border: 0;
-		border-bottom: 1px solid #e4e4e4;
-		padding: 16px 0;
+    &:hover {
+        cursor: auto;
+    }
+    background-color: white;
+    // min-width: 422px;
+    // min-height: 472px;
+    // .booking__content
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: none;
+        grid-gap: 20px;
+        padding: 35px;
+    }
+    // .booking__title
+    &__title {
+        padding: 25px 35px;
+        text-transform: uppercase;
+        color: white;
+        background-color: #171717;
+    }
+    // .booking__input
+    &__input {
+        display: block;
+        width: 100%;
+        font-family: 'Lato', sans-serif;
+        font-weight: 600;
+        @include adaptive-value('font-size', 15, 20);
+        // font-size: 20px;
+        border: 0;
+        border-bottom: 1px solid #e4e4e4;
+        padding: 16px 0;
 
-		&:is(select),
-		&[type=submit] {
-			// max-width: 50%;
-			grid-column: 1 / 3;
-		}
-	}
-	// .booking__input--a
-	&__input--a {
-		&::placeholder {
-			color: black;
-		}
-	}
-	// .booking__input--b
-	&__input--b {
-		&::placeholder {
-			color: #4b4b4b;
-		}
-	}
+        &:is(select),
+        &[type='submit'] {
+            // max-width: 50%;
+            grid-column: 1 / 3;
+        }
+    }
+    // .booking__input--a
+    &__input--a {
+        &::placeholder {
+            color: black;
+        }
+    }
+    // .booking__input--b
+    &__input--b {
+        &::placeholder {
+            color: #4b4b4b;
+        }
+    }
 }
 span.yellow {
-	color: $yellow_dark;
+    color: $yellow_dark;
 }
