@@ -18,5 +18,10 @@ window.onload = () => {
 window.onresize = () => {
 	switchBurger()
 	let burger__button = document.querySelector(".menu--burger.nav__menu .menu__button")
-	if (burger__button) {burger__button.addEventListener('click', ToggleBurger)}
+	if (burger__button) {burger__button.addEventListener('click', ()=> {
+		ToggleBurger()
+		if (burger__button.getAttribute('aria-roledescription').includes('open')) console.log(1)
+		else console.log(2)
+	})}
 }
+

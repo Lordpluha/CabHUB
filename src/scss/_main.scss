@@ -34,7 +34,8 @@
 	// .about-us__title
 	&__title {
 		margin-top: 25px;
-		font-size: 50px;
+		// font-size: 50px;
+		@include adaptive-value('font-size', 30, 50);
 		font-weight: 900;
 	}
 	// .about-us__content
@@ -44,11 +45,12 @@
 	// about-us__read-more
 	&__read-more {
 		text-transform: uppercase;
-		background-color: black;
+		background-color: $grey_dark;
 		color: white;
 		font-family: 'Bebas Neue', cursive;
 		font-weight: 800;
-		font-size: 30px;
+		// font-size: 30px;
+		@include adaptive-value('font-size', 20, 30);
 		padding: 15px 35px;
 		border-radius: 10px;
 		margin-top: 60px;
@@ -59,7 +61,8 @@
 	// .content-box__paragraph
 	&__paragraph {
 		font-weight: 400;
-		font-size: 18px;
+		// font-size: 18px;
+		@include adaptive-value('font-size', 14, 20);
 	}
 }
 .booking {
