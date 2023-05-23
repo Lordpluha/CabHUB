@@ -35,33 +35,30 @@
                         <a href="#" class="about-us__read-more">Read more</a>
                     </article>
 
-                    <form action="#" method="GET" class="booking">
-                        <h1 class="booking__title">Book a <span class="yellow">cab</span></h1>
-                        <div class="booking__content">
-                            <input class="booking__input booking__input--a" type="text" name="name" id="name"
-                                placeholder="Name" required maxlength="50" minlength="2">
-                            <input class="booking__input booking__input--b" type="phone" name="phone" id="phone"
-                                placeholder="Phone" required maxlength="15" minlength="10">
-                            <input class="booking__input booking__input--a" type="date" name="data" id="data"
-                                placeholder="When" required>
-                            <input class="booking__input booking__input--b" type="time" name="time" id="time"
-                                placeholder="Time" required>
-                            <input class="booking__input booking__input--a" type="time" name="start" id="start"
-                                placeholder="Start" required>
-                            <input class="booking__input booking__input--b" type="time" name="end" id="end"
-                                placeholder="End" required>
+                        <form action="#" method="POST" class="booking" id="order_now">
+                            <h1 class="booking__title" tabindex="0">Book a <span class="yellow">cab</span></h1>
+                            <div class="booking__content">
+                                <input class="booking__input booking__input--l" type="text" name="name" id="name" placeholder="Name" required>
+                                <input class="booking__input booking__input--r" type="phone" name="phone" id="phone" placeholder="Phone" required>
+                                <input class="booking__input booking__input--l" type="text" name="date" id="date" placeholder="When" aria-roledescription="When" required> <!-- text->date -->
+                                <input class="booking__input booking__input--r" type="text" name="time" id="time" placeholder="Time" aria-roledescription="Time" required> <!-- text->time -->
+                                <input class="booking__input booking__input--l" type="text" name="start" id="start" placeholder="Start" aria-roledescription="Start" required> <!-- text->time -->
+                                <input class="booking__input booking__input--r" type="text" name="end" id="end" placeholder="End" aria-roledescription="End" required> <!-- text->time -->
+                                <select class="booking__input booking__input--f" name="vehicle" id="vehicle" required>
+                                    <option value="none" selected hidden>Choose Vehicle</option>
+                                    <option value="labmorgini">labmorgini</option>
+                                    <option value="mercedes">mercedes</option>
+                                    <option value="bmw">bmw</option>
+                                    <option value="audi">audi</option>
+                                </select>
+                                <input type="submit" value="submit" class="booking__input booking__input--f">
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </main>
 
-                            <select class="booking__input booking__input" name="vehicle" id="vehicle">
-                                <option value="none" selected>No value</option>
-                                <option value="labmorgini">labmorgini</option>
-                                <option value="mercedes">mercedes</option>
-                                <option value="bmw">bmw</option>
-                                <option value="audi">audi</option>
-                            </select>
-                            <input type="submit" value="submit">
-                        </div>
-                    </form>
-                </div>
+            <section class="feutures" id="feutures">
             </section>
         </main>
 

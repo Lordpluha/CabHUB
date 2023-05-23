@@ -62,57 +62,75 @@
     }
 }
 .booking {
-    &:hover {
-        cursor: auto;
-    }
-    background-color: white;
-    // min-width: 422px;
-    // min-height: 472px;
-    // .booking__content
-    &__content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: none;
-        grid-gap: 20px;
-        padding: 35px;
-    }
-    // .booking__title
-    &__title {
-        padding: 25px 35px;
-        text-transform: uppercase;
-        color: white;
-        background-color: #171717;
-    }
-    // .booking__input
-    &__input {
-        display: block;
-        width: 100%;
-        font-family: 'Lato', sans-serif;
-        font-weight: 600;
-        @include adaptive-value('font-size', 15, 20);
-        // font-size: 20px;
-        border: 0;
-        border-bottom: 1px solid #e4e4e4;
-        padding: 16px 0;
+	background-color: white;
+	max-width: 1000px;
+	&:hover {
+		cursor: auto;
+	}
 
-        &:is(select),
-        &[type='submit'] {
-            // max-width: 50%;
-            grid-column: 1 / 3;
-        }
-    }
-    // .booking__input--a
-    &__input--a {
-        &::placeholder {
-            color: black;
-        }
-    }
-    // .booking__input--b
-    &__input--b {
-        &::placeholder {
-            color: #4b4b4b;
-        }
-    }
+	// .booking__content
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 20px;
+		@include adaptive-value('padding', 15, 35, 1);
+		@include adaptive-value('padding', 35, 40, 2);
+	}
+	// .booking__title
+	&__title {
+		padding: 25px 35px;
+		text-transform: uppercase;
+		color: white;
+		background-color: #171717;
+		font-weight: 800;
+	}
+	// .booking__input
+	&__input {
+		display: block;
+		width: 100%;
+		font-family: 'Lato', sans-serif;
+		font-weight: 600;
+		@include adaptive-value('font-size', 15, 20);
+		border: 0;
+		border-bottom: 3px solid #e4e4e4;
+		padding: 10px 0;
+		&::placeholder {
+			font-size: inherit;
+		}
+		&:is(select),
+		&[type="submit"] {
+			grid-column: 1 / 3;
+		}
+	}
+	// .booking__input--l
+	&__input--l {
+		&::placeholder {
+			color: black;
+		}
+	}
+	// .booking__input--r
+	&__input--r {
+		&::placeholder {
+			color: #4b4b4b;
+		}
+	}
+	// .booking__input--f
+	select.booking__input--f {
+		appearance: none;
+	}
+	input.booking__input--f[type="submit"] {
+		margin-top: 25px;
+		border-bottom: none;
+		background-color: $grey_dark;
+		color: white;
+		text-transform: uppercase;
+		font-family: 'Bebas Neue', cursive;
+		font-weight: 500;
+		font-size: 30px;
+		letter-spacing: 1px;
+		border-radius: 10px;
+	}
+
 }
 span.yellow {
     color: $yellow_dark;
