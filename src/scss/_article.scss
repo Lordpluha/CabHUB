@@ -1,7 +1,8 @@
 .article {
 	// .article__suptitle
 	&__suptitle {
-		font-size: 35px;
+		// font-size: 35px;
+		@include adaptive-value('font-size', 20, 35);
 		color: $yellow_dark;
 	}
 	// article__title
