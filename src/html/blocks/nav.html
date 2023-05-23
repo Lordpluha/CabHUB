@@ -1,29 +1,31 @@
-<nav class="nav">
+<nav class="nav" aria-role="menu" aria-orientation="horizontal">
 	<!-- Nav -->
 	<div class="container">
 		<div class="nav__brand brand">
-			<a class="brand__link" href="#"><img class="brand__logo" src="@img/nav/logo.png" alt="logotype"></a>
+			<a class="brand__link" href="index.html" aria-roledescription="CabHUB logotype link">
+				<img class="brand__logo" src="@img/nav/logo.png" alt="logotype">
+			</a>
 		</div>
-		<ul class="menu menu--default nav__menu">
+		<ul class="menu menu--default nav__menu" aria-role="group">
 			<li class="menu__elem">
-				<a class="menu__link active" href="#">Home</a>
+				<a class="menu__link active" href="index.html">Home</a>
 			</li>
 			<li class="menu__elem">
-				<a class="menu__link" href="#">About</a>
+				<a class="menu__link" href="#about">About</a>
 			</li>
 			<li class="menu__elem">
-				<a class="menu__link" href="#">Feutures</a>
+				<a class="menu__link" href="#feutures">Feutures</a>
 			</li>
 			<li class="menu__elem">
 				<a class="menu__link" href="#">Blog</a>
 			</li>
 			<li class="menu__elem">
-				<a class="menu__link" href="#">Order now</a>
+				<a class="menu__link" href="#order_now">Order now</a>
 			</li>
 			<li class="menu__elem">
-				<a class="menu__link" href="#">Contacts</a>
+				<a class="menu__link" href="#contacts">Contacts</a>
 			</li>
-			<button class="menu__button">
+			<button class="menu__button" aria-roledescription="open burger menu button">
 				<div></div>
 				<div></div>
 				<div></div>

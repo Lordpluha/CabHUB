@@ -1,6 +1,5 @@
 export const ToggleBurger = () => {
 	let burger__menu = document.querySelector('.menu--burger.nav__menu')
-	burger__menu.classList.toggle('closed')
 	burger__menu.classList.toggle('open')
 	document.querySelector('html').classList.toggle('lock')
 };
