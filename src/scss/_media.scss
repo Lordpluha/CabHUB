@@ -29,7 +29,7 @@
 @media only screen and (max-width: 1075px)  {
 	// Article About
 	.about {
-		#content {
+		.container {
 			flex-direction: column !important;
 		}
 		.booking {
@@ -52,7 +52,19 @@
 }
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+	// section About
+	.about {
+		#content {
+			flex-direction: column !important;
+		}
+		.booking {
+			@include adaptive-value('margin-top', 20, 120);
+		}
+		.about-us {
+			margin-right: 0;
+		}
+	}
 }
 
 /** <-------------------------------- [ Smartphones ] <--------------------------------> **/
@@ -91,7 +103,7 @@
 // Маленькие мобилки
 @media only screen and (max-width: 840px) {
 	.header {
-		#content {
+		.container {
 			justify-content: space-around !important;
 		}
 	}
@@ -108,6 +120,23 @@
 	.header {
 		&__illustration {
 			display: none;
+		}
+	}
+}
+
+@media only screen and (min-width: 560px) {
+	.booking {
+		min-width: 422px;
+	}
+}
+
+@media only screen and (max-width: 560px) {
+	.booking {
+		&__content {
+			display: block !important;
+			&>*{
+				margin-bottom: 20px;
+			}
 		}
 	}
 }

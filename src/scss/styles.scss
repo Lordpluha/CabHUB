@@ -24,6 +24,7 @@ $ContentMaxWidth: 1210;
 
 // Color variables
 $yellow_dark: #ffc61a;
+$grey_dark: #131313;
 
 * {}
 
@@ -42,7 +43,7 @@ body {}
 	flex-direction: column;
 }
 
-#content {
+.container {
 	display: block;
 	margin: 0 auto;
 	max-width: $ContentMaxWidth+px;
@@ -105,5 +106,6 @@ $AnimDelay: 0s;
 @import "_header.scss";
 @import "_nav.scss";
 @import "_article.scss";
+@import "_main.scss";
 @import "_aside.scss";
 @import "_footer.scss";

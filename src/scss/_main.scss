@@ -1,23 +1,22 @@
 .main {
-
 }
 .about {
-	width: 100%;
-	background-color: $yellow_dark;
-	#content {
-		display: flex;
-		justify-content: space-between;
-		flex-direction: row;
-		height: 100%;
-		padding: 0 20px;
-		// padding: 150px 20px 80px;
-		@include adaptive-value('padding-top', 50, 150);
-		@include adaptive-value('padding-bottom', 30, 80);
+    width: 100%;
+    background-color: $yellow_dark;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 100%;
+        padding: 0 20px;
+        // padding: 150px 20px 80px;
+        @include adaptive-value('padding-top', 50, 150);
+        @include adaptive-value('padding-bottom', 30, 80);
 
-		*:only-child {
-			min-width: 50%;
-		}
-	}
+        *:only-child {
+            min-width: 50%;
+        }
+    }
 }
 .about-us {
 	flex-shrink: 1;
@@ -66,19 +65,19 @@
 	}
 }
 .booking {
+	background-color: white;
+	max-width: 1000px;
 	&:hover {
 		cursor: auto;
 	}
-	background-color: white;
-	// min-width: 422px;
-	// min-height: 472px;
+
 	// .booking__content
 	&__content {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		grid-auto-rows: none;
 		grid-gap: 20px;
-		padding: 35px;
+		@include adaptive-value('padding', 15, 35, 1);
+		@include adaptive-value('padding', 35, 40, 2);
 	}
 	// .booking__title
 	&__title {
@@ -86,6 +85,7 @@
 		text-transform: uppercase;
 		color: white;
 		background-color: #171717;
+		font-weight: 800;
 	}
 	// .booking__input
 	&__input {
@@ -94,30 +94,47 @@
 		font-family: 'Lato', sans-serif;
 		font-weight: 600;
 		@include adaptive-value('font-size', 15, 20);
-		// font-size: 20px;
 		border: 0;
-		border-bottom: 1px solid #e4e4e4;
-		padding: 16px 0;
-
+		border-bottom: 3px solid #e4e4e4;
+		padding: 10px 0;
+		&::placeholder {
+			font-size: inherit;
+		}
 		&:is(select),
-		&[type=submit] {
-			// max-width: 50%;
+		&[type="submit"] {
 			grid-column: 1 / 3;
 		}
 	}
-	// .booking__input--a
-	&__input--a {
+	// .booking__input--l
+	&__input--l {
 		&::placeholder {
 			color: black;
 		}
 	}
-	// .booking__input--b
-	&__input--b {
+	// .booking__input--r
+	&__input--r {
 		&::placeholder {
 			color: #4b4b4b;
 		}
 	}
+	// .booking__input--f
+	select.booking__input--f {
+		appearance: none;
+	}
+	input.booking__input--f[type="submit"] {
+		margin-top: 25px;
+		border-bottom: none;
+		background-color: $grey_dark;
+		color: white;
+		text-transform: uppercase;
+		font-family: 'Bebas Neue', cursive;
+		font-weight: 500;
+		font-size: 30px;
+		letter-spacing: 1px;
+		border-radius: 10px;
+	}
+
 }
 span.yellow {
-	color: $yellow_dark;
+    color: $yellow_dark;
 }
