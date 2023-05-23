@@ -73,15 +73,15 @@
 					top: 0;
 					transform: translate(-70%, 60%);
 					div {
-						display: none;
 						&:first-of-type {
 							position: absolute;
-							display: block;
 							transform: rotate(45deg);
 						}
-						&:nth-of-type(3) {
-							display: block;
+						&:nth-of-type(2) {
 							transform: rotate(-45deg);
+						}
+						&:last-of-type {
+							display: none;
 						}
 					}
 				}
