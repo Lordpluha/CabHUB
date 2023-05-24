@@ -25,8 +25,11 @@ $ContentMaxWidth: 1210;
 // Color variables
 $yellow_dark: #ffc61a;
 $grey_dark: #131313;
+$grey_light: #f5f4f2;
 
-* {}
+* {
+	font-family: 'Lato', sans-serif;
+}
 
 html {
 	&.lock {
@@ -47,10 +50,6 @@ body {}
 	display: block;
 	margin: 0 auto;
 	max-width: $ContentMaxWidth+px;
-}
-
-header, nav, aside, article, section, footer {
-	font-family: 'Lato', sans-serif;
 }
 
 // Красивая загрузка элементов (см. так же в app.js и _mixins.scss)
@@ -103,9 +102,31 @@ $AnimDelay: 0s;
 	left: 0;
 }
 
+// [ Global UI Kits ]
+.custom-button {
+	background-color: $grey_dark;
+	color: white;
+	font-size: 30px;
+	text-transform: uppercase;
+	font-family: 'Bebas Neue', cursive !important;
+	font-weight: 500 !important;
+	border-radius: 10px;
+	&--link {
+		display: inline-block;
+		padding: 15px 35px;
+	}
+}
+
+span.yellow {
+    color: $yellow_dark;
+}
+
+@import "_article.scss";
+
+// ==================================
+
 @import "_header.scss";
 @import "_nav.scss";
-@import "_article.scss";
 @import "_main.scss";
 @import "_aside.scss";
 @import "_footer.scss";

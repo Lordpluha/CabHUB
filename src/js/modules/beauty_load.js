@@ -2,10 +2,8 @@
 var AnimItems = document.getElementsByClassName('_anim-elem');
 
 function offset(element) {
-	var rect = element.getBoundingClientRect(),
-		scrollLeft = window.pageXOffset,
-		scrollTop = window.pageYOffset;
-	return { top: rect.top + scrollTop, left: rect.left + scrollLeft};
+	var rect = element.getBoundingClientRect();
+	return { top: rect.top + window.pageYOffset, left: rect.left + window.pageXOffset};
 }
 
 function animOnScroll () {

@@ -22,7 +22,8 @@
 	&__suptitle {
 		font-weight: 900;
 		@include adaptive-value('font-size', 25, 35);
-		@include adaptive-value('letter-spacing', 8, 16);
+		// @include adaptive-value('letter-spacing', 8, 16);
+		letter-spacing: 3px;
 		text-transform: uppercase;
 		color: $yellow_dark;
 	}

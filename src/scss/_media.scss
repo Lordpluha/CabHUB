@@ -71,7 +71,14 @@
 
 /* Smartphones (вертикальная и горизонтальная) ----------- */
 @media only screen and (max-width: 736px) {
-	/* стили */
+	.tariffs__content {
+		padding: 20px;
+		flex-direction: column;
+		.tariff {
+			margin: 15% 0 !important;
+		}
+	}
+
 }
 
 /* Smartphones (горизонтальная) ----------- */

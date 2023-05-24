@@ -17,24 +17,25 @@
             min-width: 50%;
         }
     }
+	&__booking {
+		max-width: 1000px;
+	}
+	&__about-us {
+		@include adaptive-value('margin-right', 20, 190);
+	}
 }
 .about-us {
     flex-shrink: 1;
-    @include adaptive-value('margin-right', 20, 190);
     // .about-us__intro
-    &__intro {
-        text-transform: uppercase;
-    }
+    &__intro
     // .about-us__suptitle
     &__suptitle {
-        font-weight: 900;
         color: black;
     }
     // .about-us__title
     &__title {
         margin-top: 25px;
         font-size: 50px;
-        font-weight: 900;
     }
     // .about-us__content
     &__content {
@@ -42,28 +43,12 @@
     }
     // about-us__read-more
     &__read-more {
-        text-transform: uppercase;
-        background-color: black;
-        color: white;
-        font-family: 'Bebas Neue', cursive;
-        font-weight: 800;
-        font-size: 30px;
-        padding: 15px 35px;
-        border-radius: 10px;
         margin-top: 60px;
-        display: inline-block;
     }
 }
-.content-box {
-    // .content-box__paragraph
-    &__paragraph {
-        font-weight: 400;
-        font-size: 18px;
-    }
-}
+
 .booking {
 	background-color: white;
-	max-width: 1000px;
 	&:hover {
 		cursor: auto;
 	}
@@ -86,9 +71,7 @@
 	}
 	// .booking__input
 	&__input {
-		display: block;
 		width: 100%;
-		font-family: 'Lato', sans-serif;
 		font-weight: 600;
 		@include adaptive-value('font-size', 15, 20);
 		border: 0;
@@ -97,41 +80,126 @@
 		&::placeholder {
 			font-size: inherit;
 		}
-		&:is(select),
-		&[type="submit"] {
+		// .booking__input--f
+		&--f {
 			grid-column: 1 / 3;
+			&:is(select) {
+				appearance: none;
+			}
+			&[type="submit"] {
+				margin-top: 25px;
+				letter-spacing: 1px;
+				border-bottom: 0;
+			}
+		}
+		// .booking__input--l
+		&--l {
+			&::placeholder {
+				color: black;
+			}
+		}
+		// .booking__input--r
+		&--r {
+			&::placeholder {
+				color: #4b4b4b;
+			}
 		}
 	}
-	// .booking__input--l
-	&__input--l {
-		&::placeholder {
-			color: black;
-		}
-	}
-	// .booking__input--r
-	&__input--r {
-		&::placeholder {
-			color: #4b4b4b;
-		}
-	}
-	// .booking__input--f
-	select.booking__input--f {
-		appearance: none;
-	}
-	input.booking__input--f[type="submit"] {
-		margin-top: 25px;
-		border-bottom: none;
-		background-color: $grey_dark;
-		color: white;
-		text-transform: uppercase;
-		font-family: 'Bebas Neue', cursive;
-		font-weight: 500;
-		font-size: 30px;
-		letter-spacing: 1px;
-		border-radius: 10px;
+}
+
+.tariffs {
+	background-color: white;
+	// .tariffs__header
+	&__header {
+		margin-top: 60px;
+		text-align: center;
 	}
 
+	// .tariffs__content
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 130px;
+		.tariff {
+			margin: 0 15px;
+			&:first-of-type {
+				margin-left: 0;
+			}
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
 }
-span.yellow {
-    color: $yellow_dark;
+.tariff {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	text-align: center;
+	background-color: $grey_light;
+	padding: 25px;
+
+	// .tariff__image
+	&__image {
+		transform: translateY(-50%);
+		margin-bottom: -20%;
+	}
+
+	// .tariff__title
+	&__title {
+		color: black;
+	}
+
+	// .tariff__paragraph
+	&__paragraph {
+		margin-top: 30px;
+	}
+
+	// .tariff__cost
+	&__cost {
+		margin-top: 40px;
+		color: $yellow_dark;
+	}
+
+	// .tariff__link
+	&__link {
+		margin-top: 30px;
+		background-color: $yellow_dark;
+		color: $grey_dark;
+	}
+
+	// .tariff--special
+	&--special {
+		background-color: $yellow_dark;
+		&::before {
+			position: absolute;
+			content: url('../img/main/tariffs/star-solid.svg');
+			right: 5px;
+			bottom: 10px;
+			width: 24px;
+			height: 24px;
+			z-index: 2;
+		}
+		&::after {
+			position: absolute;
+			content: '';
+			right: 0;
+			bottom: 0;
+			width: 0;
+			height: 0;
+			border: 0 solid transparent;
+			border-right-width: 0px;
+			border-left-width: 70px;
+			border-bottom: 70px solid $grey_dark;
+			z-index: 1;
+		}
+
+		.tariff__cost {
+			color: $grey_dark;
+		}
+		.tariff__link {
+			color: white;
+			background-color: $grey_dark;
+		}
+	}
 }

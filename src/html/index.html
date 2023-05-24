@@ -12,14 +12,14 @@
 
         <main class="main">
             <section class="about" id="about">
-                <div class="container">
-                    <article class="article about-us">
-                        <div class="about-us__intro">
-                            <h3 class="article__suptitle about-us__suptitle">Best In City</h3>
-                            <h1 class="about-us__title">Trusted Cab Servies in New York</h1>
+                <div class="container article">
+                    <article class="about-us about__about-us">
+                        <div class="about-us__intro article__header">
+                            <h3 class="about-us__suptitle article__suptitle">Best In City</h3>
+                            <h1 class="about-us__title article__title">Trusted Cab Servies in New York</h1>
                         </div>
-                        <div class="about-us__content content-box">
-                            <p class="content-box__paragraph">
+                        <div class="about-us__content">
+                            <p class="about-us__paragraph article__paragraph">
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                 Quam cupiditate corporis vero quo nihil enim eius dolorum esse ipsa,
                                 quisquam id odit veritatis delectus cum excepturi labore non adipisci aliquam,
@@ -32,10 +32,10 @@
                                 sunt perspiciatis quidem rem,
                                 nam ex eum odit iusto magni. Libero, perspiciatis animi?</p>
                         </div>
-                        <a href="#" class="about-us__read-more">Read more</a>
+                        <a href="#" class="about-us__read-more custom-button custom-button--link">Read more</a>
                     </article>
 
-                    <form action="#" method="POST" class="booking" id="order_now">
+                    <form action="#" method="POST" class="booking about__booking" id="order_now">
                         <h1 class="booking__title" tabindex="0">Book a <span class="yellow">cab</span></h1>
                         <div class="booking__content">
                             <input class="booking__input booking__input--l" type="text" name="name" id="name" placeholder="Name" required>
@@ -51,18 +51,64 @@
                                 <option value="bmw">bmw</option>
                                 <option value="audi">audi</option>
                             </select>
-                            <input type="submit" value="submit" class="booking__input booking__input--f">
+                            <input type="submit" value="submit" class="booking__input booking__input--f custom-button">
                         </div>
                     </form>
                 </div>
             </section>
+
+            <section class="tariffs" id="tariffs">
+                <div class="container article">
+                    <div class="tariffs__header article__header">
+                        <h3 class="article__suptitle">Our</h3>
+                        <h1 class="article__title">Tariffs</h1>
+                    </div>
+                    <div class="tariffs__content">
+                        <article class="tariff">
+                            <img src="@img/main/tariffs/car.png" alt="car image" class="ibg tariff__image">
+
+                            <h3 class="tariff__title article__suptitle">Economy Class</h3>
+                            <p class="tariff__paragraph article__paragraph">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque dolor dolores reiciendis. Quibusdam,
+                                fugit quae.
+                            </p>
+                            <h1 class="tariff__cost article__title">$1,5/MI</h1>
+                            <a href="#" class="tariff__link custom-button custom-button--link">Read more</a>
+                        </article>
+
+                        <article class="tariff tariff--special">
+                            <img src="@img/main/tariffs/car.png" alt="car image" class="ibg tariff__image">
+
+                            <h3 class="tariff__title article__suptitle">Standart Class</h3>
+                            <p class="tariff__paragraph article__paragraph">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque dolor dolores reiciendis. Quibusdam,
+                                fugit quae.
+                            </p>
+                            <h1 class="tariff__cost article__title">$1,5/MI</h1>
+                            <a href="#" class="tariff__link custom-button custom-button--link">Read more</a>
+                        </article>
+
+                        <article class="tariff">
+                            <img src="@img/main/tariffs/car.png" alt="car image" class="ibg tariff__image">
+
+                            <h3 class="tariff__title article__suptitle">Business Class</h3>
+                            <p class="tariff__paragraph article__paragraph">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque dolor dolores reiciendis. Quibusdam,
+                                fugit quae.
+                            </p>
+                            <h1 class="tariff__cost article__title">$1,5/MI</h1>
+                            <a href="#" class="tariff__link custom-button custom-button--link">Read more</a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section class="contancts" id="contacts">
+            </section>
         </main>
-
-        <section class="feutures" id="feutures">
-        </section>
-
-        <section class="contancts" id="contacts">
-        </section>
 
         @@include('blocks/footer.html')
     </div>
