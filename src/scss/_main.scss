@@ -7,6 +7,7 @@
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+		align-items: center;
         height: 100%;
         padding: 0 20px;
         // padding: 150px 20px 80px;
@@ -21,7 +22,7 @@
 		max-width: 1000px;
 	}
 	&__about-us {
-		@include adaptive-value('margin-right', 20, 190);
+		@include adaptive-value('margin-right', 20, 80);
 	}
 }
 .about-us {
@@ -119,7 +120,9 @@
 	&__content {
 		display: flex;
 		justify-content: space-between;
-		margin-top: 130px;
+		// margin-top: 130px;
+		@include adaptive-value('margin-top', 15, 130);
+
 		.tariff {
 			margin: 0 15px;
 			&:first-of-type {
@@ -134,7 +137,8 @@
 .tariff {
 	display: flex;
 	flex-direction: column;
-	align-content: center;
+	align-items: center;
+
 	text-align: center;
 	background-color: $grey_light;
 	padding: 25px;
@@ -174,11 +178,13 @@
 		&::before {
 			position: absolute;
 			content: url('../img/main/tariffs/star-solid.svg');
-			right: 5px;
-			bottom: 10px;
+			z-index: 2;
+
 			width: 24px;
 			height: 24px;
-			z-index: 2;
+
+			right: 5px;
+			bottom: 10px;
 		}
 		&::after {
 			position: absolute;

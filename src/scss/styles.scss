@@ -106,7 +106,8 @@ $AnimDelay: 0s;
 .custom-button {
 	background-color: $grey_dark;
 	color: white;
-	font-size: 30px;
+	// font-size: 30px;
+	@include adaptive-value('font-size', 20, 35);
 	text-transform: uppercase;
 	font-family: 'Bebas Neue', cursive !important;
 	font-weight: 500 !important;

@@ -18,7 +18,9 @@
 
 /** <--------------------------- [ Computers and laptops ] ---------------------------> **/
 @media only screen and (max-width: 1280px) {
-	/* стили */
+	.tariffs {
+		padding: 0 20px 20px;
+	}
 }
 
 
@@ -71,14 +73,20 @@
 
 /* Smartphones (вертикальная и горизонтальная) ----------- */
 @media only screen and (max-width: 736px) {
-	.tariffs__content {
-		padding: 20px;
-		flex-direction: column;
-		.tariff {
-			margin: 15% 0 !important;
+	.tariffs {
+		padding: 0;
+		&__content {
+			padding: 20px;
+			flex-direction: column;
+
+			.tariff {
+				margin: 15% 0 0 0 !important;
+				&__image {
+					margin-bottom: -12%;
+				}
+			}
 		}
 	}
-
 }
 
 /* Smartphones (горизонтальная) ----------- */

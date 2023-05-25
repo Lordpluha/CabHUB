@@ -10,7 +10,9 @@
 	}
 	// article__title
 	&__title {
-		font-size: 44px;
+		// font-size: 44px;
+		@include adaptive-value('font-size', 40, 45, 1);
+		@include adaptive-value('font-size', 45, 50, 2);
 		color: $grey_dark;
 		font-weight: 900;
 		text-transform: uppercase;
@@ -19,6 +21,7 @@
 	}
 	&__paragraph {
 		font-weight: 400;
-		font-size: 18px;
+		// font-size: 18px;
+		@include adaptive-value('font-size', 15, 20);
 	}
 }
