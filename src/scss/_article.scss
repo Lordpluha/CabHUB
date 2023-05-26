@@ -17,8 +17,19 @@
 		font-weight: 900;
 		text-transform: uppercase;
 	}
+	// article__header
 	&__header {
+		text-align: center;
 	}
+	// article__subtitle
+	&__subtitle {
+		// font-size: 25px;
+		@include adaptive-value('font-size', 15, 25);
+		font-weight: 900;
+		text-transform: uppercase;
+		color: $yellow_dark;
+	}
+	// article__paragraph
 	&__paragraph {
 		font-weight: 400;
 		// font-size: 18px;

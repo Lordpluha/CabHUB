@@ -67,6 +67,9 @@
 			margin-right: 0;
 		}
 	}
+	.why-we__content {
+		grid-template-columns: repeat(1, auto) !important;
+	}
 }
 
 /** <-------------------------------- [ Smartphones ] <--------------------------------> **/

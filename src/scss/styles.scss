@@ -112,6 +112,12 @@ $AnimDelay: 0s;
 	font-family: 'Bebas Neue', cursive !important;
 	font-weight: 500 !important;
 	border-radius: 10px;
+
+	&--yellow {
+		background-color: $yellow_dark;
+		color: $grey_dark;
+	}
+
 	&--link {
 		display: inline-block;
 		padding: 15px 35px;
