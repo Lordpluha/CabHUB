@@ -1,12 +1,39 @@
 .article {
+	// No Styles !!!
 	// .article__suptitle
 	&__suptitle {
 		// font-size: 35px;
 		@include adaptive-value('font-size', 20, 35);
 		color: $yellow_dark;
+		font-weight: 900;
+		text-transform: uppercase;
 	}
 	// article__title
 	&__title {
-		font-size: 44px;
+		// font-size: 44px;
+		@include adaptive-value('font-size', 35, 45, 1);
+		@include adaptive-value('font-size', 45, 55, 2);
+		color: $grey_dark;
+		font-weight: 900;
+		text-transform: uppercase;
+		margin-top: 10px;
+	}
+	// article__header
+	&__header {
+		text-align: center;
+	}
+	// article__subtitle
+	&__subtitle {
+		// font-size: 25px;
+		@include adaptive-value('font-size', 15, 25);
+		font-weight: 900;
+		text-transform: uppercase;
+		color: $yellow_dark;
+	}
+	// article__paragraph
+	&__paragraph {
+		font-weight: 400;
+		// font-size: 18px;
+		@include adaptive-value('font-size', 15, 20);
 	}
 }

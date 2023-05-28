@@ -18,7 +18,11 @@
 
 /** <--------------------------- [ Computers and laptops ] ---------------------------> **/
 @media only screen and (max-width: 1280px) {
-	/* стили */
+	.tariffs {
+		.container {
+			padding: 0 20px 20px;
+		}
+	}
 }
 
 
@@ -37,6 +41,18 @@
 		}
 		.about-us {
 			margin-right: 0;
+		}
+	}
+
+	.download-app {
+		&__content {
+			padding: 0 20px !important;
+		}
+		&__article {
+			width: initial !important;
+		}
+		&__illustration {
+			margin-right: -150px;
 		}
 	}
 }
@@ -65,13 +81,39 @@
 			margin-right: 0;
 		}
 	}
+	.why-we__content {
+		grid-template-columns: 1fr !important;
+	}
+	.download-app {
+		&__illustration {
+			display: none;
+		}
+		&__article {
+			padding-right: 0 !important;
+		}
+	}
+	.reviews {
+		grid-template-columns: 1fr !important;
+	}
 }
 
 /** <-------------------------------- [ Smartphones ] <--------------------------------> **/
 
 /* Smartphones (вертикальная и горизонтальная) ----------- */
 @media only screen and (max-width: 736px) {
-	/* стили */
+	.tariffs {
+		padding: 0;
+		&__content {
+			flex-direction: column;
+
+			.tariff {
+				margin: 15% 0 0 0 !important;
+				&__image {
+					margin-bottom: -12%;
+				}
+			}
+		}
+	}
 }
 
 /* Smartphones (горизонтальная) ----------- */
@@ -112,7 +154,7 @@
 // Specific adaptations
 
 @media only screen and (orientation: landscape) and
-						(((min-aspect-ratio: 19/10) and
+						(((min-aspect-ratio: 19/12) and
 						(max-width: 1210px))
 						or
 						((min-aspect-ratio: 14/5) and
