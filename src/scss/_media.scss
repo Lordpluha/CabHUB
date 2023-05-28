@@ -19,7 +19,9 @@
 /** <--------------------------- [ Computers and laptops ] ---------------------------> **/
 @media only screen and (max-width: 1280px) {
 	.tariffs {
-		padding: 0 20px 20px;
+		.container {
+			padding: 0 20px 20px;
+		}
 	}
 }
 
@@ -80,7 +82,7 @@
 		}
 	}
 	.why-we__content {
-		grid-template-columns: repeat(1, auto) !important;
+		grid-template-columns: 1fr !important;
 	}
 	.download-app {
 		&__illustration {
@@ -89,6 +91,9 @@
 		&__article {
 			padding-right: 0 !important;
 		}
+	}
+	.reviews {
+		grid-template-columns: 1fr !important;
 	}
 }
 
@@ -99,7 +104,6 @@
 	.tariffs {
 		padding: 0;
 		&__content {
-			padding: 20px;
 			flex-direction: column;
 
 			.tariff {
@@ -150,7 +154,7 @@
 // Specific adaptations
 
 @media only screen and (orientation: landscape) and
-						(((min-aspect-ratio: 19/10) and
+						(((min-aspect-ratio: 19/12) and
 						(max-width: 1210px))
 						or
 						((min-aspect-ratio: 14/5) and
