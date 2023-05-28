@@ -41,6 +41,18 @@
 			margin-right: 0;
 		}
 	}
+
+	.download-app {
+		&__content {
+			padding: 0 20px !important;
+		}
+		&__article {
+			width: initial !important;
+		}
+		&__illustration {
+			margin-right: -150px;
+		}
+	}
 }
 
 /* Планшеты (горизонтальная) ----------- */
@@ -69,6 +81,14 @@
 	}
 	.why-we__content {
 		grid-template-columns: repeat(1, auto) !important;
+	}
+	.download-app {
+		&__illustration {
+			display: none;
+		}
+		&__article {
+			padding-right: 0 !important;
+		}
 	}
 }
 

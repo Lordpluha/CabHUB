@@ -1,4 +1,4 @@
-.main
+.main {}
 
 .about {
     width: 100%;
@@ -28,7 +28,7 @@
 .about-us {
     flex-shrink: 1;
     // .about-us__intro
-    &__intro
+    &__intro {}
     // .about-us__suptitle
     &__suptitle {
         color: black;
@@ -115,9 +115,7 @@
 		@include adaptive-value('padding-bottom', 0, 80);
 	}
 	// .tariffs__header
-	&__header {
-		// margin-top: 60px;
-	}
+	&__header {}
 
 	// .tariffs__content
 	&__content {
@@ -222,13 +220,10 @@
 		@include adaptive-value('padding-bottom', 40, 75);
 	}
 	// .why-we__header
-	&__header {
-		// margin-top: 80px;
-	}
+	&__header {}
 
 	// .why-we__suptitle
-	&__suptitle {
-	}
+	&__suptitle {}
 
 	// .why-we__title
 	&__title {
@@ -290,8 +285,7 @@
 		}
 	}
 	// .why-we__article-title
-	&__article-title {
-	}
+	&__article-title {}
 
 	// .why-we__paragraph
 	&__paragraph {
@@ -305,4 +299,82 @@
 	}
 	// .why-we__link
 	&__link {}
+}
+
+.download-app {
+	// padding-top: 65px;
+	@include adaptive-value('padding-top', 40, 65);
+	// .download-app__header
+	&__header {
+	}
+
+	// .download-app__suptitle
+	&__suptitle {
+	}
+
+	// .download-app__title
+	&__title {
+	}
+
+	// .download-app__content
+	&__content {
+		overflow-x: hidden;
+		margin-top: 40px;
+		// padding: 0 120px;
+		@include adaptive-value('padding-left', 0, 120, 1);
+		@include adaptive-value('padding-left', 120, 120, 2);
+		@include adaptive-value('padding-right', 0, 120, 1);
+		@include adaptive-value('padding-right', 120, 120, 2);
+		display: flex;
+		justify-content: space-between;
+	}
+
+	// .download-app__article
+	&__article {
+		// padding-top: 40px;
+		@include adaptive-value('padding-top', 0, 40);
+		padding-right: 40px;
+		width: 50%;
+	}
+
+	// .download-app__subtitle
+	&__subtitle {
+		color: black;
+		text-transform: initial;
+	}
+
+	// .download-app__paragpraph
+	&__paragpraph {
+		margin-top: 30px;
+	}
+
+	// .download-app__links
+	&__links {
+		// margin-top: 60px;
+		@include adaptive-value('margin-top', 30, 60);
+		display: grid;
+		// grid-gap: 20px;
+		@include adaptive-value('grid-gap', 10, 20);
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(auto, 1fr);
+	}
+
+	// .download-app__elem
+	&__elem {
+		display: flex;
+		justify-content: center;
+	}
+
+	// .download-app__link
+	&__link {
+		display: block;
+		max-width: 210px;
+		img {
+			width: 100%;
+		}
+	}
+
+	// .download-app__illustration
+	&__illustration {
+	}
 }
