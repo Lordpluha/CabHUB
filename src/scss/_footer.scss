@@ -1,3 +1,143 @@
-footer {
-    
+.footer {
+	padding: 0 10px;
+	&::before {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url("../img/footer/bg.jpg");
+		background-size: cover;
+		filter: brightness(.1);
+	}
+	.container {
+		padding: 75px 0 85px;
+	}
+
+	// .footer__content
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		color: white;
+	}
+
+	// .footer__elem
+	&__elem {
+		// margin: 0 20px;
+		@include adaptive-value('margin-left', 0, 20, 1);
+		@include adaptive-value('margin-left', 20, 20, 2);
+		@include adaptive-value('margin-right', 0, 20, 1);
+		@include adaptive-value('margin-right', 20, 20, 2);
+		// min-width: 33.333%;
+		min-width: 30%;
+		padding: 0 10px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+		&:first-of-type {
+			margin-left: 0;
+		}
+		&>*:not(:first-child) {
+			margin-top: 45px;
+		}
+	}
+
+	// .footer__title
+	&__title {
+		color: white;
+		&::after {
+			position: relative;
+			display: block;
+			content: '';
+
+			margin: 50px auto 0;
+
+			background-color: $yellow_dark;
+			width: 100%;
+			height: 5px;
+		}
+	}
+
+	// .footer__paragraph
+	&__paragraph {
+	}
+
+	// .footer__socials
+	&__socials {
+		.footer__item {
+			display: inline-block;
+			margin: 0 5px;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+			&:first-of-type {
+				margin-left: 0;
+			}
+			svg {
+				fill: $yellow_dark;
+			}
+		}
+	}
+
+	// .footer__item
+	&__item {
+	}
+
+	// .footer__link
+	&__link {
+		display: inline-block;
+	}
+
+	// .footer__links
+	&__links {
+		max-width: max-content;
+
+		.footer__link {
+			display: flex;
+			justify-content: space-between;
+			color: $yellow_dark;
+			align-items: center;
+
+			svg {
+				margin-left: 25px;
+				fill: white;
+			}
+		}
+	}
+
+	// .footer__contacts
+	&__contacts {
+		.footer {
+			&__item {
+				display: flex;
+				&:not(:last-of-type) {
+					margin-bottom: 25px;
+				}
+				svg {
+					fill: white;
+				}
+			}
+			&__link {
+				align-self: center;
+				margin-left: 20px;
+				color: white;
+			}
+		}
+	}
+}
+
+.small-ico {
+	// height: 20px;
+	height: 1.5em;
+	// width: 25px;
+	width: 1.5em;
+}
+.middle-ico {
+	// width: 30px;
+	height: 1.5em;
+	// height: 30px;
+	width: 1.5em;
 }

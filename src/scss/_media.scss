@@ -95,6 +95,17 @@
 	.reviews {
 		grid-template-columns: 1fr !important;
 	}
+	.footer {
+		&__content {
+			flex-direction: column;
+		}
+		&__elem {
+			margin: 0 20px !important;
+			&:not(:first-of-type) {
+				margin-top: 75px !important;
+			}
+		}
+	}
 }
 
 /** <-------------------------------- [ Smartphones ] <--------------------------------> **/
