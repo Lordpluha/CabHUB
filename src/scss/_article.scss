@@ -8,7 +8,14 @@
 		font-weight: 900;
 		text-transform: uppercase;
 	}
-	// article__title
+	// .article__super-title
+	&__super-title {
+		font-weight: 900;
+		@include adaptive-value('font-size', 45, 72);
+		letter-spacing: 6px;
+		@include adaptive-value('word-spacing', 10, 20);
+	}
+	// .article__title
 	&__title {
 		// font-size: 44px;
 		@include adaptive-value('font-size', 35, 45, 1);
@@ -18,11 +25,11 @@
 		text-transform: uppercase;
 		margin-top: 10px;
 	}
-	// article__header
+	// .article__header
 	&__header {
 		text-align: center;
 	}
-	// article__subtitle
+	// .article__subtitle
 	&__subtitle {
 		// font-size: 25px;
 		@include adaptive-value('font-size', 15, 25);
@@ -30,7 +37,7 @@
 		text-transform: uppercase;
 		color: $yellow_dark;
 	}
-	// article__paragraph
+	// .article__paragraph
 	&__paragraph {
 		font-weight: 400;
 		// font-size: 18px;
