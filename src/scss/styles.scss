@@ -33,7 +33,7 @@ $grey_light: #f5f4f2;
 	font-family: 'Lato', sans-serif;
 }
 
-html {
+body {
 	&.lock {
 		overflow: hidden;
 	}
@@ -130,6 +130,8 @@ span.yellow {
 @import "_article.scss";
 
 // ==================================
+
+@import "_dialog.scss";
 
 @import "_header.scss";
 @import "_nav.scss";
