@@ -13,29 +13,19 @@
 		max-height: 120%;
 	}
 	&__intro {
-		@include adaptive-value('margin-top', 30, 110);
+		@include adaptive-value('margin-top', 30, 60);
 		@include adaptive-value('margin-bottom', 15, 60);
 		color: white;
-		text-align: center;
 	}
 
 	&__suptitle {
-		font-weight: 900;
-		@include adaptive-value('font-size', 25, 35);
 		// @include adaptive-value('letter-spacing', 8, 16);
 		letter-spacing: 3px;
-		text-transform: uppercase;
-		color: $yellow_dark;
 	}
 
 	&__title,
 	&__title>* {
 		color: inherit;
-		display: block;
-		font-weight: 900;
-		@include adaptive-value('font-size', 35, 72);
-		letter-spacing: 6px;
-		@include adaptive-value('word-spacing', 10, 20);
 		@include adaptive-value('margin-top', 15, 22);
 	}
 
@@ -43,13 +33,15 @@
 	&__subtitle>* {
 		color: inherit;
 		font-family: 'Yu Gothic Light';
-		@include adaptive-value('margin-top', 10, 30);
+		@include adaptive-value('margin-top', 10, 25);
 		font-weight: 600;
-		@include adaptive-value('font-size', 10, 20);
 		@include adaptive-value('letter-spacing', 8, 16);
-		text-transform: uppercase;
 	}
 
+	// .header__link
+	&__link {}
+
+	// .header__illustration
 	&__illustration {
 		// max-height: 484px;
 		max-height: 60vh;
@@ -57,4 +49,7 @@
 	}
 }
 .phone {
+	a {
+		font-weight: inherit;
+	}
 }

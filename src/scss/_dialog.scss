@@ -1,0 +1,100 @@
+.order-now {
+	position: fixed;
+	background-color: rgba(0, 0, 0, .8);
+	top: 0;
+	left: 0;
+	z-index: 99;
+	width: 100%;
+	height: 100vh;
+
+	&:modal {
+		max-width: 100%;
+		max-height: 100vh;
+	}
+
+	.container {
+		padding: 110px 20px;
+		max-height: 100%;
+	}
+
+	// .order-now__content
+	&__content {
+		padding: 50px 80px 50px 40px;
+		width: 100%;
+		height: 100%;
+		color: white;
+		background-color: $grey_dark;
+		border-radius: 50px;
+	}
+
+	// .order-now__close
+	&__close {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		display: flex;
+		justify-content: space-around;
+		flex-direction: column;
+		z-index: 100;
+
+		width: 50px;
+		height: 50px;
+
+		background-color: rgba(0, 0, 0, 0);
+		transition: all 0s 0s;
+
+		div {
+			height: 5px;
+			width: 100%;
+			background-color: grey;
+
+			&:first-of-type {
+				position: absolute;
+				display: block;
+				transform: rotate(45deg);
+			}
+			&:last-of-type {
+				display: block;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	// .order-now__phone
+	&__phone {
+		a {
+			color: white;
+		}
+	}
+
+	// .order-now__contacts
+	&__contacts {
+		margin-top: 40px;
+	}
+
+	// .order-now__item
+	&__item {
+		&:not(:first-of-type) {
+			margin-top: 15px;
+		}
+	}
+
+	// .order-now__link
+	&__link {
+		max-width: 100%;
+		flex-wrap: wrap;
+		display: flex;
+		color: $yellow_dark;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		svg {
+			fill: white;
+			margin-right: 20px;
+		}
+
+	}
+}
+

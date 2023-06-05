@@ -95,6 +95,17 @@
 	.reviews {
 		grid-template-columns: 1fr !important;
 	}
+	.footer {
+		&__content {
+			flex-direction: column;
+		}
+		&__elem {
+			margin: 0 20px !important;
+			&:not(:first-of-type) {
+				margin-top: 75px !important;
+			}
+		}
+	}
 }
 
 /** <-------------------------------- [ Smartphones ] <--------------------------------> **/
@@ -154,7 +165,7 @@
 // Specific adaptations
 
 @media only screen and (orientation: landscape) and
-						(((min-aspect-ratio: 19/12) and
+						(((min-aspect-ratio: 19/10) and
 						(max-width: 1210px))
 						or
 						((min-aspect-ratio: 14/5) and

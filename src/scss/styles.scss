@@ -19,8 +19,6 @@ $ContentMaxWidth: 1210;
 @import "_zer0.scss";
 @import "_mixins.scss";
 @import "_fonts.scss";
-@import "_media.scss";
-@import "_preloader.scss";
 
 // Color variables
 $yellow_dark: #ffc61a;
@@ -28,11 +26,14 @@ $grey_dark: #131313;
 $custom_black: #040707;
 $grey_light: #f5f4f2;
 
+@import "_media.scss";
+@import "_preloader.scss";
+
 * {
 	font-family: 'Lato', sans-serif;
 }
 
-html {
+body {
 	&.lock {
 		overflow: hidden;
 	}
@@ -129,6 +130,8 @@ span.yellow {
 @import "_article.scss";
 
 // ==================================
+
+@import "_dialog.scss";
 
 @import "_header.scss";
 @import "_nav.scss";

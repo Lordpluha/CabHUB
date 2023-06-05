@@ -480,3 +480,30 @@
 	width: 75px;
 	border-radius: 50%;
 }
+
+.contacts {
+	background-color: $yellow_dark;
+
+	.container {
+		padding: 70px 20px 90px;
+	}
+
+	// .contacts__content
+	&__content {
+		color: $custom_black;
+	}
+
+	// .contacts__suptitle
+	&__suptitle {
+		color: inherit;
+	}
+
+	// .contacts__title
+	&__title {
+		margin-top: 40px;
+		color: inherit;
+	}
+
+	// .contacts__link
+	&__link {}
+}

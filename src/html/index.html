@@ -6,6 +6,65 @@
 
 <body>
     <div id="wrapper">
+        <dialog class="order-now">
+            <div class="container">
+                <div class="order-now__content article">
+                    <button class="order-now__close" onclick="document.querySelector('.order-now').close(); document.querySelector('body').classList.remove('lock')">
+                        <div></div>
+                        <div></div>
+                    </button>
+
+                    <h1 class="order-now__phone article__super-title phone"><a href="tel:+123 4567 8900">+123 4567 8900</a></h1>
+
+                    <ul class="order-now__contacts">
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="#" target="_blank">
+                                <svg class="small-ico"><use href="../img/icons/icons.svg#footer--socials--location-dot-solid"/></svg>
+                                +123, Main Street, Your City, New York, USA 789456
+                            </a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="mailto:vladislavteslyukofficial@gmail.com?subject=CabHub%20proj" target="_blank">
+                                <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--envelope-solid"/></svg>
+                                vladislavteslyukofficial@gmail.com
+                            </a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://github.com/Lordpluha" target="_blank">
+                                <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--arrow-pointer-solid"/></svg>
+                                github.com/Lordpluha
+                            </a>
+                        </li>
+
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://www.facebook.com/" target="_blank">
+                                <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--facebook-f"/></svg>
+                                cabHub.com
+                            </a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://myaccount.google.com/" target="_blank">
+                                <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--google-plus-g"/></svg>
+                                cabHub.com
+                            </a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://twitter.com/VLTesla" target="_blank">
+                                <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--twitter"/></svg>
+                                cabHub.com
+                            </a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://www.instagram.com/def.__init__" target="_blank">
+                                <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--instagram"/></svg>
+                                cabHub.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </dialog>
+
         @@include('blocks/nav.html')
         @@include('blocks/header.html')
         <!-- Контент -->
@@ -35,7 +94,7 @@
                         <a href="#" class="about-us__read-more custom-button custom-button--link">Read more</a>
                     </article>
 
-                    <form action="#" method="POST" class="booking about__booking" id="order_now">
+                    <form action="/" method="POST" class="booking about__booking" id="order_now">
                         <h1 class="booking__title" tabindex="0">Book a <span class="yellow">cab</span></h1>
                         <div class="booking__content">
                             <input class="booking__input booking__input--l" type="text" name="name" id="name" placeholder="Name" required>
@@ -45,7 +104,7 @@
                             <input class="booking__input booking__input--l" type="text" name="start" id="start" placeholder="Start" aria-roledescription="Start" required> <!-- text->time -->
                             <input class="booking__input booking__input--r" type="text" name="end" id="end" placeholder="End" aria-roledescription="End" required> <!-- text->time -->
                             <select class="booking__input booking__input--f" name="vehicle" id="vehicle" required>
-                                <option value="none" selected hidden>Choose Vehicle</option>
+                                <option value="none" hidden selected>Choose Vehicle</option>
                                 <option value="labmorgini">labmorgini</option>
                                 <option value="mercedes">mercedes</option>
                                 <option value="bmw">bmw</option>
@@ -159,12 +218,12 @@
                             <p class="download-app__paragpraph article__paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum sunt ratione distinctio, possimus harum porro sapiente adipisci rerum tenetur. Illo tenetur eligendi quis amet?</p>
                             <ul class="download-app__links">
                                 <li class="download-app__elem">
-                                    <a href="#" class="download-app__link">
+                                    <a href="https://play.google.com/" target="_blank" class="download-app__link">
                                         <img src="@img/main/download-app/google-play.png" alt="download on google play">
                                     </a>
                                 </li>
                                 <li class="download-app__elem">
-                                    <a href="#" class="download-app__link">
+                                    <a href="https://www.apple.com/app-store/" target="_blank" class="download-app__link">
                                         <img src="@img/main/download-app/app-store.png" alt="download on app store">
                                     </a>
                                 </li>
@@ -175,7 +234,7 @@
                 </div>
             </section>
 
-            <section class="testimonials">
+            <section class="testimonials article" id="testimonials">
                 <div class="container">
                     <div class="testimonials__header article__header">
                         <h3 class="testimonials__suptitle article__suptitle">Happy Client's</h3>
@@ -205,7 +264,13 @@
                 </div>
             </section>
 
-            <section class="contancts" id="contacts">
+            <section class="contacts article" id="contacts">
+                <div class="container">
+                    <div class="contacts__content article__header">
+                        <h3 class="contacts__suptitle article__suptitle">We are Ready to Take Your Call 24 Hours, 7 Days!</h3>
+                        <h1 class="contacts__title article__super-title phone"><a class="contacts__link" href="tel:+123 4567 8900">+123 4567 8900</a></h1>
+                    </div>
+                </div>
             </section>
         </main>
 
