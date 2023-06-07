@@ -1,23 +1,20 @@
 // Media
 
 /** <-------------------------------- [ Supper large screens ] --------------------------------> **/
-@media only screen and (min-width: 1824px) {
+@media (min-width: 1824px) {
 	/* стили */
 }
 
 
 
 /** <-------------------------------- [ Big screens ] --------------------------------> **/
-@media only screen and (max-width: 1824px) {
+@media (max-width: 1824px) {
 	/* стили */
 }
 
 
-
-
-
 /** <--------------------------- [ Computers and laptops ] ---------------------------> **/
-@media only screen and (max-width: 1280px) {
+@media (max-width: 1280px) {
 	.tariffs {
 		.container {
 			padding: 0 20px 20px;
@@ -30,7 +27,7 @@
 /** <-------------------------------- [ Plane tables ] --------------------------------> **/
 
 /* Планшеты (вертикальная и горизонтальная) ----------- */
-@media only screen and (max-width: 1075px)  {
+@media (max-width: 1075px)  {
 	// Article About
 	.about {
 		.container {
@@ -58,17 +55,17 @@
 }
 
 /* Планшеты (горизонтальная) ----------- */
-@media only screen and (max-width: 1024px) and (orientation: landscape) {
+@media (max-width: 1024px) and (orientation: landscape) {
 	/* стили */
 }
 
 /* Планшеты (вертикальная) ----------- */
-@media only screen and (max-width: 1024px) and (orientation: portrait) {
+@media (max-width: 1024px) and (orientation: portrait) {
 	/* стили */
 }
 
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
 	// section About
 	.about {
 		#content {
@@ -111,7 +108,7 @@
 /** <-------------------------------- [ Smartphones ] <--------------------------------> **/
 
 /* Smartphones (вертикальная и горизонтальная) ----------- */
-@media only screen and (max-width: 736px) {
+@media (max-width: 736px) {
 	.tariffs {
 		padding: 0;
 		&__content {
@@ -128,12 +125,12 @@
 }
 
 /* Smartphones (горизонтальная) ----------- */
-@media only screen and (max-width: 736px) and (orientation: landscape) {
+@media (max-width: 736px) and (orientation: landscape) {
 	/* стили */
 }
 
 /* Smartphones (вертикальная) ----------- */
-@media only screen and (max-width: 736px) and (orientation: portrait) {
+@media (max-width: 736px) and (orientation: portrait) {
 	/* стили */
 }
 
@@ -141,12 +138,12 @@
 // Retina more dpi in screens (Apple) //
 
 /* Retina (горизонтальная) ----------- */
-@media only screen and (max-width: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1.5){
+@media (max-width: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1.5){
 	/* стили */
 }
 
 /* Retina (вертикальная) ----------- */
-@media only screen and (max-width: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1.5){
+@media (max-width: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1.5){
 	/* стили */
 }
 
@@ -154,7 +151,7 @@
 /** <------------------------------ [ Little smartphones] ------------------------------> **/
 
 // Маленькие мобилки
-@media only screen and (max-width: 840px) {
+@media (max-width: 840px) {
 	.header {
 		.container {
 			justify-content: space-around !important;
@@ -163,13 +160,41 @@
 }
 
 // Specific adaptations
+/*
+(orientation: landscape)
 
-@media only screen and (orientation: landscape) and
-						(((min-aspect-ratio: 19/10) and
-						(max-width: 1210px))
-						or
-						((min-aspect-ratio: 14/5) and
-						(min-width: 1210px))) {
+(min-width: 2560px) and (min-aspect-ratio: 21/7)
+(1440px <= width <= 2560px) and (700px <= height <= 880px)
+2560*888 => 2,88
+
+(1024px <= width <= 1440px) and (630px <= height <= 700px)
+1440*700 => 1,99
+
+(510px <= width <= 1024px) and (max-height: 630px)
+1024*628 => 1,63
+768*590 => 1,30
+
+(max-width: 510px)
+==========================================
+(orientation: portrait)
+425*488 => 0,87
+375*458 => 0,82
+320*466 => 0,69
+*/
+@media ((orientation: landscape) and
+		((max-width: 510px)
+		or
+		( (510px <= width <= 1024px) and (max-height: 630px) )
+		or
+		( (1024px <= width <= 1440px) and (630px <= height <= 700px) )
+		or
+		( (1440px <= width <= 2560px) and (700px <= height <= 880px) )
+		or
+		( (min-width: 2560px) and (min-aspect-ratio: 21/7) )
+		) )
+		or
+		( (orientation: portrait) and ( (max-width: 425px) and (max-height: 500px) ) )
+		{
 	.header {
 		&__illustration {
 			display: none;
@@ -177,13 +202,13 @@
 	}
 }
 
-@media only screen and (min-width: 560px) {
+@media (min-width: 560px) {
 	.booking {
 		min-width: 422px;
 	}
 }
 
-@media only screen and (max-width: 560px) {
+@media (max-width: 560px) {
 	.booking {
 		&__content {
 			display: block !important;
