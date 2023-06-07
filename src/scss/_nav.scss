@@ -1,6 +1,6 @@
 .nav {
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -49,7 +49,7 @@
 		flex-direction: column;
 
 		&.open {
-			position: absolute;
+			position: fixed;
 			display: flex;
 			align-items: center;
 
@@ -133,9 +133,9 @@
 			background-color: $yellow_dark;
 			color: black;
 		}
-		&:hover {
-			background-color: $yellow_dark;
-			color: black;
-		}
+		// &:active {
+		// 	background-color: $yellow_dark;
+		// 	color: black;
+		// }
 	}
 }

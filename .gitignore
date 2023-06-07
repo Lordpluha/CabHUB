@@ -75,24 +75,24 @@ typings/
 # FuseBox cache
 .fusebox/
 
-# Файлы и папки операционной системы
+# OS files
 .DS_Store
 Thumbs.db
 
-# Файлы редактора
+# Editor config files
 .idea
 *.sublime*
 .vscode
 
 .vscode/
 
-# Папка с собранными файлами проекта
+# Build folder
 dist/*
 
-# Файл конфигурации explorer.exe
+# Config for explorer.exe
 desktop.ini
 
-# Сертификаты и доп. файлы
+# Certificates and etc.
 *.key
 *.crt
 *.pem
@@ -102,3 +102,6 @@ desktop.ini
 # Dependency file
 package-lock.json
 .prettierrc.json
+
+# Special files
+gulp/version.json
