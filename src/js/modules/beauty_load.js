@@ -9,13 +9,13 @@ function offset(element) {
 function animOnScroll () {
 	for (var i = 0; i < AnimItems.length; i++) {
 		// Текущие параметры елемента
-		var AnimItem = AnimItems[i];
-		var AnimItemHeight = AnimItem.offsetHeight;
-		var AnimItemOffset = offset(AnimItem).top;
+		const AnimItem = AnimItems[i];
+		const AnimItemHeight = AnimItem.offsetHeight;
+		const AnimItemOffset = offset(AnimItem).top;
 		// Часть страницы, при которой срабатывает еффект
-		var animStart = 4;
+		const animStart = 3;
 		// Точка налача анимации
-		var animItemPoint = window.innerHeight - AnimItemHeight / animStart;
+		let animItemPoint = window.innerHeight - AnimItemHeight / animStart;
 		if (AnimItemHeight > window.innerHeight) {
 			animItemPoint = window.innerHeight - window.innerHeight / animStart;
 		}
@@ -26,4 +26,7 @@ function animOnScroll () {
 	}
 }
 
-export { animOnScroll }
+export const beautyLoadInit = () => {
+	setTimeout(animOnScroll, 300)
+	window.addEventListener('scroll', animOnScroll)
+}

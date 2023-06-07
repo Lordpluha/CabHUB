@@ -2,6 +2,9 @@
 // @use "sass:math";
 @use "sass:list";
 
+@import "_zer0.scss";
+@import "_preloader.scss";
+
 // Ширина макета
 $SiteMaxWidth: 1600;
 // Ширина контентного блока
@@ -10,24 +13,21 @@ $ContentMaxWidth: 1210;
 @debug "Page template width = #{$SiteMaxWidth}px";
 @debug "Content width = #{$ContentMaxWidth}px";
 
+@import "_mixins.scss";
+@import "_media.scss";
+@import "_fonts.scss";
+
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 // font-family: 'Lato', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 // font-family: 'Bebas Neue', cursive;
 
-@import "_zer0.scss";
-@import "_mixins.scss";
-@import "_fonts.scss";
-
 // Color variables
 $yellow_dark: #ffc61a;
 $grey_dark: #131313;
 $custom_black: #040707;
 $grey_light: #f5f4f2;
-
-@import "_media.scss";
-@import "_preloader.scss";
 
 * {
 	font-family: 'Lato', sans-serif;
@@ -46,6 +46,7 @@ body {}
 	height: 100%;
 	display: flex;
 	flex-direction: column;
+	overflow-x: hidden;
 }
 
 .container {
@@ -57,7 +58,7 @@ body {}
 // Красивая загрузка элементов (см. так же в app.js и _mixins.scss)
 $AnimTime: 1s;
 $AnimDelay: 0s;
-.anim-elem {
+._anim-elem {
 	-webkit-transition: margin, padding .0s linear;
 	   -moz-transition: margin, padding .0s linear;
 	    -ms-transition: margin, padding .0s linear;
@@ -83,7 +84,7 @@ $AnimDelay: 0s;
 	        transition: opacity   $AnimTime ease-in-out $AnimDelay,
 	        			transform $AnimTime ease-in-out $AnimDelay;
 
-	&.active-fx {
+	&._active-fx {
 		transform: translate(0px, 0px);
 		opacity: 1;
 	}
