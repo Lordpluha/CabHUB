@@ -301,6 +301,7 @@
 }
 
 .download-app {
+	background-color: white;
 	// padding-top: 65px;
 	@include adaptive-value('padding-top', 40, 65);
 	// .download-app__header
