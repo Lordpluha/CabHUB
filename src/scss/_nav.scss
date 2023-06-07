@@ -49,7 +49,7 @@
 		flex-direction: column;
 
 		&.open {
-			position: absolute;
+			position: fixed;
 			display: flex;
 			align-items: center;
 
