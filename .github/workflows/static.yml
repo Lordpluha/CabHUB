@@ -37,6 +37,11 @@ jobs:
           npm ci
       - name: Build
         run: npm run prod
+      - name: Cache files
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
