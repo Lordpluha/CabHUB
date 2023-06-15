@@ -99,9 +99,5 @@ desktop.ini
 # *.conf
 *.htaccess
 
-# Dependency file
-package-lock.json
-.prettierrc.json
-
 # Special files
 gulp/version.json
