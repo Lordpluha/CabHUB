@@ -16,7 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.29.3",
-    "clean-jsdoc-theme": "^4.2.2",
+    "clean-jsdoc-theme": "^4.2.9",
     "gulp-file-include": "^2.3.0",
     "gulp-html-bem-validator": "^1.0.5",
     "gulp-newer": "^1.4.0",
