@@ -4,7 +4,6 @@ import { beautyLoadInit } from './modules/beauty_load.js'
 
 // Testing browser for supports and some static funcs
 document.addEventListener('DOMContentLoaded', () => {
-	webpfuncs.ibg()
 	webpfuncs.testWebP(()=>{})
 })
 
