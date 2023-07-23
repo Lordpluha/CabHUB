@@ -1,12 +1,12 @@
 // DEV
-import dartSass from 'sass';
-import gulpSass from 'gulp-sass';
+import * as dartSass from 'sass'
+import gulpSass from 'gulp-sass'
 
 // PROD
-import webpcss from 'gulp-webpcss';
-import cleanCss from 'gulp-clean-css';
-import autoprefixer from 'gulp-autoprefixer';
-import groupCssMediaQueries from 'gulp-group-css-media-queries';
+import webpcss from 'gulp-webpcss'
+import cleanCss from 'gulp-clean-css'
+import autoprefixer from 'gulp-autoprefixer'
+import groupCssMediaQueries from 'gulp-group-css-media-queries'
 
 /**
  * @file Module for processing style files

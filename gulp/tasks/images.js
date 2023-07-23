@@ -1,14 +1,15 @@
 // PROD plugins
-import webp from "gulp-webp";
-import imagemin from "gulp-imagemin";
-import pngquant from "imagemin-pngquant";
-import svgSprite from "gulp-svg-sprite";
+import webp from "gulp-webp"
+import imagemin from "gulp-imagemin"
+import pngquant from "imagemin-pngquant"
+import svgSprite from "gulp-svg-sprite"
 
 /**
  * @module tasks/images
  * @requires gulp-webp
  * @requires gulp-imagemin
  * @requires imagemin-pngquant
+ * @requires gulp-svg-sprite
  *
  * @exports images
  * @exports svgSprites
@@ -44,21 +45,17 @@ export const images = () => {
         silent: app.isBuild ? 'true' : 'false',
         verbose: app.isBuild ? 'false' : 'true'
     }
-    
+
     return app.gulp.src(app.path.src.images)
         .pipe(app.plugins.newer(app.path.build.images))
         .pipe(
             app.plugins.if(
                 app.isBuild,
-                webp()
+                imagemin([pngquant({})], imagemin_cfg)
             )
         )
-        .pipe(
-            app.plugins.if(
-                app.isBuild,
-                app.gulp.dest(app.path.build.images)
-            )
-        )
+        .pipe(app.gulp.dest(app.path.build.images))
+        // WEBP
         .pipe(
             app.plugins.if(
                 app.isBuild,
@@ -74,17 +71,16 @@ export const images = () => {
         .pipe(
             app.plugins.if(
                 app.isBuild,
-                imagemin(imagemin_cfg)
+                webp()
             )
         )
         .pipe(
             app.plugins.if(
                 app.isBuild,
-                imagemin([pngquant()], imagemin_cfg)
+                app.gulp.dest(app.path.build.images)
             )
         )
-        .pipe(app.gulp.dest(app.path.build.images))
-
+        // SVG copying
         .pipe(app.gulp.src(app.path.src.svgs))
         .pipe(app.gulp.dest(app.path.build.images))
         .pipe(app.plugins.browsersync.stream());
