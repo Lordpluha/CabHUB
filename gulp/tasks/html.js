@@ -1,19 +1,19 @@
 // DEV
-import fileinclude from "gulp-file-include";
-import htmlBemVadlidator from "gulp-html-bem-validator";
+import fileinclude from "gulp-file-include"
+import htmlBemVadlidator from "gulp-html-bem-validator"
 
 // PROD
-import webpHtmlNosvg from "gulp-webp-html-nosvg";
-import versionNumber from "gulp-version-number";
-import htmlMin from "gulp-htmlmin";
-import prettify from "gulp-html-prettify";
+import webpHtml from "gulp-html-img-wrapper"
+import versionNumber from "gulp-version-number"
+import htmlMin from "gulp-htmlmin"
+import prettify from "gulp-html-prettify"
 
 /**
  * @file Module of processing all html files of project
  * @module tasks/html
  *
  * @requires gulp-file-include
- * @requires gulp-webp-html-nosvg
+ * @requires gulp-html-img-wrapper
  * @requires gulp-version-number
  * @requires gulp-html-bem-validator
  * @requires gulp-htmlmin
@@ -32,27 +32,32 @@ export const html = () => {
      * @desc Event of processing html
      * @see [html]{@link module:tasks/html~html}
      */
-    let files;
-    if (app.MainFileType == 'php') {
-        files = [app.path.src.html, app.path.src.php];
-    } else {
-        files = app.path.src.html;
-    }
-    return app.gulp.src(files)
+    return app.gulp.src(
+            app.MainFileType == 'php'
+            ? [app.path.src.html, app.path.src.php]
+            : app.path.src.html
+        )
         .pipe(app.plugins.plumber(
             app.plugins.notify.onError({
                 title: "HTML",
                 message: "Error <%= error.message %>"
             }))
         )
-        .pipe(fileinclude())
+        .pipe(fileinclude({
+            context: {
+                isBuild: app.isBuild,
+                isDev: app.isDev
+            }
+        }))
 
         // <img src="@img/..." alt="">
         .pipe(app.plugins.replace(/@img\//g, 'img/'))
         .pipe(
             app.plugins.if(
                 app.isBuild,
-                webpHtmlNosvg()
+                webpHtml({
+                    logger: app.isDev ? true : false
+                })
             )
         )
         .pipe(
@@ -110,5 +115,5 @@ export const html = () => {
                 app.gulp.dest(app.path.build.html)
             )
         )
-        .pipe(app.plugins.browsersync.stream());
+        .pipe(app.plugins.browsersync.stream())
 }

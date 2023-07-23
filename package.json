@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "gulp",
+    "full-dev": "gulp --build",
     "prod": "gulp prod --build",
     "zip": "gulp zip --build",
     "deploy": "gulp deploy --build",
@@ -19,6 +20,7 @@
     "clean-jsdoc-theme": "^4.2.2",
     "gulp-file-include": "^2.3.0",
     "gulp-html-bem-validator": "^1.0.5",
+    "gulp-html-img-wrapper": "^4.0.1",
     "gulp-newer": "^1.4.0",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
@@ -43,7 +45,6 @@
     "gulp-util": "^3.0.8",
     "gulp-version-number": "^0.2.4",
     "gulp-webp": "^4.0.1",
-    "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
     "imagemin-pngquant": "^9.0.2",
