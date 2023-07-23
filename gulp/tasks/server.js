@@ -39,7 +39,7 @@ export const server = (done) => {
 	 */
     const ProjectName = app.path.rootFolder;
     const OSPanel = false;
-    const https = false;
+    const https = true;
 
     var browsersync_conf = {
 		injectChanges: true,
