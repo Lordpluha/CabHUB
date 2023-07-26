@@ -1,10 +1,15 @@
-import * as webpfuncs from './modules/functions.js'
-import { closePreloader, burgerInit, openOrderNow, getDataFromForm, formTransform } from './modules/design.js'
+import {
+	closePreloader,
+	burgerInit,
+	openOrderNow,
+	getDataFromForm,
+	formTransform
+} from './modules/design.js'
 import { beautyLoadInit } from './modules/beauty_load.js'
 
 // Testing browser for supports and some static funcs
 document.addEventListener('DOMContentLoaded', () => {
-	webpfuncs.testWebP(()=>{})
+	// webpfuncs.testWebP(()=>{})
 })
 
 // On page load event

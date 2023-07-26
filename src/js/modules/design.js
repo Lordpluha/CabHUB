@@ -1,3 +1,5 @@
+import focusManager from 'focus-manager'
+
 export const closePreloader = () => {
 	document.querySelector('.preloader').classList.add('loaded')
 	document.querySelector('body').classList.remove('lock')
@@ -14,6 +16,22 @@ export const getDataFromForm = () => {
 			}
 			alert(JSON.stringify(res))
 		})
+}
+
+const initFocusManager = (elClass) => {
+	const dialog = document.querySelector(elClass)
+
+	// Listen for clicks on the open button
+	const openFocus = () => {
+		focusManager.capture(dialog)
+	}
+
+	// Listen for clicks on the close button
+	const closeFocus = () => {
+		focusManager.release(dialog)
+	}
+
+	return [openFocus, closeFocus]
 }
 
 // Burger show/hide
