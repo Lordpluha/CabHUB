@@ -153,7 +153,8 @@ export const path = {
         fontsDir:  `${srcFolder}/${fontsFolder}`,
         fonts:     `${srcFolder}/${fontsFolder}/**/*.{eot,ttf,otf,woff,woff2,eot?#iefix}`,
         fontsScss: `${srcFolder}/${scssFolder}/${fontsScss}`,
-        js:        `${srcFolder}/${jsFolder}/app.js`,
+        js:        `${srcFolder}/${jsFolder}/*.js`,
+        jsDir:        `${srcFolder}/${jsFolder}/`,
         certs:     `${srcFolder}/${certFolder}/**/*.{pem,key,cert}`
     },
     /**
