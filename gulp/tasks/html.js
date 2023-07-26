@@ -1,8 +1,5 @@
-// DEV
 import fileinclude from "gulp-file-include"
 import htmlBemVadlidator from "gulp-html-bem-validator"
-
-// PROD
 import webpHtml from "gulp-html-img-wrapper"
 import versionNumber from "gulp-version-number"
 import htmlMin from "gulp-htmlmin"

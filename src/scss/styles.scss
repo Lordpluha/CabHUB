@@ -55,6 +55,15 @@ body {}
 	max-width: $ContentMaxWidth+px;
 }
 
+picture {
+	display: block;
+	max-width: 100%;
+	width: fit-content;
+	height: fit-content;
+	object-fit: cover;
+	object-position: center;
+}
+
 // Красивая загрузка элементов (см. так же в app.js и _mixins.scss)
 $AnimTime: 1s;
 $AnimDelay: 0s;
