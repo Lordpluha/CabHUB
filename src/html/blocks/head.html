@@ -11,7 +11,11 @@
 
     <title>@@title</title>
 
-    <link rel="stylesheet" href="css/styles.min.css">
-    <link rel="stylesheet" href="css/styles.min.css.map">
     <link rel="stylesheet" href="css/preloader.min.css">
+    <link rel="preload" as="style" href="css/styles.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="css/styles.min.css.map" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/styles.min.css">
+        <link rel="stylesheet" href="css/styles.min.css.map">
+    </noscript>
 </head>
