@@ -123,7 +123,7 @@
 		justify-content: space-between;
 		// margin-top: 130px;
 		@include adaptive-value('margin-top', 15, 70);
-
+		padding: 20px;
 		.tariff {
 			margin: 0 15px;
 			&:first-of-type {
@@ -139,15 +139,22 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
 
 	text-align: center;
 	background-color: $grey_light;
 	padding: 25px;
 
 	// .tariff__image
-	&__image {
+	.tariff__image {
 		transform: translateY(-50%);
 		margin-bottom: -20%;
+	}
+	picture {
+		.tariff__image {
+			transform: translateY(-50%);
+			margin-bottom: -20%;
+		}
 	}
 
 	// .tariff__title
@@ -336,7 +343,7 @@
 		@include adaptive-value('padding-bottom', 40, 80);
 		// padding-bottom: 40px;
 		padding-right: 40px;
-		width: 50%;
+		width: 60%;
 	}
 
 	// .download-app__subtitle
@@ -378,7 +385,17 @@
 
 	// .download-app__illustration
 	&__illustration {
-		overflow: visible;
+			height: 100%;
+			overflow: hidden;
+			margin-right: -50px;
+
+		&--picture {
+			height: 100%;
+
+			align-self: flex-end;
+			flex-grow: 1;
+			overflow: hidden;
+		}
 	}
 }
 
@@ -454,6 +471,13 @@
 	grid-template-rows: repeat(2, minmax(37.5px, auto));
 	grid-column-gap: 18px;
 	grid-row-gap: 5px;
+
+	picture {
+		grid-row-start: 1;
+		grid-row-end: 3;
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
 
 	// .creator-bio__avatar
 	&__avatar {

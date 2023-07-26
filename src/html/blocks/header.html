@@ -1,5 +1,22 @@
-<div class="header-bg"></div>
-<header class="header article" id="home">
+
+
+@@if (isDev) {
+    <div class="header-bg ibg">
+        <img
+            src="@img/header/bg.jpg"
+            alt="background image"
+        >
+    </div>
+
+}
+@@if (isBuild) {
+    <img
+        src="@img/header/bg.jpg"
+        alt="background image"
+        ghiw-picture-class="header-bg ibg"
+    >
+}
+<header class="header article" id="home" aria-label="header content">
     <div class="container">
         <div class="header__intro article__header">
             <a class="header__suptitle article__suptitle open-order-now _anim-elem" href="#">BOOK CAB NOW</a>
@@ -9,6 +26,11 @@
             <h6 class="header__subtitle article__subtitle _anim-elem"><a href="index.html">CabHUB.ua</a></h6>
         </div>
 
-        <img class="header__illustration _anim-elem" src="@img/header/Car.png" alt="illustration">
+        <img
+            class="header__illustration _anim-elem"
+            src="@img/header/Car.png"
+            alt="illustration"
+            ghiw-picture-class="header__illustration--picture"
+        >
     </div>
 </header>

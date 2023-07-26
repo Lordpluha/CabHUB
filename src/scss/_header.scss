@@ -18,17 +18,16 @@
 		justify-content: space-between;
 		flex-direction: column;
 		padding: 110px 20px 0;
-		min-height: 100%;
-		max-height: 120%;
+		height: 100%;
 	}
 	&__intro {
 		@include adaptive-value('margin-top', 30, 60);
 		@include adaptive-value('margin-bottom', 15, 60);
 		color: white;
+		flex-grow: 1;
 	}
 
 	&__suptitle {
-		// @include adaptive-value('letter-spacing', 8, 16);
 		letter-spacing: 3px;
 	}
 
@@ -51,10 +50,21 @@
 	&__link {}
 
 	// .header__illustration
-	&__illustration {
-		// max-height: 484px;
-		max-height: 60vh;
+	.header__illustration {
+		margin: 0 auto;
+		width: 100%;
+		flex-grow: 1;
 		object-fit: contain;
+
+		&--picture {
+			margin: initial;
+			object-fit: initial;
+			max-height: 60vh;
+			width: 100%;
+			flex-grow: 1;
+			display: flex;
+			justify-content: center;
+		}
 	}
 }
 .phone {
