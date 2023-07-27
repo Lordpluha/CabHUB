@@ -101,4 +101,4 @@ desktop.ini
 
 # Special files
 CabHUB.layout.code-workspace
-gulp/version.json
+**/*.json
