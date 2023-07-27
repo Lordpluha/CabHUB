@@ -13,7 +13,7 @@ function animOnScroll () {
 		const AnimItemHeight = AnimItem.offsetHeight;
 		const AnimItemOffset = offset(AnimItem).top;
 		// Часть страницы, при которой срабатывает еффект
-		const animStart = 3;
+		const animStart = 4;
 		// Точка налача анимации
 		let animItemPoint = window.innerHeight - AnimItemHeight / animStart;
 		if (AnimItemHeight > window.innerHeight) {

@@ -35,28 +35,34 @@ const initFocusManager = (elClass) => {
 }
 
 // Burger show/hide
-const ToggleBurger = () => {
+const ToggleBurger = (openFocus, closeFocus) => {
 	let burger__menu = document.querySelector('.menu--burger.nav__menu')
 	if (burger__menu) {
 		burger__menu.classList.toggle('open')
+		burger__menu.classList.contains('open') ? openFocus() : closeFocus()
 		document.querySelector('body').classList.toggle('lock')
 	}
 }
 
 // Navigation changing
 const switchBurger = () => {
-	let current_height = window.innerHeight,
+	const current_height = window.innerHeight,
 		current_width = window.innerWidth,
-		burger__menu = document.querySelector('.menu.nav__menu')
+		burger__menu = document.querySelector('.menu.nav__menu'),
+		burger__button = document.querySelector('.nav__menu .menu__button')
+
 
 	if (current_width <= 840) {
 		burger__menu.classList.remove('menu--default')
 		burger__menu.classList.add('menu--burger')
+		burger__button.ariaHidden = false
+
 
 		burger__menu.classList.remove('open')
 	} else {
 		burger__menu.classList.remove('menu--burger')
 		burger__menu.classList.add('menu--default')
+		burger__button.ariaHidden = true
 
 		burger__menu.classList.remove('open')
 		document.querySelector('body').classList.remove('lock')
@@ -92,17 +98,18 @@ export const formTransform = () => {
 
 // Burger initialization
 export const burgerInit = () => {
-	// Burger menu init
+	const [openBurgerFocus, closeBurgerFocus] = initFocusManager('.menu--burger.nav__menu')
+
 	switchBurger()
-	let burger__button = document.querySelector(".menu--burger.nav__menu .menu__button")
-	if (burger__button) {burger__button.addEventListener('click', ToggleBurger)}
+	const burger__button = document.querySelector('.menu--burger.nav__menu .menu__button')
+	if (burger__button) burger__button.addEventListener('click', () => {ToggleBurger(openBurgerFocus, closeBurgerFocus)})
 
 	// Burger links functionality
 	for(const [_, val] of Object.entries(document.getElementsByClassName('menu__link'))) {
 		val.addEventListener('click', ()=>{
 			document.querySelector('.menu__link.active').classList.remove('active')
 			val.classList.add('active')
-			ToggleBurger()
+			ToggleBurger(openBurgerFocus, closeBurgerFocus)
 		})
 	}
 }

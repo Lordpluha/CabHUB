@@ -244,7 +244,27 @@
                                 </li>
                             </ul>
                         </article>
-                        <img src="@img/main/download-app/illustration.png" alt="app illustration" class="download-app__illustration">
+
+                        @@if (isDev) {
+                            <div class="download-app__illustration-picture">
+                                <img
+                                    src="@img/main/download-app/illustration.png"
+                                    class="download-app__illustration"
+                                    alt="app illustration"
+                                    loading=lazy
+                                >
+                            </div>
+                        }
+
+                        @@if (isBuild) {
+                            <img
+                                src="@img/main/download-app/illustration.png"
+                                class="download-app__illustration"
+                                alt="app illustration"
+                                ghiw-picture-class="download-app__illustration-picture"
+                                loading=lazy
+                            >
+                        }
                     </div>
                 </div>
             </section>
