@@ -111,30 +111,7 @@ $AnimDelay: 0s;
 }
 
 // [ Global UI Kits ]
-.custom-button {
-	background-color: $grey_dark;
-	color: white;
-	// font-size: 30px;
-	@include adaptive-value('font-size', 20, 35);
-	text-transform: uppercase;
-	font-family: 'Bebas Neue', cursive !important;
-	font-weight: 500 !important;
-	border-radius: 10px;
-
-	&--yellow {
-		background-color: $yellow_dark;
-		color: $grey_dark;
-	}
-
-	&--link {
-		display: inline-block;
-		padding: 15px 35px;
-	}
-}
-
-span.yellow {
-    color: $yellow_dark;
-}
+@import "_ui-kits.scss";
 
 @import "_article.scss";
 
