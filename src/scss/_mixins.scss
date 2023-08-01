@@ -19,8 +19,8 @@
 	}
 }
 
-// Последвательная крассивая прогрузка для наследников .anim-elem
-@mixin beaut_blocks($NumOfElems, $DelayCoof, $AnimDelay) {
+// Последвательная крассивая прогрузка ._anim-elem для наследников
+@mixin beaut_blocks($NumOfElems: 2, $AnimDelay, $DelayCoof) {
 	$AnimDelayV: $AnimDelay+.1;
 
 	@for $i from 1 through $NumOfElems {
