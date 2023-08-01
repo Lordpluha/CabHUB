@@ -1,4 +1,5 @@
 .order-now {
+	display: none;
 	position: fixed;
 	background-color: rgba(0, 0, 0, .8);
 	top: 0;
@@ -6,6 +7,10 @@
 	z-index: 99;
 	width: 100%;
 	height: 100vh;
+
+	&.open {
+		display: block;
+	}
 
 	&:modal {
 		max-width: 100%;
@@ -69,11 +74,14 @@
 
 	// .order-now__contacts
 	&__contacts {
-		margin-top: 40px;
+
 	}
 
 	// .order-now__item
 	&__item {
+		&:first-of-type {
+			margin-top: 40px;
+		}
 		&:not(:first-of-type) {
 			margin-top: 15px;
 		}

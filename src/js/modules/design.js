@@ -2,7 +2,21 @@ import focusManager from 'focus-manager'
 
 export const closePreloader = () => {
 	document.querySelector('.preloader').classList.add('loaded')
-	document.querySelector('body').classList.remove('lock')
+	document.body.classList.remove('lock')
+}
+
+export const initFocusManager = (elClass) => {
+	const dialog = document.querySelector(elClass)
+	const openFocus = () => {
+		focusManager.capture(dialog)
+		console.log(`[${elClass}] - focus opened`)
+	}
+	const closeFocus = () => {
+		focusManager.release(dialog)
+		console.log(`[${elClass}] - focus closed`)
+	}
+
+	return [openFocus, closeFocus]
 }
 
 // Getting data from order now form
@@ -18,66 +32,71 @@ export const getDataFromForm = () => {
 		})
 }
 
-const initFocusManager = (elClass) => {
-	const dialog = document.querySelector(elClass)
-
-	// Listen for clicks on the open button
-	const openFocus = () => {
-		focusManager.capture(dialog)
-	}
-
-	// Listen for clicks on the close button
-	const closeFocus = () => {
-		focusManager.release(dialog)
-	}
-
-	return [openFocus, closeFocus]
-}
-
 // Burger show/hide
-const ToggleBurger = (openFocus, closeFocus) => {
+const ToggleBurger = focusFuncs => {
+	const [openFocus, closeFocus] = focusFuncs()
 	let burger__menu = document.querySelector('.menu--burger.nav__menu')
 	if (burger__menu) {
 		burger__menu.classList.toggle('open')
 		burger__menu.classList.contains('open') ? openFocus() : closeFocus()
-		document.querySelector('body').classList.toggle('lock')
+		document.body.classList.toggle('lock')
 	}
 }
 
 // Navigation changing
-const switchBurger = () => {
-	const current_height = window.innerHeight,
-		current_width = window.innerWidth,
+export const switchBurger = () => {
+	const current_width = window.innerWidth,
 		burger__menu = document.querySelector('.menu.nav__menu'),
 		burger__button = document.querySelector('.nav__menu .menu__button')
-
-
 	if (current_width <= 840) {
 		burger__menu.classList.remove('menu--default')
+		burger__menu.classList.remove('open')
 		burger__menu.classList.add('menu--burger')
 		burger__button.ariaHidden = false
-
-
-		burger__menu.classList.remove('open')
 	} else {
 		burger__menu.classList.remove('menu--burger')
+		burger__menu.classList.remove('open')
 		burger__menu.classList.add('menu--default')
 		burger__button.ariaHidden = true
-
-		burger__menu.classList.remove('open')
-		document.querySelector('body').classList.remove('lock')
-
+		document.body.classList.remove('lock')
 	}
 }
 
+const showModal = () => {
+	console.log(`[${this}] - open modal`)
+	document.querySelector(this.target).classList.add('open')
+	document.querySelector(this.target).ariaHidden = false
+}
+const closeModal = () => {
+	console.log(`[${this}] - close modal`)
+	document.querySelector(this.target).classList.remove('open')
+	document.querySelector(this.target).ariaHidden = true
+}
+
 // Open order-now
-export const openOrderNow = () => {
-	document.querySelectorAll('a.open-order-now').forEach(el => {
-		el.addEventListener('click', (event) => {
-			event.preventDefault()
-			document.querySelector('dialog.order-now').showModal()
-			document.querySelector('body').classList.add('lock')
+export const orderNowDialog = burgerFocusCbs => {
+	const orderDialog = '.order-now',
+		orderDialogElem = document.querySelector(orderDialog),
+		orderDialogOpenBtns = document.querySelectorAll('a.open-order-now'),
+		orderDialogCloseBtn = document.querySelector(`.order-now__close`),
+		[openModalFocus, closeModalFocus] = initFocusManager(`${orderDialog}`)
+
+	orderDialogOpenBtns.forEach(el => {
+		el.addEventListener("click", e => {
+			e.preventDefault()
+			orderDialogElem.classList.add('open')
+			orderDialogElem.ariaHidden = false
+			openModalFocus()
+			document.body.classList.add('lock')
 		})
+	})
+
+	orderDialogCloseBtn.addEventListener("click", e => {
+		e.preventDefault()
+		closeModalFocus()
+		orderDialogElem.classList.remove('open')
+		orderDialogElem.ariaHidden = true
+		document.body.classList.remove('lock')
 	})
 }
 
@@ -97,19 +116,19 @@ export const formTransform = () => {
 }
 
 // Burger initialization
-export const burgerInit = () => {
-	const [openBurgerFocus, closeBurgerFocus] = initFocusManager('.menu--burger.nav__menu')
-
+export const burgerInit = (burgerFocusFuncs) => {
 	switchBurger()
 	const burger__button = document.querySelector('.menu--burger.nav__menu .menu__button')
-	if (burger__button) burger__button.addEventListener('click', () => {ToggleBurger(openBurgerFocus, closeBurgerFocus)})
+	if (burger__button) burger__button.onclick = () => {
+		ToggleBurger(burgerFocusFuncs)
+	}
 
 	// Burger links functionality
 	for(const [_, val] of Object.entries(document.getElementsByClassName('menu__link'))) {
-		val.addEventListener('click', ()=>{
+		val.onclick = () => {
 			document.querySelector('.menu__link.active').classList.remove('active')
 			val.classList.add('active')
-			ToggleBurger(openBurgerFocus, closeBurgerFocus)
-		})
+			ToggleBurger(burgerFocusFuncs)
+		}
 	}
 }

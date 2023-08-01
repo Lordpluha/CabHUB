@@ -1,29 +1,33 @@
 import {
 	closePreloader,
 	burgerInit,
-	openOrderNow,
+	orderNowDialog,
 	getDataFromForm,
-	formTransform
+	formTransform,
+	initFocusManager,
+	switchBurger
 } from './modules/design.js'
 import { beautyLoadInit } from './modules/beauty_load.js'
 
 // Testing browser for supports and some static funcs
-document.addEventListener('DOMContentLoaded', () => {
-	// webpfuncs.testWebP(()=>{})
-})
+// document.addEventListener('DOMContentLoaded', () => {
+
+// })
 
 // On page load event
 window.onload = () => {
 	closePreloader()
 
-	// Burger
-	burgerInit()
+	const burgerFocusFuncs = () => initFocusManager('.menu--burger.nav__menu')
 
 	// Beauty load
 	beautyLoadInit()
 
+	// Burger
+	burgerInit(burgerFocusFuncs)
+
 	// Order Now dialog function
-	openOrderNow()
+	orderNowDialog(burgerFocusFuncs)
 
 	// Getting data from order now form
 	getDataFromForm()
@@ -33,4 +37,4 @@ window.onload = () => {
 }
 
 // Dev function
-window.onresize = () =>	burgerInit()
+window.onresize = () =>	switchBurger()
