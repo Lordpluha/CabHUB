@@ -67,12 +67,6 @@ picture {
 $AnimTime: 1s;
 $AnimDelay: 0s;
 ._anim-elem {
-	-webkit-transition: margin, padding .0s linear;
-	   -moz-transition: margin, padding .0s linear;
-	    -ms-transition: margin, padding .0s linear;
-	     -o-transition: margin, padding .0s linear;
-	        transition: margin, padding .0s linear;
-
 	-webkit-transform: translate(0, -100%);
 	   -moz-transform: translate(0, -100%);
 		-ms-transform: translate(0, -100%);
@@ -81,18 +75,24 @@ $AnimDelay: 0s;
 
 	opacity: 0;
 
-	-webkit-transition: opacity   $AnimTime ease-in-out $AnimDelay,
-						transform $AnimTime ease-in-out $AnimDelay;
-	   -moz-transition: opacity   $AnimTime ease-in-out $AnimDelay,
-	   					transform $AnimTime ease-in-out $AnimDelay;
-	    -ms-transition: opacity   $AnimTime ease-in-out $AnimDelay,
-	    				transform $AnimTime ease-in-out $AnimDelay;
-	     -o-transition: opacity   $AnimTime ease-in-out $AnimDelay,
-	     				transform $AnimTime ease-in-out $AnimDelay;
-	        transition: opacity   $AnimTime ease-in-out $AnimDelay,
-	        			transform $AnimTime ease-in-out $AnimDelay;
-
 	&._active-fx {
+		-webkit-transition: margin, padding .0s linear;
+			-moz-transition: margin, padding .0s linear;
+			-ms-transition: margin, padding .0s linear;
+			-o-transition: margin, padding .0s linear;
+				transition: margin, padding .0s linear;
+
+		-webkit-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+							transform $AnimTime ease-in-out $AnimDelay;
+			-moz-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+								transform $AnimTime ease-in-out $AnimDelay;
+			-ms-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+							transform $AnimTime ease-in-out $AnimDelay;
+			-o-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+							transform $AnimTime ease-in-out $AnimDelay;
+				transition: opacity   $AnimTime ease-in-out $AnimDelay,
+							transform $AnimTime ease-in-out $AnimDelay;
+
 		transform: translate(0px, 0px);
 		opacity: 1;
 	}
