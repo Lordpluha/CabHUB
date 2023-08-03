@@ -81,6 +81,8 @@ export const orderNowDialog = burgerFocusCbs => {
 		orderDialogCloseBtn = document.querySelector(`.order-now__close`),
 		[openModalFocus, closeModalFocus] = initFocusManager(`${orderDialog}`)
 
+	let activateElem
+
 	orderDialogOpenBtns.forEach(el => {
 		el.addEventListener("click", e => {
 			e.preventDefault()
@@ -88,6 +90,8 @@ export const orderNowDialog = burgerFocusCbs => {
 			orderDialogElem.ariaHidden = false
 			openModalFocus()
 			document.body.classList.add('lock')
+			activateElem = el
+			console.log(activateElem)
 		})
 	})
 
@@ -97,6 +101,7 @@ export const orderNowDialog = burgerFocusCbs => {
 		orderDialogElem.classList.remove('open')
 		orderDialogElem.ariaHidden = true
 		document.body.classList.remove('lock')
+		if(activateElem) activateElem.focus()
 	})
 }
 
