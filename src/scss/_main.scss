@@ -124,7 +124,9 @@
 		// margin-top: 130px;
 		@include adaptive-value('margin-top', 15, 70);
 		padding: 20px;
+
 		.tariff {
+			@include beaut_blocks(3, .5s, .5s);
 			margin: 0 15px;
 			&:first-of-type {
 				margin-left: 0;
@@ -251,6 +253,7 @@
 		grid-template-columns: repeat(2, auto);
 		grid-template-rows: repeat(2, auto);
 		padding: 20px;
+		@include beaut_blocks(4, .5s, .5s);
 		&:nth-of-type(1) {
 			&::before {
 				content: url('../img/main/why-we/star.png');
@@ -440,6 +443,7 @@
 
 	// .reviews__review
 	&__review {
+		@include beaut_blocks(2, .5s, .5s);
 	}
 }
 .review {

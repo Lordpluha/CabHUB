@@ -29,6 +29,7 @@
 		@include adaptive-value('margin-left', 20, 20, 2);
 		@include adaptive-value('margin-right', 0, 20, 1);
 		@include adaptive-value('margin-right', 20, 20, 2);
+		@include beaut_blocks(3, .5s, .5s);
 		// min-width: 33.333%;
 		min-width: 30%;
 		padding: 0 10px;
