@@ -32,8 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install deps
-        run: git config --global url."https://".insteadOf git://
-            yarn install --frozen-lockfile
+        run: git config --global url."https://".insteadOf git:// && yarn install --frozen-lockfile
       - name: Build
         run: yarn run prod
       - name: Cache files
