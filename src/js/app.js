@@ -9,11 +9,6 @@ import {
 } from './modules/design.js'
 import { beautyLoadInit } from './modules/beauty_load.js'
 
-// Testing browser for supports and some static funcs
-// document.addEventListener('DOMContentLoaded', () => {
-
-// })
-
 // On page load event
 window.onload = () => {
 	closePreloader()
