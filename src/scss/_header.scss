@@ -35,6 +35,7 @@
 	&__title>* {
 		color: inherit;
 		@include adaptive-value('margin-top', 15, 22);
+		@include adaptive-value('margin-bottom', 15, 22);
 	}
 
 	&__subtitle,
