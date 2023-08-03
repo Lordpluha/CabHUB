@@ -100,4 +100,5 @@ desktop.ini
 *.htaccess
 
 # Special files
+CabHUB.layout.code-workspace
 gulp/version.json

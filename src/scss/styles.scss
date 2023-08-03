@@ -3,7 +3,6 @@
 @use "sass:list";
 
 @import "_zer0.scss";
-@import "_preloader.scss";
 
 // Ширина макета
 $SiteMaxWidth: 1600;
@@ -55,16 +54,19 @@ body {}
 	max-width: $ContentMaxWidth+px;
 }
 
+picture {
+	display: block;
+	max-width: 100%;
+	width: fit-content;
+	height: fit-content;
+	object-fit: cover;
+	object-position: center;
+}
+
 // Красивая загрузка элементов (см. так же в app.js и _mixins.scss)
 $AnimTime: 1s;
 $AnimDelay: 0s;
 ._anim-elem {
-	-webkit-transition: margin, padding .0s linear;
-	   -moz-transition: margin, padding .0s linear;
-	    -ms-transition: margin, padding .0s linear;
-	     -o-transition: margin, padding .0s linear;
-	        transition: margin, padding .0s linear;
-
 	-webkit-transform: translate(0, -100%);
 	   -moz-transform: translate(0, -100%);
 		-ms-transform: translate(0, -100%);
@@ -73,18 +75,24 @@ $AnimDelay: 0s;
 
 	opacity: 0;
 
-	-webkit-transition: opacity   $AnimTime ease-in-out $AnimDelay,
-						transform $AnimTime ease-in-out $AnimDelay;
-	   -moz-transition: opacity   $AnimTime ease-in-out $AnimDelay,
-	   					transform $AnimTime ease-in-out $AnimDelay;
-	    -ms-transition: opacity   $AnimTime ease-in-out $AnimDelay,
-	    				transform $AnimTime ease-in-out $AnimDelay;
-	     -o-transition: opacity   $AnimTime ease-in-out $AnimDelay,
-	     				transform $AnimTime ease-in-out $AnimDelay;
-	        transition: opacity   $AnimTime ease-in-out $AnimDelay,
-	        			transform $AnimTime ease-in-out $AnimDelay;
-
 	&._active-fx {
+		-webkit-transition: margin, padding .0s linear;
+			-moz-transition: margin, padding .0s linear;
+			-ms-transition: margin, padding .0s linear;
+			-o-transition: margin, padding .0s linear;
+				transition: margin, padding .0s linear;
+
+		-webkit-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+							transform $AnimTime ease-in-out $AnimDelay;
+			-moz-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+								transform $AnimTime ease-in-out $AnimDelay;
+			-ms-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+							transform $AnimTime ease-in-out $AnimDelay;
+			-o-transition: opacity   $AnimTime ease-in-out $AnimDelay,
+							transform $AnimTime ease-in-out $AnimDelay;
+				transition: opacity   $AnimTime ease-in-out $AnimDelay,
+							transform $AnimTime ease-in-out $AnimDelay;
+
 		transform: translate(0px, 0px);
 		opacity: 1;
 	}
@@ -103,30 +111,7 @@ $AnimDelay: 0s;
 }
 
 // [ Global UI Kits ]
-.custom-button {
-	background-color: $grey_dark;
-	color: white;
-	// font-size: 30px;
-	@include adaptive-value('font-size', 20, 35);
-	text-transform: uppercase;
-	font-family: 'Bebas Neue', cursive !important;
-	font-weight: 500 !important;
-	border-radius: 10px;
-
-	&--yellow {
-		background-color: $yellow_dark;
-		color: $grey_dark;
-	}
-
-	&--link {
-		display: inline-block;
-		padding: 15px 35px;
-	}
-}
-
-span.yellow {
-    color: $yellow_dark;
-}
+@import "_ui-kits.scss";
 
 @import "_article.scss";
 

@@ -28,6 +28,9 @@
 	// .article__header
 	&__header {
 		text-align: center;
+		span {
+			display: block;
+		}
 	}
 	// .article__subtitle
 	&__subtitle {

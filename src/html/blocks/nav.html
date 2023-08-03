@@ -1,34 +1,39 @@
-<nav class="nav" aria-role="menu" aria-orientation="horizontal">
-	<!-- Nav -->
+<!-- Nav -->
+<nav class="nav" role="navigation" aria-label="cabhub navigation bar">
 	<div class="container">
 		<div class="nav__brand brand">
-			<a class="brand__link" href="index.html" aria-roledescription="CabHUB logotype link">
-				<img class="brand__logo" src="@img/nav/logo.png" alt="logotype">
+			<a class="brand__link" href="index.html" aria-label="cabhub logotype link to home page">
+				<img class="brand__logo" src="@img/nav/logo.png" alt="cabhub logotype">
 			</a>
 		</div>
-		<ul class="menu menu--default nav__menu" aria-role="group">
-			<li class="menu__elem">
-				<a class="menu__link active" href="#home">Home</a>
+		<ul class="menu menu--default nav__menu" aria-label="navigation links">
+			<li class="menu__elem" aria-posinset="1">
+				<a class="menu__link active" href="#home" aria-label="to home page link">Home</a>
 			</li>
-			<li class="menu__elem">
-				<a class="menu__link" href="#about">About</a>
+			<li class="menu__elem" aria-posinset="2">
+				<a class="menu__link" href="#about" aria-label="to about us link">About</a>
 			</li>
-			<li class="menu__elem">
-				<a class="menu__link" href="#why-we">Feutures</a>
+			<li class="menu__elem" aria-posinset="3">
+				<a class="menu__link" href="#why-we" aria-label="to feutures link">Feutures</a>
 			</li>
-			<li class="menu__elem">
-				<a class="menu__link" href="#testimonials">Blog</a>
+			<li class="menu__elem" aria-posinset="4">
+				<a class="menu__link" href="#testimonials" aria-label="to our blog link">Blog</a>
 			</li>
-			<li class="menu__elem">
-				<a class="menu__link open-order-now" href="#">Order now</a>
+			<li class="menu__elem" aria-posinset="5">
+				<a
+					class="menu__link open-order-now"
+					aria-label="open modal order now"
+					aria-haspopup="dialog"
+					href="#"
+				>Order now</a>
 			</li>
-			<li class="menu__elem">
-				<a class="menu__link" href="#contacts">Contacts</a>
+			<li class="menu__elem" aria-posinset="5">
+				<a class="menu__link" href="#contacts" aria-label="to contacts link">Contacts</a>
 			</li>
-			<button class="menu__button" aria-roledescription="open burger menu button">
-				<div></div>
-				<div></div>
-				<div></div>
+			<button class="menu__button" role="listitem" aria-label="open burger button">
+				<div role="presentation"></div>
+				<div role="presentation"></div>
+				<div role="presentation"></div>
 			</button>
 		</ul>
 	</div>

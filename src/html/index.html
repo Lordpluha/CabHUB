@@ -22,56 +22,57 @@
             </div>
         </div>
 
-        <dialog class="order-now">
+        <div role="dialog" class="order-now" aria-label="order now modal window">
             <div class="container">
                 <div class="order-now__content article">
-                    <button class="order-now__close" onclick="document.querySelector('.order-now').close(); document.querySelector('body').classList.remove('lock')">
-                        <div></div>
-                        <div></div>
+                    <button class="order-now__close" aria-label="close modal button">
+                        <div role="presentation"></div>
+                        <div role="presentation"></div>
                     </button>
 
-                    <h1 class="order-now__phone article__super-title phone"><a href="tel:+123 4567 8900">+123 4567 8900</a></h1>
-
-                    <ul class="order-now__contacts">
+                    <ul class="order-now__contacts" aria-label="official links">
+                        <li class="order-now__phone article__super-title phone">
+                            <a href="tel:+123 4567 8900" aria-label="callcenter phone">+123 4567 8900</a>
+                        </li>
                         <li class="order-now__item">
-                            <a class="order-now__link article__paragraph" href="#" target="_blank">
+                            <a class="order-now__link article__paragraph" href="https://www.google.com/maps" target="_blank" aria-label="google maps office location">
                                 <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--location-dot-solid"/></svg>
                                 +123, Main Street, Your City, New York, USA 789456
                             </a>
                         </li>
                         <li class="order-now__item">
-                            <a class="order-now__link article__paragraph" href="mailto:vladislavteslyukofficial@gmail.com?subject=CabHub%20proj" target="_blank">
+                            <a class="order-now__link article__paragraph" href="mailto:vladislavteslyukofficial@gmail.com?subject=CabHub%20proj" aria-label="company email" target="_blank">
                                 <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--envelope-solid"/></svg>
                                 vladislavteslyukofficial@gmail.com
                             </a>
                         </li>
                         <li class="order-now__item">
-                            <a class="order-now__link article__paragraph" href="https://github.com/Lordpluha" target="_blank">
+                            <a class="order-now__link article__paragraph" href="https://github.com/Lordpluha" aria-label="github social link" target="_blank">
                                 <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--arrow-pointer-solid"/></svg>
                                 github.com/Lordpluha
                             </a>
                         </li>
 
                         <li class="order-now__item">
-                            <a class="order-now__link article__paragraph" href="https://www.facebook.com/" target="_blank">
+                            <a class="order-now__link article__paragraph" href="https://www.facebook.com/" aria-label="facebook social link" target="_blank">
                                 <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--facebook-f"/></svg>
                                 cabHub.com
                             </a>
                         </li>
                         <li class="order-now__item">
-                            <a class="order-now__link article__paragraph" href="https://myaccount.google.com/" target="_blank">
+                            <a class="order-now__link article__paragraph" href="https://myaccount.google.com/" aria-label="google plus social link" target="_blank">
                                 <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--google-plus-g"/></svg>
                                 cabHub.com
                             </a>
                         </li>
                         <li class="order-now__item">
-                            <a class="order-now__link article__paragraph" href="https://twitter.com/VLTesla" target="_blank">
+                            <a class="order-now__link article__paragraph" href="https://twitter.com/VLTesla" aria-label="twitter social link" aria-f target="_blank">
                                 <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--twitter"/></svg>
                                 cabHub.com
                             </a>
                         </li>
                         <li class="order-now__item">
-                            <a class="order-now__link article__paragraph" href="https://www.instagram.com/def.__init__" target="_blank">
+                            <a class="order-now__link article__paragraph" href="https://www.instagram.com/def.__init__" aria-label="instagram social link" target="_blank">
                                 <svg class="small-ico"><use href="@img/icons/icons.svg#footer--socials--instagram"/></svg>
                                 cabHub.com
                             </a>
@@ -79,22 +80,22 @@
                     </ul>
                 </div>
             </div>
-        </dialog>
+        </div>
 
         @@include('blocks/nav.html')
         @@include('blocks/header.html')
         <!-- Контент -->
 
-        <main class="main">
-            <section class="about article" id="about">
-                <div class="container">
-                    <article class="about-us about__about-us">
+        <main class="main" aria-label="cabhub main content">
+            <section class="about article" id="about" aria-label="about us section" tabindex="0">
+                <div class="container" role="presentation">
+                    <article class="about-us about__about-us" aria-label="about us content">
                         <div class="about-us__intro">
-                            <h3 class="about-us__suptitle article__suptitle _anim-elem">Best In City</h3>
-                            <h1 class="about-us__title article__title _anim-elem">Trusted Cab Servies in New York</h1>
+                            <h1 class="about-us__suptitle article__suptitle _anim-elem" tabindex="0">Best In City</h1>
+                            <h2 class="about-us__title article__title _anim-elem" tabindex="0">Trusted Cab Servies in New York</h2>
                         </div>
                         <div class="about-us__content">
-                            <p class="about-us__paragraph article__paragraph _anim-elem">
+                            <p class="about-us__paragraph article__paragraph _anim-elem" aria-roledescription="about us paragraph" tabindex="0">
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                 Quam cupiditate corporis vero quo nihil enim eius dolorum esse ipsa,
                                 quisquam id odit veritatis delectus cum excepturi labore non adipisci aliquam,
@@ -105,173 +106,273 @@
                                 vel voluptates dolores dignissimos.
                                 Porro sint cupiditate unde et dolore placeat explicabo culpa quod minus voluptatum iste
                                 sunt perspiciatis quidem rem,
-                                nam ex eum odit iusto magni. Libero, perspiciatis animi?</p>
+                                nam ex eum odit iusto magni. Libero, perspiciatis animi?
+                            </p>
                         </div>
-                        <a href="#" class="about-us__read-more custom-button custom-button--link _anim-elem">Read more</a>
+                        <a href="#" class="about-us__read-more custom-button custom-button--link _anim-elem" aria-label="about us read more link">Read more</a>
                     </article>
 
-                    <form action="/" method="POST" class="booking about__booking _anim-elem" id="order_now">
-                        <h1 class="booking__title" tabindex="0">Book a <span class="yellow">cab</span></h1>
+                    <form
+                        action="/"
+                        method="POST"
+                        class="booking about__booking _anim-elem"
+                        id="order_now"
+                        aria-label="book a cab form"
+                        tabindex="0"
+                    >
+                        <h1 class="booking__title" role="presentation">
+                            Book a <span class="yellow">cab</span>
+                        </h1>
                         <div class="booking__content">
-                            <input class="booking__input booking__input--l" type="text" name="name" id="name" placeholder="Name" required>
-                            <input class="booking__input booking__input--r" type="phone" name="phone" id="phone" placeholder="Phone" required>
-                            <input class="booking__input booking__input--l" type="text" name="date" id="date" placeholder="When" aria-roledescription="When" required> <!-- text->date -->
-                            <input class="booking__input booking__input--r" type="text" name="time" id="time" placeholder="Time" aria-roledescription="Time" required> <!-- text->time -->
-                            <input class="booking__input booking__input--l" type="text" name="start" id="start" placeholder="Start" aria-roledescription="Start" required> <!-- text->time -->
-                            <input class="booking__input booking__input--r" type="text" name="end" id="end" placeholder="End" aria-roledescription="End" required> <!-- text->time -->
-                            <select class="booking__input booking__input--f" name="vehicle" id="vehicle" required>
+                            <input class="booking__input booking__input--l"  name="name"    id="name"  type="text"   placeholder="Name"  aria-roledescription="Owner name input"     required>
+                            <input class="booking__input booking__input--r"  name="phone"   id="phone" type="phone"  placeholder="Phone" aria-roledescription="Callback phone input" required>
+                            <input class="booking__input booking__input--l"  name="date"    id="date"  type="text"   placeholder="When"  aria-roledescription="When date input"      required> <!-- text->date -->
+                            <input class="booking__input booking__input--r"  name="time"    id="time"  type="text"   placeholder="Time"  aria-roledescription="Time input"           required> <!-- text->time -->
+                            <input class="booking__input booking__input--l"  name="start"   id="start" type="text"   placeholder="Start" aria-roledescription="Start time input"     required> <!-- text->time -->
+                            <input class="booking__input booking__input--r"  name="end"     id="end"   type="text"   placeholder="End"   aria-roledescription="End time input"       required> <!-- text->time -->
+                            <select class="booking__input booking__input--f" name="vehicle" id="vehicle" aria-label="Choose vehicle"     aria-roledescription="Car select"           required>
                                 <option value="none" hidden selected>Choose Vehicle</option>
                                 <option value="labmorgini">labmorgini</option>
                                 <option value="mercedes">mercedes</option>
                                 <option value="bmw">bmw</option>
                                 <option value="audi">audi</option>
                             </select>
-                            <input type="submit" value="submit" class="booking__input booking__input--f custom-button">
+                            <input type="submit" value="submit" class="booking__input booking__input--f custom-button" aria-label="submit button">
                         </div>
                     </form>
                 </div>
             </section>
 
-            <section class="tariffs article" id="tariffs">
-                <div class="container">
-                    <div class="tariffs__header article__header">
-                        <h3 class="article__suptitle _anim-elem">Our</h3>
-                        <h1 class="article__title _anim-elem">Tariffs</h1>
-                    </div>
-                    <div class="tariffs__content">
-                        <article class="tariff _anim-elem">
-                            <img src="@img/main/tariffs/car.png" alt="car image" class="ibg tariff__image">
+            <section class="tariffs article" id="tariffs" aria-labelledby="tariffs__header" tabindex="0">
+                <div class="container" role="presentation">
+                    <h1 class="tariffs__header article__header" id="tariffs__header">
+                        <span class="article__suptitle _anim-elem">Our</span>
+                        <span class="article__title _anim-elem">Tariffs</span>
+                    </h1>
+                    <ul class="tariffs__content" aria-label="tariffs list">
+                        <li class="tariff _anim-elem" aria-posinset="1" aria-label="tariff not special offer" tabindex="0">
+                            <img
+                                src="@img/main/tariffs/car.png"
+                                alt="taxi car image"
+                                class="ibg tariff__image"
+                                loading=lazy
+                            >
 
-                            <h3 class="tariff__title article__suptitle">Economy Class</h3>
-                            <p class="tariff__paragraph article__paragraph">
+                            <h2
+                                class="tariff__title article__suptitle"
+                                aria-roledescription="tariff name"
+                                tabindex="0"
+                            >Economy Class</h2>
+                            <p class="tariff__paragraph article__paragraph" aria-roledescription="tariff description" tabindex="0">
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque dolor dolores reiciendis. Quibusdam,
                                 fugit quae.
                             </p>
-                            <h1 class="tariff__cost article__title">$1,5/MI</h1>
-                            <a href="#" class="tariff__link custom-button custom-button--link">Read more</a>
-                        </article>
+                            <p class="tariff__cost article__title" aria-roledescription="tariff cost" tabindex="0">$1,5/MI</p>
+                            <a href="#" class="tariff__link custom-button custom-button--link" aria-label="link read more about tariff">Read more</a>
+                        </li>
 
-                        <article class="tariff _anim-elem tariff--special">
-                            <img src="@img/main/tariffs/car.png" alt="car image" class="ibg tariff__image">
+                        <li class="tariff tariff--special _anim-elem" aria-posinset="2" aria-label="tariff special offer" tabindex="0">
+                            <img
+                                src="@img/main/tariffs/car.png"
+                                alt="taxi car image"
+                                class="ibg tariff__image"
+                                loading=lazy
+                            >
 
-                            <h3 class="tariff__title article__suptitle">Standart Class</h3>
-                            <p class="tariff__paragraph article__paragraph">
+                            <h2
+                                class="tariff__title article__suptitle"
+                                aria-roledescription="tariff name"
+                                tabindex="0"
+                            >Standart Class</h2>
+                            <p class="tariff__paragraph article__paragraph" aria-roledescription="tariff description" tabindex="0">
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque dolor dolores reiciendis. Quibusdam,
                                 fugit quae.
                             </p>
-                            <h1 class="tariff__cost article__title">$1,5/MI</h1>
-                            <a href="#" class="tariff__link custom-button custom-button--link">Read more</a>
-                        </article>
+                            <p class="tariff__cost article__title" aria-roledescription="tariff cost" tabindex="0">$1,5/MI</p>
+                            <a href="#" class="tariff__link custom-button custom-button--link" aria-label="link read more about tariff">Read more</a>
+                        </li>
 
-                        <article class="tariff _anim-elem">
-                            <img src="@img/main/tariffs/car.png" alt="car image" class="ibg tariff__image">
+                        <li class="tariff _anim-elem" aria-posinset="3" aria-label="tariff not special offer" tabindex="0">
+                            <img
+                                src="@img/main/tariffs/car.png"
+                                alt="taxi car image"
+                                class="ibg tariff__image"
+                                loading=lazy
+                            >
 
-                            <h3 class="tariff__title article__suptitle">Business Class</h3>
-                            <p class="tariff__paragraph article__paragraph">
+                            <h2
+                                class="tariff__title article__suptitle"
+                                aria-roledescription="tariff name"
+                                tabindex="0"
+                            >Business Class</h2>
+                            <p class="tariff__paragraph article__paragraph" aria-roledescription="tariff description" tabindex="0">
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque dolor dolores reiciendis. Quibusdam,
                                 fugit quae.
                             </p>
-                            <h1 class="tariff__cost article__title">$1,5/MI</h1>
-                            <a href="#" class="tariff__link custom-button custom-button--link">Read more</a>
-                        </article>
-                    </div>
+                            <p class="tariff__cost article__title" aria-roledescription="tariff cost" tabindex="0">$1,5/MI</p>
+                            <a href="#" class="tariff__link custom-button custom-button--link" aria-label="link read more about tariff">Read more</a>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
-            <section class="why-we article" id="why-we">
-                <div class="container">
-                    <div class="why-we__header article__header">
-                        <h3 class="why-we__suptitle article__suptitle _anim-elem">We do best</h3>
-                        <h1 class="why-we__title article__title _anim-elem">Than you wish</h1>
-                    </div>
+            <section class="why-we article" id="why-we" aria-label="why you must choose us" tabindex="0">
+                <div class="container" role="presentation">
+                    <h1 class="why-we__header article__header" tabindex="0">
+                        <span class="why-we__suptitle article__suptitle _anim-elem">We do best</span>
+                        <span class="why-we__title article__title _anim-elem">Than you wish</span>
+                    </h1>
 
-                    <div class="why-we__content">
-                        <article class="why-we__item _anim-elem">
-                            <h6 class="why-we__article-title article__subtitle">Home pickup</h6>
-                            <p class="why-we__paragraph article__paragraph">
+                    <ul class="why-we__content" role="list" aria-label="our advantages">
+                        <li class="why-we__item _anim-elem" aria-labelledby="why-we__article-title1" tabindex="0">
+                            <h2 class="why-we__article-title article__subtitle" id="why-we__article-title1">Home pickup</h2>
+                            <p class="why-we__paragraph article__paragraph" tabindex="0">
                                 Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
                             </p>
-                        </article>
+                        </li>
 
-                        <article class="why-we__item _anim-elem">
-                            <h6 class="why-we__article-title article__subtitle">Fast booking</h6>
-                            <p class="why-we__paragraph article__paragraph">
+                        <li class="why-we__item _anim-elem" aria-labelledby="why-we__article-title2" tabindex="0">
+                            <h2 class="why-we__article-title article__subtitle" id="why-we__article-title2">Fast booking</h2>
+                            <p class="why-we__paragraph article__paragraph" tabindex="0">
                                 Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
                             </p>
-                        </article>
+                        </li>
 
-                        <article class="why-we__item _anim-elem">
-                            <h6 class="why-we__article-title article__subtitle">Bonuses for ride</h6>
-                            <p class="why-we__paragraph article__paragraph">
+                        <li class="why-we__item _anim-elem" aria-labelledby="why-we__article-title3" tabindex="0">
+                            <h2 class="why-we__article-title article__subtitle" id="why-we__article-title3">Bonuses for ride</h2>
+                            <p class="why-we__paragraph article__paragraph" tabindex="0">
                                 Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
                             </p>
-                        </article>
+                        </li>
 
-                        <article class="why-we__item _anim-elem">
-                            <h6 class="why-we__article-title article__subtitle">GPS searching</h6>
-                            <p class="why-we__paragraph article__paragraph">
+                        <li class="why-we__item _anim-elem" aria-labelledby="why-we__article-title4" tabindex="0">
+                            <h2 class="why-we__article-title article__subtitle" id="why-we__article-title4">GPS searching</h2>
+                            <p class="why-we__paragraph article__paragraph" tabindex="0">
                                 Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
                             </p>
-                        </article>
-                    </div>
+                        </li>
+                    </ul>
                     <div class="why-we__inner">
-                        <a href="#" class="why-we__link custom-button custom-button--link custom-button--yellow _anim-elem">Read more</a>
+                        <a
+                            href="#"
+                            class="why-we__link custom-button custom-button--link custom-button--yellow _anim-elem"
+                            aria-label="link why you must choose us"
+                        >Read more</a>
                     </div>
                 </div>
             </section>
 
-            <section class="download-app article" id="download-app">
-                <div class="container">
-                    <div class="download-app__header article__header">
-                        <h3 class="download-app__suptitle article__suptitle _anim-elem">Download</h3>
-                        <h1 class="download-app__title article__title _anim-elem">Best cab service</h1>
-                    </div>
+            <section class="download-app article" id="download-app" aria-labelledby="download-app__header" tabindex="0">
+                <div class="container" role="presentation">
+                    <h1 class="download-app__header article__header" id="download-app__header" tabindex="0">
+                        <span class="download-app__suptitle article__suptitle _anim-elem">Download</span>
+                        <span class="download-app__title article__title _anim-elem">Best cab service</span>
+                    </h1>
 
-                    <div class="download-app__content">
-                        <article class="download-app__article">
-                            <h6 class="download-app__subtitle article__subtitle _anim-elem">Downlaod the Cab voucher app free! Get Exciting New Offers</h6>
-                            <p class="download-app__paragpraph article__paragraph _anim-elem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum sunt ratione distinctio, possimus harum porro sapiente adipisci rerum tenetur. Illo tenetur eligendi quis amet?</p>
-                            <ul class="download-app__links">
-                                <li class="download-app__elem _anim-elem">
-                                    <a href="https://play.google.com/" target="_blank" class="download-app__link">
-                                        <img src="@img/main/download-app/google-play.png" alt="download on google play">
+                    <div class="download-app__content" aria-label="download app content">
+                        <article class="download-app__article" aria-labelledby="download-app__subtitle">
+                            <h2 class="download-app__subtitle article__subtitle _anim-elem" id="download-app__subtitle" tabindex="0">
+                                Downlaod the Cab voucher app free! Get Exciting New Offers
+                            </h2>
+                            <p class="download-app__paragpraph article__paragraph _anim-elem" tabindex="0" aria-roledescription="about our app">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Iure ipsum sunt ratione distinctio, possimus harum porro sapiente adipisci rerum tenetur.
+                                Illo tenetur eligendi quis amet?
+                            </p>
+                            <ul class="download-app__links" role="list" aria-label="download our app links">
+                                <li class="download-app__elem _anim-elem" role="listitem" aria-posinset="1">
+                                    <a href="https://play.google.com/" target="_blank" class="download-app__link" aria-label="download on google play">
+                                        <img src="@img/main/download-app/google-play.png" alt="download on google play" loading=lazy role="presentation">
                                     </a>
                                 </li>
-                                <li class="download-app__elem _anim-elem">
-                                    <a href="https://www.apple.com/app-store/" target="_blank" class="download-app__link">
-                                        <img src="@img/main/download-app/app-store.png" alt="download on app store">
+                                <li class="download-app__elem _anim-elem" role="listitem" aria-posinset="2">
+                                    <a href="https://www.apple.com/app-store/" target="_blank" class="download-app__link" aria-label="download on app store">
+                                        <img src="@img/main/download-app/app-store.png" alt="download on app store" loading=lazy role="presentation">
                                     </a>
                                 </li>
                             </ul>
                         </article>
-                        <img src="@img/main/download-app/illustration.png" alt="app illustration" class="download-app__illustration">
+
+                        @@if (isDev) {
+                            <div class="download-app__illustration-picture" role="presentation">
+                                <img
+                                    src="@img/main/download-app/illustration.png"
+                                    class="download-app__illustration"
+                                    alt="app preview"
+                                    loading=lazy
+                                >
+                            </div>
+                        }
+
+                        @@if (isBuild) {
+                            <img
+                                src="@img/main/download-app/illustration.png"
+                                class="download-app__illustration"
+                                alt="app preview"
+                                ghiw-picture-class="download-app__illustration-picture"
+                                loading=lazy
+                                role="presentation"
+                            >
+                        }
                     </div>
                 </div>
             </section>
 
-            <section class="testimonials article" id="testimonials">
-                <div class="container">
-                    <div class="testimonials__header article__header">
-                        <h3 class="testimonials__suptitle article__suptitle _anim-elem">Happy Client's</h3>
-                        <h1 class="testimonials__title article__title _anim-elem">Testimonials</h1>
-                    </div>
+            <section class="testimonials article lazy-background" id="testimonials" aria-labelledby="testimonials__header" tabindex="0">
+                <div class="container" role="presentation">
+                    <h1 class="testimonials__header article__header" id="testimonials__header">
+                        <span class="testimonials__suptitle article__suptitle _anim-elem">Happy Client's</span>
+                        <span class="testimonials__title article__title _anim-elem">Testimonials</span>
+                    </h1>
 
-                    <div class="testimonials__content">
-                        <div class="testimonials__reviews reviews">
-                            <article class="reviews__review review article _anim-elem">
-                                <p class="review__paragraph article__paragrpaph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus provident aliquam asperiores amet molestias nobis, eveniet numquam enim incidunt quo cumque non reprehenderit tempora aliquid!</p>
-                                <div class="review__creator-bio creator-bio">
-                                    <img class="creator-bio__avatar avatar" src="@img/main/testimonials/avatar.jpg" alt="avatar">
-                                    <h6 class="creator-bio__name article__subtitle">John Doe</h6>
-                                    <p class="creator-bio__job article__paragraph">Business man</p>
+                    <div class="testimonials__content" aria-label="testimonials content">
+                        <div class="testimonials__reviews reviews" role="list" aria-label="reviewer`s testimonials and comments" tabindex="0">
+                            <article class="reviews__review review article _anim-elem" role="listitem" aria-posinset="1" aria-label="comment" tabindex="0">
+                                <p
+                                    class="review__paragraph article__paragrpaph"
+                                    data-author="John Doe"
+                                    aria-roledescription="comment message"
+                                    tabindex="0"
+                                >
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                    Natus provident aliquam asperiores amet molestias nobis,
+                                    eveniet numquam enim incidunt quo cumque non reprehenderit tempora aliquid!
+                                </p>
+                                <div class="review__creator-bio creator-bio" aria-label="author info" tabindex="0">
+                                    <img
+                                        class="creator-bio__avatar avatar"
+                                        src="@img/main/testimonials/avatar.jpg"
+                                        alt="avatar"
+                                        loading=lazy
+                                        aria-roledescription="author avatar"
+                                        role="presentation"
+                                    >
+                                    <p class="creator-bio__name article__subtitle" aria-roledescription="author name" tabindex="0">John Doe</p>
+                                    <p class="creator-bio__job article__paragraph" aria-roledescription="author job" tabindex="0">Business man</p>
                                 </div>
                             </article>
-                            <article class="reviews__review review article _anim-elem">
-                                <p class="review__paragraph article__paragrpaph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus provident aliquam asperiores amet molestias nobis, eveniet numquam enim incidunt quo cumque non reprehenderit tempora aliquid!</p>
-                                <div class="review__creator-bio creator-bio">
-                                    <img class="creator-bio__avatar avatar" src="@img/main/testimonials/avatar.jpg" alt="avatar">
-                                    <h6 class="creator-bio__name article__subtitle">John Doe</h6>
-                                    <p class="creator-bio__job article__paragraph">Business man</p>
+                            <article class="reviews__review review article _anim-elem" role="listitem" aria-posinset="2" aria-label="comment" tabindex="0">
+                                <p
+                                    class="review__paragraph article__paragrpaph"
+                                    data-author="John Doe"
+                                    aria-roledescription="comment message"
+                                    tabindex="0"
+                                >
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                    Natus provident aliquam asperiores amet molestias nobis,
+                                    eveniet numquam enim incidunt quo cumque non reprehenderit tempora aliquid!
+                                </p>
+                                <div class="review__creator-bio creator-bio" aria-label="author info" tabindex="0">
+                                    <img
+                                        class="creator-bio__avatar avatar"
+                                        src="@img/main/testimonials/avatar.jpg"
+                                        alt="avatar"
+                                        loading=lazy
+                                        aria-roledescription="author avatar"
+                                        role="presentation"
+                                    >
+                                    <p class="creator-bio__name article__subtitle" aria-roledescription="author name" tabindex="0">John Doe</p>
+                                    <p class="creator-bio__job article__paragraph" aria-roledescription="author job" tabindex="0">Business man</p>
                                 </div>
                             </article>
                         </div>
@@ -279,11 +380,15 @@
                 </div>
             </section>
 
-            <section class="contacts article" id="contacts">
-                <div class="container">
+            <section class="contacts article" id="contacts" aria-label="contact us" tabindex="0">
+                <div class="container" role="presentation">
                     <div class="contacts__content article__header">
-                        <h3 class="contacts__suptitle article__suptitle _anim-elem">We are Ready to Take Your Call 24 Hours, 7 Days!</h3>
-                        <h1 class="contacts__title article__super-title phone _anim-elem"><a class="contacts__link" href="tel:+123 4567 8900">+123 4567 8900</a></h1>
+                        <p class="contacts__suptitle article__suptitle _anim-elem" tabindex="0">We are Ready to Take Your Call 24 Hours, 7 Days!</p>
+                        <h2 class="contacts__title article__super-title phone _anim-elem" role="presentation">
+                            <a class="contacts__link" href="tel:+123 4567 8900" aria-label="hotline phone" tabindex="0">
+                                +123 4567 8900
+                            </a>
+                        </h2>
                     </div>
                 </div>
             </section>
@@ -293,6 +398,6 @@
     </div>
 </body>
 
-<script src="js/app.min.js"></script>
+<script async src="js/app.min.js"></script>
 
 </html>
