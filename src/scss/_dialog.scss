@@ -67,6 +67,7 @@
 
 	// .order-now__phone
 	&__phone {
+		margin-bottom: 40px;
 		a {
 			color: white;
 		}
@@ -79,9 +80,6 @@
 
 	// .order-now__item
 	&__item {
-		&:first-of-type {
-			margin-top: 40px;
-		}
 		&:not(:first-of-type) {
 			margin-top: 15px;
 		}
