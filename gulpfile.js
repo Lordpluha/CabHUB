@@ -33,7 +33,7 @@
  * @todo ▶ Добавить bower вместо npm (@since 2.0.0)
  * @todo ▶ <b>{@link module:tasks/uploads}</b>Сделать функции для выгрузки файлов на другие типы удаленных файловых систем
  *
- * @copyright Teslyuk Vlad 2020
+ * @copyright Teslyuk Vlad 2022
  * @license GNU
  */
 
@@ -77,10 +77,6 @@ import { FtpUpload } from "./gulp/tasks/deploy.js";
 /**
  * @function watcher
  * @desc Files wathcer
- * @fires processScss
- * @fires processHtml
- * @fires processImages
- * @fires processJS
  */
 function watcher() {
     /**
@@ -101,13 +97,12 @@ function watcher() {
  *
  * @event FontsProcess
  *
- * @fires otfToTtf
- * @fires ttfToWoff
- * @fires ttfToWoff2
- * @fires fontsStyle
- * @fires fontsCp
  */
-const fonts = gulp.series(otfToTtf, gulp.parallel(ttfToWoff, ttfToWoff2), fontsStyle, fontsCp);
+const fonts = gulp.parallel(fontsStyle, fontsCp);
+
+const fontConverter = gulp.series(otfToTtf, gulp.parallel(ttfToWoff, ttfToWoff2));
+
+const fullFonts = gulp.series(fontConverter, fonts);
 
 /**
  * @function FilesProcess
@@ -117,13 +112,9 @@ const fonts = gulp.series(otfToTtf, gulp.parallel(ttfToWoff, ttfToWoff2), fontsS
  *
  * @event FilesProcess
  *
- * @fires FontsProcess
- * @fires processScss
- * @fires processHtml
- * @fires processImages
- * @fires processJS
  */
-const FilesProcess = gulp.parallel(fonts, scss, images, svgSprites, html, js);
+const FilesProcessDev = gulp.parallel(fonts, scss, images, svgSprites, html, js);
+const FilesProcessProd = gulp.parallel(fullFonts, scss, images, svgSprites, html, js);
 
 /**
  * @function dev
@@ -131,54 +122,40 @@ const FilesProcess = gulp.parallel(fonts, scss, images, svgSprites, html, js);
  *
  * @desc Switch to dev mode func
  *
- * @event StartDev
- *
- * @fires cleanBuild
- * @fires watchFiles
- * @fires CpCerts
- * @fires server
- * @fires FilesProcess
  */
-const dev = gulp.series(cleanBuild, FilesProcess, gulp.parallel(watcher, gulp.series(CpCerts, server)));
+const dev = gulp.series(cleanBuild, FilesProcessDev, gulp.parallel(watcher, gulp.series(CpCerts, server)));
 
 /**
  * @function prod
  * @desc Swhitch to production mode func
- * @event StartProduction
- *
- * @fires cleanBuild
- * @fires FilesProcess
  */
-const prod = gulp.series(cleanBuild, FilesProcess);
+const prod = gulp.series(cleanBuild, FilesProcessProd);
 
 /**
  * @desc Production mode UI
- * @fires StartProduction
  */
 gulp.task('prod', prod);
 
 /**
  * @desc Developement mode UI
- * @fires StartDev
  */
 gulp.task('default', dev);
 
 /**
  * @desc Archivate UI
- * @fires cleanBuild
- * @fires FilesProcess
- * @fires ZipBuild
  */
-gulp.task('zip', gulp.series(cleanBuild, FilesProcess, ZipBuild));
+gulp.task('zip', gulp.series(cleanBuild, FilesProcessProd, ZipBuild));
 
 /**
  * @desc Project deploy UI
- * @fires cleanBuild
- * @fires FilesProcess
- * @fires ZipBuild
- * @fires FtpUpload
  */
-gulp.task('deploy', gulp.series(cleanBuild, FilesProcess, ZipBuild, FtpUpload));
+gulp.task('deploy', gulp.series(cleanBuild, FilesProcessProd, ZipBuild, FtpUpload));
+
+/**
+ * @desc Fonts Converter
+ */
+gulp.task('fonts', fontConverter)
+
 
 export { dev };
 export { prod };
