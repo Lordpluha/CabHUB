@@ -1,5 +1,5 @@
-import fonter from 'gulp-fonter';
-import ttf2woff2 from 'gulp-ttf2woff2';
+import fonter from 'gulp-fonter'
+import ttf2woff2 from 'gulp-ttf2woff2'
 
 // @ts-check
 
@@ -20,57 +20,50 @@ import ttf2woff2 from 'gulp-ttf2woff2';
 /**
  * @function otfToTtf
  * @desc Fonts convert from .otf to .ttf in [./src/fonts]{@link module:configs/path.path.src}
- * @example otfToTtf();
+ * @example otfToTtf()
  */
-export const otfToTtf = () => {
+export const otfToTtf = () =>
     /**
      * @event otfToTtf
      * @desc Event of fonts converting from .otf to .ttf
      * @see [otfToTtf]{@link module:tasks/fonts~otfToTtf}
      */
-    return app.gulp.src(`${app.path.src.fontsDir}/**/*.otf`)
+    app.gulp.src(`${app.path.src.fontsDir}/**/*.otf`)
+        .pipe(fonter({formats: ['ttf']}))
         .pipe(app.plugins.newer(app.path.src.fontsDir))
-        .pipe(fonter({
-            formats: ['ttf']
-        }))
-        .pipe(app.gulp.dest(app.path.src.fontsDir));
-}
+        .pipe(app.gulp.dest(app.path.src.fontsDir))
 
 /**
  * @function ttfToWoff
  * @desc Fonts convert from .ttf to .woff in [./src/fonts]{@link module:configs/path.path.src}
- * @example ttfToWoff();
+ * @example ttfToWoff()
  */
-export const ttfToWoff = () => {
+export const ttfToWoff = () =>
     /**
      * @event ttfToWoff
      * @desc Event of fonts converting from .ttf to .woff
      * @see [ttfToWoff]{@link module:tasks/fonts~ttfToWoff}
      */
-    return app.gulp.src(`${app.path.src.fontsDir}/**/*.ttf`)
+    app.gulp.src(`${app.path.src.fontsDir}/**/*.ttf`)
+        .pipe(fonter({formats: ['woff']}))
         .pipe(app.plugins.newer(app.path.src.fontsDir))
-        .pipe(fonter({
-            formats: ['woff']
-        }))
-        .pipe(app.gulp.dest(app.path.src.fontsDir));
-}
+        .pipe(app.gulp.dest(app.path.src.fontsDir))
 
 /**
  * @function ttfToWoff2
  * @desc Fonts convert from .ttf to .woff2 in [./src/fonts]{@link module:configs/path.path.src}
- * @example ttfToWoff2();
+ * @example ttfToWoff2()
  */
-export const ttfToWoff2 = () => {
+export const ttfToWoff2 = () =>
     /**
      * @event ttfToWoff2
      * @desc Event of fonts converting from .ttf to .woff2
      * @see [ttfToWoff2]{@link module:tasks/fonts~ttfToWoff2}
      */
-    return app.gulp.src(`${app.path.src.fontsDir}/**/*.ttf`)
-        .pipe(app.plugins.newer(app.path.src.fontsDir))
+    app.gulp.src(`${app.path.src.fontsDir}/**/*.ttf`)
         .pipe(ttf2woff2())
-        .pipe(app.gulp.dest(app.path.src.fontsDir));
-}
+        .pipe(app.plugins.newer(app.path.src.fontsDir))
+        .pipe(app.gulp.dest(app.path.src.fontsDir))
 
 /**
  * @function getScssData
@@ -78,18 +71,9 @@ export const ttfToWoff2 = () => {
  * @desc Getting styles code from [./src/scss/*.scss]{@link module:configs/path.path.src} except _fonts.scss
  * @returns {string} scss code
  *
- * @example var variable = getScssData();
+ * @example const variable = getScssData()
  */
-function getScssData () {
-    let files = app.plugins.fs.readdirSync(app.path.src.scssDir, function(){});
-    let scssData = '';
-    for (let i in files) {
-        if (files[i] != app.path.src.fontScss) {
-            scssData += app.plugins.fs.readFileSync(app.path.src.scssDir+'/'+files[i], 'utf-8');
-        }
-    }
-    return scssData;
-}
+const getScssData = () => app.plugins.fs.readdirSync(app.path.src.scssDir, ()=>{}).reduce((scssData, file) => file != app.path.src.fontScss ? (scssData += app.plugins.fs.readFileSync(app.path.src.scssDir + '/' + file, 'utf-8')): (scssData = scssData), '')
 
 /**
  * @function DirWalk
@@ -103,33 +87,24 @@ function getScssData () {
  *
  * @example DirWalk(dir, Obj, function (data=Data) { // your code })
  */
-function DirWalk (dir, data, func) {
-    data.files_ = data.files_ || [];
-    let files = app.plugins.fs.readdirSync(dir, () => { });
+const DirWalk = (dir, data, func) => {
+    data.files_ = data.files_ || []
+    app.plugins.fs.readdirSync(dir, ()=>{})
+        .forEach((file) => {
+            const name = `${dir}/${file}`
+            if (app.plugins.fs.statSync(name).isDirectory()) {
+                DirWalk(name, data, func)
+            } else {
+                data.files_.push(name)
+                const [file_name, file_ext] = file.split('.')
 
-    for (let i in files) {
-        let name = `${dir}/${files[i]}`;
-        if (app.plugins.fs.statSync(name).isDirectory()){
-            DirWalk(name, data, func);
-        } else {
-            data.files_.push(name);
-            let file_name_split = files[i].split('.');
+                // Sending arg by using object Data
+                data.file_ext, data.file_name, data.dir, data.name = file_ext, file_name, dir, name
 
-            let file_name = file_name_split[0];
-            let file_ext = file_name_split[1];
-
-            // Sending arg by using object Data
-            data.file_ext = file_ext;
-            data.file_name = file_name;
-            data.dir = dir;
-            data.name = name;
-
-            // Cheking file extension
-            if (["ttf","woff","woff2","otf","eot","eot?#iefix"].includes(file_ext)) {
-                func();
+                // Cheking file extension
+                if (['ttf','woff','woff2','otf','eot','eot?#iefix',].includes(file_ext)) func()
             }
-        }
-    }
+        })
 }
 
 /**
@@ -146,59 +121,36 @@ function DirWalk (dir, data, func) {
  *
  * @return {list} [font_style, font_weight]
  *
- * @example let [font_style, font_weight] = checkFontParams(file_name);
+ * @example let [font_style, font_weight] = checkFontParams(file_name)
  */
-function checkFontParams (file_name) {
-    let font_weight = 'normal';
-    let font_style = 'normal';
-    if (file_name.includes('Italic') || file_name.includes('italic')) {
-        font_style = 'italic';
-    }
-    if (file_name.includes('Thin') || file_name.includes('thin')) {
-        font_weight = 100;
-    } else if (file_name.includes('Light') || file_name.includes('light')) {
-        font_weight = 300;
-        if (file_name.includes('Extra') ||
-            file_name.includes('extra') ||
-            file_name.includes('Ultra') ||
-            file_name.includes('ultra')) {
-            font_weight = 200;
+const checkFontParams = file_name => {
+    let font_weight = 'normal', font_style = 'normal'
+    if (file_name.includes('Italic') || file_name.includes('italic')) font_style = 'italic'
+
+    if (file_name.includes('Thin') || file_name.includes('thin')) font_weight = 100
+    else if (file_name.includes('Light') || file_name.includes('light')) {
+        font_weight = 300
+        if ( file_name.includes('Extra') || file_name.includes('extra') || file_name.includes('Ultra') || file_name.includes('ultra')) {
+            font_weight = 200
         }
-    } else if (file_name.includes('Normal') ||
-                file_name.includes('normal') ||
-                file_name.includes('Regular') ||
-                file_name.includes('regular')) {
-        font_weight = 400;
+    } else if ( file_name.includes('Normal') || file_name.includes('normal') || file_name.includes('Regular') || file_name.includes('regular')) {
+        font_weight = 400
     } else if (file_name.includes('Medium') || file_name.includes('medium')) {
-        font_weight = 500;
+        font_weight = 500
     } else if (file_name.includes('Bold') || file_name.includes('bold')) {
-        font_weight = 700;
-        if (file_name.includes('Semi') ||
-            file_name.includes('semi') ||
-            file_name.includes('Demi') ||
-            file_name.includes('demi')) {
-            font_weight = 600;
-        } else if (file_name.includes('Extra') ||
-                    file_name.includes('extra') ||
-                    file_name.includes('Ultra') ||
-                    file_name.includes('ultra')) {
-            font_weight = 800;
+        font_weight = 700
+        if ( file_name.includes('Semi') || file_name.includes('semi') || file_name.includes('Demi') || file_name.includes('demi')) {
+            font_weight = 600
+        } else if ( file_name.includes('Extra') || file_name.includes('extra') || file_name.includes('Ultra') || file_name.includes('ultra')) {
+            font_weight = 800
         }
-    } else if (file_name.includes('Black') ||
-                file_name.includes('black') ||
-                file_name.includes('Heavy') ||
-                file_name.includes('heavy')) {
-        font_weight = 900;
-        if (file_name.includes('Extra') ||
-            file_name.includes('extra') ||
-            file_name.includes('Ultra') ||
-            file_name.includes('ultra')) {
-            font_weight = 950;
+    } else if ( file_name.includes('Black') || file_name.includes('black') || file_name.includes('Heavy') || file_name.includes('heavy')) {
+        font_weight = 900
+        if ( file_name.includes('Extra') || file_name.includes('extra') || file_name.includes('Ultra') || file_name.includes('ultra')) {
+            font_weight = 950
         }
-    } else if (file_name.includes('Bolder') || file_name.includes('bolder')) {
-        font_weight = 1000;
-    }
-    return [font_style, font_weight];
+    } else if (file_name.includes('Bolder') || file_name.includes('bolder')) font_weight = 1000
+    return [font_style, font_weight]
 }
 
 /**
@@ -207,10 +159,10 @@ function checkFontParams (file_name) {
  * @desc Function, which writing used font in scss code by using mixin font() from _mixins.scss in _fonts.scss throught [DirWalk]{@link module:tasks/fonts~DirWalk}
  * @version 1.0.1
  * @param {functionCallback} done default callback function
- * @example fontsStyle();
- * done();
+ * @example fontsStyle()
+ * done()
 */
-export const fontsStyle = (done) => {
+export const fontsStyle = done => {
     /**
      * @event fontsStyle
      * @desc Event of writing fonts in scss
@@ -222,42 +174,34 @@ export const fontsStyle = (done) => {
      * @type {object}
      * @prop {string} dir - [source fonts dir]{@link module:configs/path.path.src}
      */
-    var Data = {
-        dir: app.path.src.fontsDir
-    };
-    /**
-     * @namespace
-     * @private
-     * @type {object}
-     */
-    var out = {};
-    app.plugins.fs.writeFileSync(app.path.src.fontsScss, '');
-    DirWalk(Data.dir, Data, function(data=Data) {
+    const Data = { dir: app.path.src.fontsDir },
+        /**
+         * @namespace
+         * @private
+         * @type {object}
+         */
+        out = {}
+    app.plugins.fs.writeFileSync(app.path.src.fontsScss, '')
+    DirWalk(Data.dir, Data, (data = Data) => {
         // Checking font for using in scss code
         if (getScssData().includes(data.file_name)) {
-            /**
-             * @desc Dir with current files
-             * @private
-             */
-            let final_dir = data.dir.replace(/\/src/gi, '.');
+            // Dir with current files
+            const final_dir = data.dir.replace(/\/src/gi, '.')
 
             if (out[data.file_name] == undefined) {
-                out[data.file_name] = {};
-                out[data.file_name][final_dir] = [];
+                out[data.file_name] = {}
+                out[data.file_name][final_dir] = []
             }
-            out[data.file_name][final_dir].push(data.file_ext);
+            out[data.file_name][final_dir].push(data.file_ext)
         }
-    });
+    })
 
     // Writing fonts in _fonts.scss
-    for (let font_name in out) {
-        for (let font_dir in out[font_name]) {
-            let [font_style, font_weight] = checkFontParams(font_name);
-            app.plugins.fs.appendFileSync(app.path.src.fontsScss, `@include font('${font_name}', '${font_dir}', ${font_weight}, ${font_style}, '${out[font_name][font_dir].join('\', \'')}');\n`);
-        }
+    for (const [font_name, font_dir] in Object.entries(out)) {
+        const [font_style, font_weight] = checkFontParams(font_name)
+        app.plugins.fs.appendFileSync(app.path.src.fontsScss, `@include font('${font_name}', '${font_dir}', ${font_weight}, ${font_style}, '${out[font_name][font_dir].join("', '")}');\n`)
     }
-
-    done();
+    done()
 }
 /**
  * @callback functionCallback
@@ -268,9 +212,9 @@ export const fontsStyle = (done) => {
  * @function fontsCp
  * @desc Function of copying from [./src/fonts]{@link module:configs/path.path.src} to [./dist/fonts]{@link module:configs/path.path.build}
  * @param {functionCallback} done default callback function
- * @example fontsCp();
+ * @example fontsCp()
  */
-export const fontsCp = (done) => {
+export const fontsCp = done => {
     /**
      * @event fontsCp
      * @desc Event of copying fonts
@@ -282,19 +226,13 @@ export const fontsCp = (done) => {
      * @type {Object}
      * @prop {string} dir - [source fonts dir]{@link module:configs/path.path.src}
      */
-
-    var Data = {
-        dir: app.path.src.fontsDir
-    };
-    app.plugins.fs.mkdirSync(app.path.build.fonts, { recursive: true });
-    DirWalk(Data.dir, Data, function(data=Data) {
+    const Data = { dir: app.path.src.fontsDir }
+    app.plugins.fs.mkdirSync(app.path.build.fonts, { recursive: true })
+    DirWalk(Data.dir, Data, (data = Data) => {
         // Cheking for using font in code
-        if (getScssData().includes(data.file_name)) {
-            let dest_folder_name = data.dir.split('/');
-            dest_folder_name = dest_folder_name[dest_folder_name.length-1];
+        if (getScssData().includes(data.file_name))
             app.gulp.src(data.name)
-                .pipe(app.gulp.dest(app.path.build.fonts+'/'+dest_folder_name));
-        }
-    });
-    done();
+                .pipe(app.gulp.dest(app.path.build.fonts + '/' + data.dir.split('/')[data.dir.split('/').length - 1]))
+    })
+    done()
 }

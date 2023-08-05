@@ -10,7 +10,8 @@
     "prod": "gulp prod --build",
     "zip": "gulp zip --build",
     "deploy": "gulp deploy --build",
-    "docs": "jsdoc --configure jsdoc.json"
+    "docs": "jsdoc --configure jsdoc.json",
+    "fonts": "gulp fonts"
   },
   "keywords": [],
   "author": "Lordpluha",
