@@ -3,6 +3,7 @@
 @@if (isDev) {
     <div class="header-bg ibg">
         <img
+            class="header-bg__img"
             src="@img/header/bg.jpg"
             alt="background image"
             role="presentation"
@@ -12,10 +13,13 @@
 }
 @@if (isBuild) {
     <img
+        class="header-bg__img"
         src="@img/header/bg.jpg"
         alt="background image"
         ghiw-picture-class="header-bg ibg"
         role="presentation"
+        width="1600"
+        height="900"
     >
 }
 <header class="header article" id="home" aria-label="header content">
@@ -42,6 +46,8 @@
             src="@img/header/Car.png"
             alt="illustration"
             ghiw-picture-class="header__illustration--picture"
+            width="826"
+            height="465"
         >
     </div>
 </header>
