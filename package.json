@@ -58,6 +58,6 @@
     "vanilla-lazyload": "^17.8.4"
   },
   "optionalDependencies": {
-    "swiper": "^8.4.6"
+    "swiper": "^10.1.0"
   }
 }
