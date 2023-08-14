@@ -33,11 +33,11 @@
 			-webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
 			animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
 
-			&1 {
+			&1,&5, &9 {
 				-webkit-animation-delay: 0.2s;
 				animation-delay: 0.2s;
 			}
-			&2 {
+			&2, &6 {
 				-webkit-animation-delay: 0.3s;
 				animation-delay: 0.3s;
 			}
@@ -45,29 +45,13 @@
 				-webkit-animation-delay: 0.4s;
 				animation-delay: 0.4s;
 			}
-			&4 {
+			&4, &8 {
 				-webkit-animation-delay: 0.1s;
 				animation-delay: 0.1s;
-			}
-			&5 {
-				-webkit-animation-delay: 0.2s;
-				animation-delay: 0.2s;
-			}
-			&6 {
-				-webkit-animation-delay: 0.3s;
-				animation-delay: 0.3s;
 			}
 			&7 {
 				-webkit-animation-delay: 0s;
 				animation-delay: 0s;
-			}
-			&8 {
-				-webkit-animation-delay: 0.1s;
-				animation-delay: 0.1s;
-			}
-			&9 {
-				-webkit-animation-delay: 0.2s;
-				animation-delay: 0.2s;
 			}
 		}
 	}

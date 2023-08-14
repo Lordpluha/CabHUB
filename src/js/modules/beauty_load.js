@@ -1,32 +1,31 @@
 // Content upploading effect
-var AnimItems = document.getElementsByClassName('_anim-elem');
+// import LazyLoad from "vanilla-lazyload"
 
-function offset(element) {
-	var rect = element.getBoundingClientRect();
-	return { top: rect.top + window.pageYOffset, left: rect.left + window.pageXOffset};
+const offset = el => {
+	const rect = el.getBoundingClientRect()
+	return { top: rect.top + window.scrollX }
 }
 
-function animOnScroll () {
-	for (var i = 0; i < AnimItems.length; i++) {
-		// Текущие параметры елемента
-		const AnimItem = AnimItems[i];
-		const AnimItemHeight = AnimItem.offsetHeight;
-		const AnimItemOffset = offset(AnimItem).top;
-		// Часть страницы, при которой срабатывает еффект
-		const animStart = 4;
+const animOnScroll = ([...AnimItems]) => {
+	// Часть страницы, при которой срабатывает еффект
+	const animStart = 4
+	const windowInnerHeight = window.innerHeight
+	AnimItems.forEach(el => {
+		const AnimItemHeight = el.offsetHeight
+		const AnimItemOffset = offset(el).top
+
 		// Точка налача анимации
-		let animItemPoint = window.innerHeight - AnimItemHeight / animStart;
-		if (AnimItemHeight > window.innerHeight) {
-			animItemPoint = window.innerHeight - window.innerHeight / animStart;
+		let animItemPoint = windowInnerHeight - AnimItemHeight / animStart
+		if (AnimItemHeight > windowInnerHeight) animItemPoint = windowInnerHeight - windowInnerHeight / animStart
+		if ((window.scrollY > AnimItemOffset - animItemPoint) &&
+			window.scrollY < (AnimItemOffset + AnimItemHeight)) {
+			el.classList.add('_active-fx')
 		}
-		if ((window.pageYOffset > AnimItemOffset - animItemPoint) && window.pageYOffset < (AnimItemOffset + AnimItemHeight))
-		{
-			AnimItem.classList.add('_active-fx');
-		}
-	}
+	})
 }
 
 export const beautyLoadInit = () => {
-	setTimeout(animOnScroll, 300)
-	window.addEventListener('scroll', animOnScroll)
+	const AnimElemOnScroll = () => animOnScroll(document.getElementsByClassName('_anim-elem'))
+	AnimElemOnScroll()
+	window.addEventListener('scroll', AnimElemOnScroll)
 }

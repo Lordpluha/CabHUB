@@ -1,0 +1,59 @@
+.booking {
+	background-color: white;
+	&:hover {
+		cursor: auto;
+	}
+
+	// .booking__content
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 20px;
+		@include adaptive-value('padding', 15, 35, 1);
+		@include adaptive-value('padding', 35, 40, 2);
+	}
+	// .booking__title
+	&__title {
+		padding: 25px 35px;
+		text-transform: uppercase;
+		color: white;
+		background-color: #171717;
+		font-weight: 800;
+	}
+	// .booking__input
+	&__input {
+		width: 100%;
+		font-weight: 600;
+		@include adaptive-value('font-size', 15, 20);
+		border: 0;
+		border-bottom: 3px solid #e4e4e4;
+		padding: 10px 0;
+		&::placeholder {
+			font-size: inherit;
+		}
+		// .booking__input--f
+		&--f {
+			grid-column: 1 / 3;
+			&:is(select) {
+				appearance: none;
+			}
+			&[type="submit"] {
+				margin-top: 25px;
+				letter-spacing: 1px;
+				border-bottom: 0;
+			}
+		}
+		// .booking__input--l
+		&--l {
+			&::placeholder {
+				color: black;
+			}
+		}
+		// .booking__input--r
+		&--r {
+			&::placeholder {
+				color: #4b4b4b;
+			}
+		}
+	}
+}

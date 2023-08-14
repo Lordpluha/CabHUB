@@ -40,7 +40,7 @@
 		&:first-of-type {
 			margin-left: 0;
 		}
-		&>*:not(:first-child) {
+		&>*:not(.footer__title) {
 			margin-top: 45px;
 		}
 	}

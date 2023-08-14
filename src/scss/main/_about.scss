@@ -1,0 +1,47 @@
+.about {
+    width: 100%;
+    background-color: $yellow_dark;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+		align-items: center;
+        height: 100%;
+        padding: 0 20px;
+        // padding: 150px 20px 80px;
+        @include adaptive-value('padding-top', 40, 100);
+        @include adaptive-value('padding-bottom', 30, 80);
+
+        *:only-child {
+            min-width: 50%;
+        }
+    }
+	&__booking {
+		max-width: 1000px;
+	}
+	&__about-us {
+		@include adaptive-value('margin-right', 20, 80);
+	}
+}
+.about-us {
+    flex-shrink: 1;
+    // .about-us__intro
+    &__intro {}
+    // .about-us__suptitle
+    &__suptitle {
+        color: black;
+    }
+    // .about-us__title
+    &__title {
+        margin-top: 25px;
+        font-size: 50px;
+    }
+    // .about-us__content
+    &__content {
+        margin-top: 45px;
+    }
+    // about-us__read-more
+    &__read-more {
+        margin-top: 60px;
+    }
+}

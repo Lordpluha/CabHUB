@@ -6,28 +6,14 @@
 
 <body class="lock">
     <div id="wrapper">
-        <div class="preloader">
-            <div class="container">
-                <div class="sk-cube-grid">
-                    <div class="sk-cube sk-cube1"></div>
-                    <div class="sk-cube sk-cube2"></div>
-                    <div class="sk-cube sk-cube3"></div>
-                    <div class="sk-cube sk-cube4"></div>
-                    <div class="sk-cube sk-cube5"></div>
-                    <div class="sk-cube sk-cube6"></div>
-                    <div class="sk-cube sk-cube7"></div>
-                    <div class="sk-cube sk-cube8"></div>
-                    <div class="sk-cube sk-cube9"></div>
-                </div>
-            </div>
-        </div>
+        @@include('blocks/preloader.html')
 
         <div role="dialog" class="order-now" aria-label="order now modal window">
             <div class="container">
                 <div class="order-now__content article">
                     <button class="order-now__close" aria-label="close modal button">
-                        <div role="presentation"></div>
-                        <div role="presentation"></div>
+                        <div class="order-now__close-first-div" role="presentation"></div>
+                        <div class="order-now__close-second-div" role="presentation"></div>
                     </button>
 
                     <ul class="order-now__contacts" aria-label="official links">
@@ -230,28 +216,28 @@
                     </h1>
 
                     <ul class="why-we__content" role="list" aria-label="our advantages">
-                        <li class="why-we__item _anim-elem" aria-labelledby="why-we__article-title1" tabindex="0">
+                        <li class="why-we__item why-we__item--star _anim-elem" aria-labelledby="why-we__article-title1" tabindex="0">
                             <h2 class="why-we__article-title article__subtitle" id="why-we__article-title1">Home pickup</h2>
                             <p class="why-we__paragraph article__paragraph" tabindex="0">
                                 Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
                             </p>
                         </li>
 
-                        <li class="why-we__item _anim-elem" aria-labelledby="why-we__article-title2" tabindex="0">
+                        <li class="why-we__item why-we__item--clock _anim-elem" aria-labelledby="why-we__article-title2" tabindex="0">
                             <h2 class="why-we__article-title article__subtitle" id="why-we__article-title2">Fast booking</h2>
                             <p class="why-we__paragraph article__paragraph" tabindex="0">
                                 Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
                             </p>
                         </li>
 
-                        <li class="why-we__item _anim-elem" aria-labelledby="why-we__article-title3" tabindex="0">
+                        <li class="why-we__item why-we__item--castle _anim-elem" aria-labelledby="why-we__article-title3" tabindex="0">
                             <h2 class="why-we__article-title article__subtitle" id="why-we__article-title3">Bonuses for ride</h2>
                             <p class="why-we__paragraph article__paragraph" tabindex="0">
                                 Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
                             </p>
                         </li>
 
-                        <li class="why-we__item _anim-elem" aria-labelledby="why-we__article-title4" tabindex="0">
+                        <li class="why-we__item why-we__item--gear _anim-elem" aria-labelledby="why-we__article-title4" tabindex="0">
                             <h2 class="why-we__article-title article__subtitle" id="why-we__article-title4">GPS searching</h2>
                             <p class="why-we__paragraph article__paragraph" tabindex="0">
                                 Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
