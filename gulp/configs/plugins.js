@@ -1,12 +1,12 @@
-import replace from "gulp-replace";
-import plumber from "gulp-plumber";
-import notify from "gulp-notify";
-import browsersync from "browser-sync";
-import newer from "gulp-newer";
-import rename from 'gulp-rename';
-import fs from 'fs';
-import ifPlugin from 'gulp-if';
-import sourcemaps from 'gulp-sourcemaps';
+import replace from "gulp-replace"
+import plumber from "gulp-plumber"
+import notify from "gulp-notify"
+import browsersync from "browser-sync"
+import newer from "gulp-newer"
+import rename from 'gulp-rename'
+import fs from 'fs'
+import ifPlugin from 'gulp-if'
+import sourcemaps from 'gulp-sourcemaps'
 
 /**
  * @file Global used plugins module

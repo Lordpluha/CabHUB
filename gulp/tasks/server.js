@@ -31,46 +31,48 @@ export function CpCerts() {
  *
  * @example server();
  */
-export const server = (done) => {
+export const server = done => {
 	/**
 	 * @event server
 	 * @desc Event of starting local server
 	 * @see [server]{@link module:tasks/server~server}
 	 */
-    const ProjectName = app.path.rootFolder;
-    const OSPanel = false;
-    const https = true;
+    const ProjectName = app.path.rootFolder,
+		OSPanel = true,
+		https = true
 
-    var browsersync_conf = {
+    const browsersync_conf = {
+		// ui: app.isDev ? true : false,
+		localOnly: app.isBuild ? false : true,
 		injectChanges: true,
 		watch: true,
 		// Sync of all devices and them action
 		ghostMode: {
-			clicks: true,
-			forms: true,
-			scroll: true
+			clicks: app.isDev ? true : false,
+			forms: app.isDev ? true : false,
+			scroll: app.isDev ? true : false
 		},
 		scrollProportionally: true,
 		codeSync: true,
-
 		reloadOnRestart: true,
-        // debug || info
-		logLevel: 'info',
+
+		logLevel: app.isDev ? 'debug' : 'silent',
 		logPrefix: ProjectName,
-		logConnections: true,
-		logFileChanges: true,
+		logConnections: app.isBuild ? false : true,
+		logFileChanges: app.isBuild ? false : true,
 
 		open: true,
-		notify: true,
+		notify: app.isBuild ? false : true,
 		timestamps: true,
 		online: true,
-		minify: false
+		minify: app.isDev ? true : false
 	}
 
     // OS Panel on/off checking
 	if (OSPanel == true) {
-		browsersync_conf.proxy = ProjectName;
-		browsersync_conf.port = 3000;
+		browsersync_conf.proxy = {
+			target: ProjectName,
+		browsersync_conf.port = 3000
 
 		// Check main file type
 		if (app.MainFileType == 'php') {
@@ -99,7 +101,7 @@ export const server = (done) => {
 		};
 
 	}
-    app.plugins.browsersync.init(browsersync_conf);
+    app.plugins.browsersync.init(browsersync_conf)
 }
 
 /**

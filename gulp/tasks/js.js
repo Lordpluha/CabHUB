@@ -29,6 +29,7 @@ export const js = () =>
         .pipe(webpack({
             mode: app.isBuild ? 'production' : 'development',
             devtool: 'source-map',
+            target: ['web', 'es2017'],
             entry: {
                 app: `${app.path.src.jsDir}/app.js`,
             },
