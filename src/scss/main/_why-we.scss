@@ -1,5 +1,5 @@
 .why-we {
-	background-image: url('../img/main/why-we/bg.jpg');
+	// background-image: url('../img/main/why-we/bg.jpg');
 	color: white;
 	padding: 1px;
 
@@ -26,6 +26,30 @@
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: auto 1fr;
 		grid-column-gap: 30px;
+		&.pseudo-lz-bg {
+			.why-we__item {
+				&--star {
+					&::before {
+						content: url('../img/main/why-we/star.png');
+					}
+				}
+				&--clock {
+					&::before {
+						content: url('../img/main/why-we/clock.png');
+					}
+				}
+				&--castle {
+					&::before {
+						content: url('../img/main/why-we/castle.png');
+					}
+				}
+				&--gear {
+					&::before {
+						content: url('../img/main/why-we/gear.png');
+					}
+				}
+			}
+		}
 	}
 
 	// .why-we__item
@@ -35,26 +59,6 @@
 		grid-template-rows: repeat(2, auto);
 		padding: 20px;
 		@include beaut_blocks(4, .5s, .5s);
-		&--star {
-			&::before {
-				content: url('../img/main/why-we/star.png');
-			}
-		}
-		&--clock {
-			&::before {
-				content: url('../img/main/why-we/clock.png');
-			}
-		}
-		&--castle {
-			&::before {
-				content: url('../img/main/why-we/castle.png');
-			}
-		}
-		&--gear {
-			&::before {
-				content: url('../img/main/why-we/gear.png');
-			}
-		}
 
 		&::before {
 			position: relative;

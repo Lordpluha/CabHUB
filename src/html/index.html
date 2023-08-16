@@ -137,14 +137,27 @@
                     </h1>
                     <ul class="tariffs__content" aria-label="tariffs list">
                         <li class="tariff _anim-elem" aria-posinset="1" aria-label="tariff not special offer" tabindex="0">
+                            <!--
                             <img
-                                src="@img/main/tariffs/car.png"
+                                src=""
+                                data-src="@img/main/tariffs/car.png"
+                                class="lazy ibg tariff__image"
                                 alt="taxi car image"
-                                class="ibg tariff__image"
                                 width="366"
                                 height="206"
-                                loading=lazy
                             >
+                            -->
+                            @@include('./components/webpLazyLoad.html', {
+                                "pictureClass": "",
+                                "webpSrc": "@img/main/tariffs/car.webp",
+                                "imgDataSrc": "@img/main/tariffs/car.png",
+                                "imgAlt": "taxi car image",
+                                "imgClass": "lazy ibg tariff__image",
+                                "imgWidth": "366",
+                                "imgHeight": "206",
+                                "imgRole": "",
+                                "ariaRoledescription": ""
+                            })
 
                             <h2
                                 class="tariff__title article__suptitle"
@@ -160,14 +173,17 @@
                         </li>
 
                         <li class="tariff tariff--special _anim-elem" aria-posinset="2" aria-label="tariff special offer" tabindex="0">
-                            <img
-                                src="@img/main/tariffs/car.png"
-                                alt="taxi car image"
-                                class="ibg tariff__image"
-                                width="366"
-                                height="206"
-                                loading=lazy
-                            >
+                            @@include('./components/webpLazyLoad.html', {
+                                "pictureClass": "",
+                                "webpSrc": "@img/main/tariffs/car.webp",
+                                "imgDataSrc": "@img/main/tariffs/car.png",
+                                "imgAlt": "taxi car image",
+                                "imgClass": "lazy ibg tariff__image",
+                                "imgWidth": "366",
+                                "imgHeight": "206",
+                                "imgRole": "",
+                                "ariaRoledescription": ""
+                            })
 
                             <h2
                                 class="tariff__title article__suptitle"
@@ -183,14 +199,17 @@
                         </li>
 
                         <li class="tariff _anim-elem" aria-posinset="3" aria-label="tariff not special offer" tabindex="0">
-                            <img
-                                src="@img/main/tariffs/car.png"
-                                alt="taxi car image"
-                                class="ibg tariff__image"
-                                width="366"
-                                height="206"
-                                loading=lazy
-                            >
+                            @@include('./components/webpLazyLoad.html', {
+                                "pictureClass": "",
+                                "webpSrc": "@img/main/tariffs/car.webp",
+                                "imgDataSrc": "@img/main/tariffs/car.png",
+                                "imgAlt": "taxi car image",
+                                "imgClass": "lazy ibg tariff__image",
+                                "imgWidth": "366",
+                                "imgHeight": "206",
+                                "imgRole": "",
+                                "ariaRoledescription": ""
+                            })
 
                             <h2
                                 class="tariff__title article__suptitle"
@@ -208,14 +227,14 @@
                 </div>
             </section>
 
-            <section class="why-we article" id="why-we" aria-label="why you must choose us" tabindex="0">
+            <section class="lazy why-we article" data-bg="@img/main/why-we/bg.jpg" id="why-we" aria-label="why you must choose us" tabindex="0">
                 <div class="container" role="presentation">
                     <h1 class="why-we__header article__header" tabindex="0">
                         <span class="why-we__suptitle article__suptitle _anim-elem">We do best</span>
                         <span class="why-we__title article__title _anim-elem">Than you wish</span>
                     </h1>
 
-                    <ul class="why-we__content" role="list" aria-label="our advantages">
+                    <ul class="lazy why-we__content" data-lazy-function="pseudo" role="list" aria-label="our advantages">
                         <li class="why-we__item why-we__item--star _anim-elem" aria-labelledby="why-we__article-title1" tabindex="0">
                             <h2 class="why-we__article-title article__subtitle" id="why-we__article-title1">Home pickup</h2>
                             <p class="why-we__paragraph article__paragraph" tabindex="0">
@@ -274,43 +293,73 @@
                             <ul class="download-app__links" role="list" aria-label="download our app links">
                                 <li class="download-app__elem _anim-elem" role="listitem" aria-posinset="1">
                                     <a href="https://play.google.com/" target="_blank" class="download-app__link" aria-label="download on google play">
-                                        <img src="@img/main/download-app/google-play.png" alt="download on google play" loading=lazy role="presentation">
+                                        <!--
+                                        <img
+                                            class="lazy"
+                                            src=""
+                                            data-src="@img/main/download-app/google-play.png"
+                                            alt="download on google play"
+                                            loading=lazy
+                                            role="presentation"
+                                        >
+                                        -->
+                                        @@include('./components/webpLazyLoad.html', {
+                                            "pictureClass": "",
+                                            "webpSrc": "@img/main/download-app/google-play.webp",
+                                            "imgDataSrc": "@img/main/download-app/google-play.png",
+                                            "imgAlt": "download on google play",
+                                            "imgClass": "lazy",
+                                            "imgWidth": "210",
+                                            "imgHeight": "65",
+                                            "imgRole": "presentation",
+                                            "ariaRoledescription": ""
+                                        })
                                     </a>
                                 </li>
                                 <li class="download-app__elem _anim-elem" role="listitem" aria-posinset="2">
                                     <a href="https://www.apple.com/app-store/" target="_blank" class="download-app__link" aria-label="download on app store">
-                                        <img src="@img/main/download-app/app-store.png" alt="download on app store" loading=lazy role="presentation">
+                                        <!--
+                                        <img
+                                            class="lazy"
+                                            src=""
+                                            data-src="@img/main/download-app/app-store.png"
+                                            alt="download on app store"
+                                            loading=lazy
+                                            role="presentation"
+                                        >
+                                        -->
+                                        @@include('./components/webpLazyLoad.html', {
+                                            "pictureClass": "",
+                                            "webpSrc": "@img/main/download-app/app-store.webp",
+                                            "imgDataSrc": "@img/main/download-app/app-store.png",
+                                            "imgAlt": "download on app store",
+                                            "imgClass": "lazy",
+                                            "imgWidth": "210",
+                                            "imgHeight": "65",
+                                            "imgRole": "presentation",
+                                            "ariaRoledescription": ""
+                                        })
                                     </a>
                                 </li>
                             </ul>
                         </article>
 
-                        @@if (isDev) {
-                            <div class="download-app__illustration-picture" role="presentation">
-                                <img
-                                    src="@img/main/download-app/illustration.png"
-                                    class="download-app__illustration"
-                                    alt="app preview"
-                                    loading=lazy
-                                >
-                            </div>
-                        }
-
-                        @@if (isBuild) {
-                            <img
-                                src="@img/main/download-app/illustration.png"
-                                class="download-app__illustration"
-                                alt="app preview"
-                                ghiw-picture-class="download-app__illustration-picture"
-                                loading=lazy
-                                role="presentation"
-                            >
-                        }
+                        @@include('./components/webpLazyLoad.html', {
+                            "pictureClass": "download-app__illustration-picture",
+                            "webpSrc": "@img/main/download-app/illustration.webp",
+                            "imgDataSrc": "@img/main/download-app/illustration.png",
+                            "imgAlt": "app preview",
+                            "imgClass": "lazy download-app__illustration",
+                            "imgWidth": "426",
+                            "imgHeight": "466",
+                            "imgRole": "presentation",
+                            "ariaRoledescription": ""
+                        })
                     </div>
                 </div>
             </section>
 
-            <section class="testimonials article lazy-background" id="testimonials" aria-labelledby="testimonials__header" tabindex="0">
+            <section class="lazy testimonials article" data-bg="./img/main/testimonials/bg.jpg" id="testimonials" aria-labelledby="testimonials__header" tabindex="0">
                 <div class="container" role="presentation">
                     <h1 class="testimonials__header article__header" id="testimonials__header">
                         <span class="testimonials__suptitle article__suptitle _anim-elem">Happy Client's</span>
@@ -331,14 +380,26 @@
                                     eveniet numquam enim incidunt quo cumque non reprehenderit tempora aliquid!
                                 </p>
                                 <div class="review__creator-bio creator-bio" aria-label="author info" tabindex="0">
-                                    <img
-                                        class="creator-bio__avatar avatar"
-                                        src="@img/main/testimonials/avatar.jpg"
+                                    <!-- <img
+                                        class="lazy creator-bio__avatar avatar"
+                                        src=""
+                                        data-src="@img/main/testimonials/avatar.jpg"
                                         alt="avatar"
                                         loading=lazy
                                         aria-roledescription="author avatar"
                                         role="presentation"
-                                    >
+                                    > -->
+                                    @@include('./components/webpLazyLoad.html', {
+                                        "pictureClass": "",
+                                        "webpSrc": "@img/main/testimonials/avatar.webp",
+                                        "imgDataSrc": "@img/main/testimonials/avatar.jpg",
+                                        "imgAlt": "avatar",
+                                        "imgClass": "lazy creator-bio__avatar avatar",
+                                        "imgWidth": "",
+                                        "imgHeight": "",
+                                        "imgRole": "presentation",
+                                        "ariaRoledescription": "author avatar"
+                                    })
                                     <p class="creator-bio__name article__subtitle" aria-roledescription="author name" tabindex="0">John Doe</p>
                                     <p class="creator-bio__job article__paragraph" aria-roledescription="author job" tabindex="0">Business man</p>
                                 </div>
@@ -355,14 +416,26 @@
                                     eveniet numquam enim incidunt quo cumque non reprehenderit tempora aliquid!
                                 </p>
                                 <div class="review__creator-bio creator-bio" aria-label="author info" tabindex="0">
-                                    <img
-                                        class="creator-bio__avatar avatar"
-                                        src="@img/main/testimonials/avatar.jpg"
+                                    <!-- <img
+                                        class="lazy creator-bio__avatar avatar"
+                                        src=""
+                                        data-src="@img/main/testimonials/avatar.jpg"
                                         alt="avatar"
                                         loading=lazy
                                         aria-roledescription="author avatar"
                                         role="presentation"
-                                    >
+                                    > -->
+                                    @@include('./components/webpLazyLoad.html', {
+                                        "pictureClass": "",
+                                        "webpSrc": "@img/main/testimonials/avatar.webp",
+                                        "imgDataSrc": "@img/main/testimonials/avatar.jpg",
+                                        "imgAlt": "avatar",
+                                        "imgClass": "lazy creator-bio__avatar avatar",
+                                        "imgWidth": "",
+                                        "imgHeight": "",
+                                        "imgRole": "presentation",
+                                        "ariaRoledescription": "author avatar"
+                                    })
                                     <p class="creator-bio__name article__subtitle" aria-roledescription="author name" tabindex="0">John Doe</p>
                                     <p class="creator-bio__job article__paragraph" aria-roledescription="author job" tabindex="0">Business man</p>
                                 </div>

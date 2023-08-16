@@ -72,6 +72,12 @@ export const server = done => {
 	if (OSPanel == true) {
 		browsersync_conf.proxy = {
 			target: ProjectName,
+			// proxyReq: [
+			// 	function(proxyReq) {
+			// 		proxyReq.setHeader('Content-Encoding', 'br');
+			// 	}
+			// ]
+		}
 		browsersync_conf.port = 3000
 
 		// Check main file type

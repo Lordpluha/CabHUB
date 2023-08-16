@@ -7,7 +7,7 @@ export const closePreloader = () => {
 
 export const initFocusManager = elClass => {
 	const dialog = document.querySelector(elClass)
-	return [focusManager.capture(dialog), focusManager.release(dialog)]
+	return [()=>focusManager.capture(dialog), ()=>focusManager.release(dialog)]
 }
 
 // Getting data from order now form
@@ -109,7 +109,7 @@ export const formTransform = () => {
 }
 
 // Burger initialization
-export const burgerInit = (burgerFocusFuncs) => {
+export const burgerInit = burgerFocusFuncs => {
 	switchBurger()
 	const burger__button = document.querySelector('.menu--burger.nav__menu .menu__button')
 	if (burger__button) burger__button.onclick = () => {
@@ -117,10 +117,10 @@ export const burgerInit = (burgerFocusFuncs) => {
 	}
 
 	// Burger links functionality
-	for(const [_, val] of Object.entries(document.getElementsByClassName('menu__link'))) {
-		val.onclick = () => {
+	for(let val of document.getElementsByClassName('menu__link')) {
+		val.onclick = e => {
 			document.querySelector('.menu__link.active').classList.remove('active')
-			val.classList.add('active')
+			e.target.classList.add('active')
 			ToggleBurger(burgerFocusFuncs)
 		}
 	}
