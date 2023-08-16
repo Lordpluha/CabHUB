@@ -4,10 +4,8 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	// height: 110px;
-	// height: 10vh;
-	@include adaptive-value('height', 100, 100, 1);
-	@include adaptive-value('height', 100, 150, 2);
+	@include adaptive-value('height', 100, 110, 1);
+	@include adaptive-value('height', 110, 150, 2);
 	background-color: rgba(0, 0, 0, 0);
 
 	.container {
@@ -35,6 +33,8 @@
 .brand {
 	&__logo {
 		min-width: 150px;
+		height: auto;
+		width: 100%;
 	}
 	&__link {
 		display: inline-block;
@@ -77,12 +77,12 @@
 					transform: translate(-70%, 60%);
 					div {
 						display: none;
-						&:first-of-type {
+						&.menu__button-first-div {
 							position: absolute;
 							display: block;
 							transform: rotate(45deg);
 						}
-						&:nth-of-type(3) {
+						&.menu__button-third-div {
 							display: block;
 							transform: rotate(-45deg);
 						}
@@ -136,9 +136,5 @@
 			background-color: $yellow_dark;
 			color: black;
 		}
-		// &:active {
-		// 	background-color: $yellow_dark;
-		// 	color: black;
-		// }
 	}
 }

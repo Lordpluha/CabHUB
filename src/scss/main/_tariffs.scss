@@ -1,0 +1,111 @@
+.tariffs {
+	background-color: white;
+	.container {
+		// padding: 65px 0 80px;
+		@include adaptive-value('padding-top', 40, 60);
+		@include adaptive-value('padding-bottom', 20, 80);
+	}
+	// .tariffs__header
+	&__header {}
+
+	// .tariffs__content
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		// margin-top: 130px;
+		@include adaptive-value('margin-top', 15, 70);
+		padding: 20px;
+
+		.tariff {
+			@include beaut_blocks(3, .5s, .5s);
+			margin: 0 15px;
+			&:first-of-type {
+				margin-left: 0;
+			}
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+}
+.tariff {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+	text-align: center;
+	background-color: $grey_light;
+	padding: 25px;
+
+	// .tariff__image
+	.tariff__image {
+		transform: translateY(-50%);
+		margin-bottom: -20%;
+		width: 100%;
+		height: auto;
+	}
+	picture {
+		.tariff__image {
+			transform: translateY(-50%);
+			margin-bottom: -20%;
+		}
+	}
+
+	// .tariff__title
+	&__title {
+		color: black;
+	}
+
+	// .tariff__paragraph
+	&__paragraph {
+		margin-top: 30px;
+	}
+
+	// .tariff__cost
+	&__cost {
+		margin-top: 40px;
+		color: $yellow_dark;
+	}
+
+	// .tariff__link
+	&__link {
+		margin-top: 30px;
+		@extend .custom-button--yellow;
+	}
+
+	// .tariff--special
+	&--special {
+		background-color: $yellow_dark;
+		&::before {
+			position: absolute;
+			content: url('../img/main/tariffs/star-solid.svg');
+			z-index: 2;
+
+			width: 24px;
+			height: 24px;
+
+			right: 5px;
+			bottom: 10px;
+		}
+		&::after {
+			position: absolute;
+			content: '';
+			right: 0;
+			bottom: 0;
+			width: 0;
+			height: 0;
+			border: 0 solid transparent;
+			border-right-width: 0px;
+			border-left-width: 70px;
+			border-bottom: 70px solid $grey_dark;
+			z-index: 1;
+		}
+		.tariff__cost {
+			color: $grey_dark;
+		}
+		.tariff__link {
+			@extend .custom-button;
+		}
+	}
+}

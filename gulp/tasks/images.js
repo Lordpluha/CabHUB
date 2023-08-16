@@ -40,8 +40,8 @@ export const images = () => {
     const imagemin_cfg = {
         progressive: true,
         interlaced: true,
-        quality: 100,
-        optimizationLevel: 3,
+        quality: app.isBuild ? 75 : 50,
+        optimizationLevel: app.usBuild ? 3 : 5,
         silent: app.isBuild ? 'true' : 'false',
         verbose: app.isBuild ? 'false' : 'true'
     }

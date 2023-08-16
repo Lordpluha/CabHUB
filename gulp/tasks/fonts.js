@@ -73,7 +73,13 @@ export const ttfToWoff2 = () =>
  *
  * @example const variable = getScssData()
  */
-const getScssData = () => app.plugins.fs.readdirSync(app.path.src.scssDir, ()=>{}).reduce((scssData, file) => file != app.path.src.fontScss ? (scssData += app.plugins.fs.readFileSync(app.path.src.scssDir + '/' + file, 'utf-8')): (scssData = scssData), '')
+const getScssData = () =>
+    app.plugins.fs.readdirSync(app.path.src.scssDir, ()=>{})
+        .reduce((scssData, file) => {
+            if(file != app.path.src.fontScss)
+                return scssData += app.plugins.fs.readFileSync(app.path.src.scssDir + '/' + file, 'utf-8')
+            , ''
+        })
 
 /**
  * @function DirWalk

@@ -28,8 +28,8 @@
 	line-height: 1em;
 
 	&,
-	&:after,
-	&:before {
+	&::after,
+	&::before {
 		transition: all .3s linear 0s;
 	}
 }
@@ -37,12 +37,6 @@
 html {
 	scroll-behavior: smooth;
 }
-
-body {
-
-}
-
-a, p, h1, h2, h3, h4, h5, h6, span, label, input, button, textarea {}
 
 a, button, input, textarea, form {
 	color: #000;

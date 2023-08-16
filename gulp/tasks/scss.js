@@ -67,7 +67,9 @@ export const scss = () => {
             app.plugins.if(
                 app.isBuild,
                 webpcss({
-                    webpClass: '.webp',
+                    webpClass:'.webp',
+                    replace_from:/\.(png|jpg|jpeg)/,
+                    replace_to:'.webp',
                     noWebpClass: '.no-webp'
                 })
             )

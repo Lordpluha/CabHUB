@@ -1,0 +1,107 @@
+.testimonials {
+	// background-image: url("../img/main/testimonials/bg.jpg");
+
+	.container {
+		// padding: 110px 0 85px;
+		@include adaptive-value('padding-top', 40, 80);
+		@include adaptive-value('padding-bottom', 40, 50);
+	}
+
+	// .testimonials__header
+	&__header {
+	}
+
+	// .testimonials__suptitle
+	&__suptitle {
+	}
+
+	// .testimonials__title
+	&__title {
+		color: white;
+	}
+
+	// .testimonials__content
+	&__content {
+		// margin-top: 100px;
+		@include adaptive-value('margin-top', 30, 60);
+	}
+
+	// .testimonials__reviews
+	&__reviews {
+	}
+}
+.reviews {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	// grid-gap: 30px;
+	@include adaptive-value('grid-gap', 15, 30);
+	padding: 0 15px;
+
+	// .reviews__review
+	&__review {
+		@include beaut_blocks(2, .5s, .5s);
+	}
+}
+.review {
+	background-color: $custom_black;
+	border-radius: 40px;
+	// padding: 40px 60px;
+	@include adaptive-value('padding-top', 30, 40, 1);
+	@include adaptive-value('padding-top', 40, 40, 2);
+	@include adaptive-value('padding-left', 30, 60, 1);
+	@include adaptive-value('padding-left', 40, 60, 2);
+	@include adaptive-value('padding-bottom', 30, 40, 1);
+	@include adaptive-value('padding-bottom', 40, 40, 2);
+	@include adaptive-value('padding-right', 30, 60, 1);
+	@include adaptive-value('padding-right', 40, 60, 2);
+
+	// .review__paragraph
+	&__paragraph {
+		color: white;
+	}
+
+	// .review__creator-bio
+	&__creator-bio {
+		margin-top: 20px;
+	}
+}
+.creator-bio {
+	display: grid;
+	grid-template-columns: minmax(75px, auto) 10fr;
+	grid-template-rows: repeat(2, minmax(37.5px, auto));
+	grid-column-gap: 18px;
+	grid-row-gap: 5px;
+
+	picture {
+		grid-row-start: 1;
+		grid-row-end: 3;
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
+
+	// .creator-bio__avatar
+	&__avatar {
+		grid-row-start: 1;
+		grid-row-end: 3;
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
+
+	// .creator-bio__name
+	&__name {
+		margin-top: auto;
+	}
+
+	// .creator-bio__job
+	&__job {
+		display: block;
+		color: white;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
+}
+.avatar {
+	height: 75px;
+	width: 75px;
+	border-radius: 50%;
+}

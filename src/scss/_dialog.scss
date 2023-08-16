@@ -53,12 +53,12 @@
 			width: 100%;
 			background-color: grey;
 
-			&:first-of-type {
+			&.order-now__close-first-div {
 				position: absolute;
 				display: block;
 				transform: rotate(45deg);
 			}
-			&:last-of-type {
+			&.order-now__close-second-div {
 				display: block;
 				transform: rotate(-45deg);
 			}

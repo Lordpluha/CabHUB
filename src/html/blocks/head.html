@@ -3,25 +3,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-language" content="en">
-
+    <!--
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self';
-                 script-src 'self' 'unsafe-inline';
-                 font-src 'self' https://fonts.googleapis.com/ https://fonts.gstatic.com;
-                 style-src 'self' https://fonts.googleapis.com/ https://fonts.gstatic.com;
-                 img-src 'self' https://pngimg.com/d/taxi_logos_PNG15.png;
+                 script-src 'self' 'unsafe-inline' 'unsafe-eval';
+                 font-src 'self'  https://fonts.gstatic.com/;
+                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/;
+                 img-src 'self' https://pngimg.com/d/taxi_logos_PNG15.png
         "
     >
-
+    -->
 
     <title>@@title</title>
 
     <!-- CEO -->
     <meta name="robots" content="index">
+    <meta name="googlebot-news" content="noindex">
+
     <meta name="description" content="CabHub - Best Taxi: Call and Relax">
     <meta name="keywords" content="cars markup layout cabhub taxi best in sity book a car economy standart business class app">
     <meta name="author" content="https://github.com/Lordpluha">
     <link rel="icon" href="https://pngimg.com/d/taxi_logos_PNG15.png">
+    <link rel="canonical" href="https://github.com/Lordpluha/CabHUB.layout">
+
 
     <!-- Open Graph Protocol -->
     <meta propery="og:title" content="CabHub">
@@ -35,13 +39,24 @@
     <meta propery="og:type" content="website">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/preloader.min.css">
-    <link rel="prefetch" as="style" href="css/styles.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <!-- for Dev -->
-    <link rel="prefetch" as="style" href="css/styles.min.css.map" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="css/preloader.min.css" media="screen" charset="UTF-8">
+    <!-- <link rel="preload" href="css/preloader.min.css" as="style" media="screen" onload="this.onload=null;this.rel='stylesheet'" charset="UTF-8"> -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap">
+
+    <link rel="preload" as="style" href="css/styles.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    @@if (isDev) {
+        <link rel="prefetch" as="style" href="css/styles.min.css.map" onload="this.onload=null;this.rel='stylesheet'" charset="UTF-8">
+    }
     <noscript>
+        <link rel="stylesheet" href="css/preloader.min.css">
         <link rel="stylesheet" href="css/styles.min.css">
-        <!-- for Dev -->
-        <link rel="stylesheet" href="css/styles.min.css.map">
+        @@if (isDev) {
+            <link rel="stylesheet" href="css/styles.min.css.map">
+        }
     </noscript>
 </head>

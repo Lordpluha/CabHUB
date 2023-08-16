@@ -1,3 +1,4 @@
+import testWebP from './modules/testWebp.js'
 import {
 	closePreloader,
 	burgerInit,
@@ -7,16 +8,23 @@ import {
 	initFocusManager,
 	switchBurger
 } from './modules/design.js'
-import { beautyLoadInit } from './modules/beauty_load.js'
+import { beautyLoadInit, VanillaLazyLoadInit } from './modules/beauty_load.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+	// Testing browser for supports webp
+	testWebP().then(supportWebp => supportWebp ? document.body.classList.add('webp') : document.body.classList.add('no-webp'))
+})
 
 // On page load event
 window.onload = () => {
-	closePreloader()
-
-	const burgerFocusFuncs = () => initFocusManager('.menu--burger.nav__menu')
+	VanillaLazyLoadInit()
 
 	// Beauty load
 	beautyLoadInit()
+
+	closePreloader()
+
+	const burgerFocusFuncs = () => initFocusManager('.menu--burger.nav__menu')
 
 	// Burger
 	burgerInit(burgerFocusFuncs)

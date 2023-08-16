@@ -1,32 +1,61 @@
 // Content upploading effect
-var AnimItems = document.getElementsByClassName('_anim-elem');
+import LazyLoad from "vanilla-lazyload"
 
-function offset(element) {
-	var rect = element.getBoundingClientRect();
-	return { top: rect.top + window.pageYOffset, left: rect.left + window.pageXOffset};
+const fallbackImage = "https://watchdiana.fail/blog/wp-content/themes/koji/assets/images/default-fallback-image.png"
+
+const offset = el => {
+	const rect = el.getBoundingClientRect()
+	return { top: rect.top + window.scrollX }
 }
 
-function animOnScroll () {
-	for (var i = 0; i < AnimItems.length; i++) {
-		// Текущие параметры елемента
-		const AnimItem = AnimItems[i];
-		const AnimItemHeight = AnimItem.offsetHeight;
-		const AnimItemOffset = offset(AnimItem).top;
-		// Часть страницы, при которой срабатывает еффект
-		const animStart = 4;
-		// Точка налача анимации
-		let animItemPoint = window.innerHeight - AnimItemHeight / animStart;
-		if (AnimItemHeight > window.innerHeight) {
-			animItemPoint = window.innerHeight - window.innerHeight / animStart;
-		}
-		if ((window.pageYOffset > AnimItemOffset - animItemPoint) && window.pageYOffset < (AnimItemOffset + AnimItemHeight))
-		{
-			AnimItem.classList.add('_active-fx');
+export const VanillaLazyLoadInit = () => {
+	window.lazyFunctions = {
+		pseudo: el => {
+			el.classList.add('pseudo-lz-bg')
+			console.log("[ LL ] - " + el.classList)
 		}
 	}
+	const lazyLoadInstance = new LazyLoad({
+		// Your custom settings go here
+		unobserve_entered: true,
+		// use_native: true,
+		// threshold: 1,
+		// container: document.querySelector("#wrapper"),
+		callback_error: img => {
+			// Use the following line only if your images have the `srcset` attribute
+			img.setAttribute("srcset", fallbackImage)
+				.setAttribute("src", fallbackImage)
+		},
+		callback_enter: element => {
+			const lazyFunctionName = element.getAttribute("data-lazy-function"),
+				lazyFunction = window.lazyFunctions[lazyFunctionName]
+			if (!lazyFunction) return
+			lazyFunction(element)
+		}
+	})
+}
+
+// Часть страницы, при которой срабатывает еффект
+const animStart = 4,
+	windowInnerHeight = window.innerHeight
+
+const animOnScroll = ([...AnimItems]) => {
+	AnimItems.forEach(el => {
+		const AnimItemHeight = el.offsetHeight,
+			AnimItemOffset = offset(el).top
+
+		// Точка налача анимации
+		let animItemPoint = windowInnerHeight - AnimItemHeight / animStart
+		if (AnimItemHeight > windowInnerHeight) animItemPoint = windowInnerHeight - windowInnerHeight / animStart
+		if ((window.scrollY > AnimItemOffset - animItemPoint) &&
+			window.scrollY < (AnimItemOffset + AnimItemHeight)) {
+			el.classList.add('_active-fx')
+		}
+	})
 }
 
 export const beautyLoadInit = () => {
-	setTimeout(animOnScroll, 300)
-	window.addEventListener('scroll', animOnScroll)
+	const AnimElemOnScroll = () => animOnScroll(document.getElementsByClassName('_anim-elem'))
+	AnimElemOnScroll()
+	window.addEventListener('scroll', AnimElemOnScroll)
 }

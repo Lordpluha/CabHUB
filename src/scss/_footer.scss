@@ -1,5 +1,4 @@
-.footer {
-	padding: 0 10px;
+.footer.pseudo-lz-bg {
 	&::before {
 		position: absolute;
 		content: '';
@@ -11,6 +10,10 @@
 		background-size: cover;
 		filter: brightness(.1);
 	}
+}
+.footer {
+	padding: 0 10px;
+
 	.container {
 		padding: 75px 0 85px;
 	}
@@ -40,7 +43,7 @@
 		&:first-of-type {
 			margin-left: 0;
 		}
-		&>*:not(:first-child) {
+		&>*:not(.footer__title) {
 			margin-top: 45px;
 		}
 	}

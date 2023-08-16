@@ -5,18 +5,9 @@ export const closePreloader = () => {
 	document.body.classList.remove('lock')
 }
 
-export const initFocusManager = (elClass) => {
+export const initFocusManager = elClass => {
 	const dialog = document.querySelector(elClass)
-	const openFocus = () => {
-		focusManager.capture(dialog)
-		console.log(`[${elClass}] - focus opened`)
-	}
-	const closeFocus = () => {
-		focusManager.release(dialog)
-		console.log(`[${elClass}] - focus closed`)
-	}
-
-	return [openFocus, closeFocus]
+	return [()=>focusManager.capture(dialog), ()=>focusManager.release(dialog)]
 }
 
 // Getting data from order now form
@@ -35,7 +26,7 @@ export const getDataFromForm = () => {
 // Burger show/hide
 const ToggleBurger = focusFuncs => {
 	const [openFocus, closeFocus] = focusFuncs()
-	let burger__menu = document.querySelector('.menu--burger.nav__menu')
+	const burger__menu = document.querySelector('.menu--burger.nav__menu')
 	if (burger__menu) {
 		burger__menu.classList.toggle('open')
 		burger__menu.classList.contains('open') ? openFocus() : closeFocus()
@@ -63,12 +54,10 @@ export const switchBurger = () => {
 }
 
 const showModal = () => {
-	console.log(`[${this}] - open modal`)
 	document.querySelector(this.target).classList.add('open')
 	document.querySelector(this.target).ariaHidden = false
 }
 const closeModal = () => {
-	console.log(`[${this}] - close modal`)
 	document.querySelector(this.target).classList.remove('open')
 	document.querySelector(this.target).ariaHidden = true
 }
@@ -91,7 +80,6 @@ export const orderNowDialog = burgerFocusCbs => {
 			openModalFocus()
 			document.body.classList.add('lock')
 			activateElem = el
-			console.log(activateElem)
 		})
 	})
 
@@ -115,13 +103,13 @@ export const formTransform = () => {
 	}
 
 	for(const [key, value] of Object.entries(formInputs)) {
-		document.querySelector(key).addEventListener('focus', (e)=> e.target.type = value)
-		document.querySelector(key).addEventListener('blur', (e)=> e.target.type = 'text')
+		document.querySelector(key).addEventListener('focus', e=>e.target.type = value)
+		document.querySelector(key).addEventListener('blur', e=>e.target.type = 'text')
 	}
 }
 
 // Burger initialization
-export const burgerInit = (burgerFocusFuncs) => {
+export const burgerInit = burgerFocusFuncs => {
 	switchBurger()
 	const burger__button = document.querySelector('.menu--burger.nav__menu .menu__button')
 	if (burger__button) burger__button.onclick = () => {
@@ -129,10 +117,10 @@ export const burgerInit = (burgerFocusFuncs) => {
 	}
 
 	// Burger links functionality
-	for(const [_, val] of Object.entries(document.getElementsByClassName('menu__link'))) {
-		val.onclick = () => {
+	for(let val of document.getElementsByClassName('menu__link')) {
+		val.onclick = e => {
 			document.querySelector('.menu__link.active').classList.remove('active')
-			val.classList.add('active')
+			e.target.classList.add('active')
 			ToggleBurger(burgerFocusFuncs)
 		}
 	}
