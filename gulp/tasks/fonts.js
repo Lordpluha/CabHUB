@@ -73,13 +73,23 @@ export const ttfToWoff2 = () =>
  *
  * @example const variable = getScssData()
  */
-const getScssData = () =>
-    app.plugins.fs.readdirSync(app.path.src.scssDir, ()=>{})
-        .reduce((scssData, file) => {
-            if(file != app.path.src.fontScss)
-                return scssData += app.plugins.fs.readFileSync(app.path.src.scssDir + '/' + file, 'utf-8')
-            , ''
-        })
+const getScssData = () => {
+    return app.plugins.fs.readdirSync(
+        app.path.src.scssDir, ()=>{})
+            .reduce((scssData, file) => {
+                if (app.plugins.fs.statSync(app.path.src.scssDir + '/' + file).isDirectory()) {
+                    return app.plugins.fs.readdirSync(app.path.src.scssDir+file, ()=>{})
+                        .reduce((scssSubData, subFile) => scssSubData += app.plugins.fs.readFileSync(app.path.src.scssDir + '/' + file + '/' + subFile, 'utf-8'), '')
+                } else if (file != app.path.src.fontsScss) {
+                    try {
+                        return scssData += app.plugins.fs.readFileSync(app.path.src.scssDir + '/' + file, 'utf-8')
+                    } catch (error) {
+                        console.log(error)
+                        return scssData
+                    }
+                }
+            }, '')
+}
 
 /**
  * @function DirWalk
@@ -105,10 +115,13 @@ const DirWalk = (dir, data, func) => {
                 const [file_name, file_ext] = file.split('.')
 
                 // Sending arg by using object Data
-                data.file_ext, data.file_name, data.dir, data.name = file_ext, file_name, dir, name
+                data.file_ext = file_ext
+                data.file_name = file_name
+                data.dir = dir
+                data.name = name
 
                 // Cheking file extension
-                if (['ttf','woff','woff2','otf','eot','eot?#iefix',].includes(file_ext)) func()
+                if (['ttf','woff','woff2','otf','eot','eot?#iefix'].includes(file_ext)) func()
             }
         })
 }
@@ -203,8 +216,9 @@ export const fontsStyle = done => {
     })
 
     // Writing fonts in _fonts.scss
-    for (const [font_name, font_dir] in Object.entries(out)) {
+    for (const font_name of Object.keys(out)) {
         const [font_style, font_weight] = checkFontParams(font_name)
+        const font_dir = Object.keys(out[font_name])[0]
         app.plugins.fs.appendFileSync(app.path.src.fontsScss, `@include font('${font_name}', '${font_dir}', ${font_weight}, ${font_style}, '${out[font_name][font_dir].join("', '")}');\n`)
     }
     done()
