@@ -154,8 +154,9 @@ export const path = {
         fonts:     `${srcFolder}/${fontsFolder}/**/*.{eot,ttf,otf,woff,woff2,eot?#iefix}`,
         fontsScss: `${srcFolder}/${scssFolder}/${fontsScss}`,
         js:        `${srcFolder}/${jsFolder}/*.js`,
-        jsDir:        `${srcFolder}/${jsFolder}/`,
-        certs:     `${srcFolder}/${certFolder}/**/*.{pem,key,cert}`
+        jsDir:     `${srcFolder}/${jsFolder}/`,
+        certs:     `${srcFolder}/${certFolder}/**/*.{pem,key,cert}`,
+        copyFiles: [`${srcFolder}/*.{webmanifest, json}`]
     },
     /**
      * @memberof module:configs/path.path
@@ -168,7 +169,7 @@ export const path = {
      */
     watch: {
         images: `${srcFolder}/${imgFolder}/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
-        scss: [`${srcFolder}/${scssFolder}/**/*.scss`, `!${srcFolder}/${scssFolder}/**/_fonts.scss`],
+        scss: [`${srcFolder}/${scssFolder}/**/*.scss`, `!${srcFolder}/${scssFolder}/_fonts.scss`],
         html: `${srcFolder}/${srcHtmlFolder}/**/*.html`,
         js: `${srcFolder}/${jsFolder}/**/*.js`
     },

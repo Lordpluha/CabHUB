@@ -8,6 +8,7 @@
     "dev": "gulp",
     "full-dev": "gulp --build",
     "prod": "gulp prod --build",
+    "prod-no-fonts": "gulp prod-no-fonts --build",
     "zip": "gulp zip --build",
     "deploy": "gulp deploy --build",
     "docs": "jsdoc --configure jsdoc.json",

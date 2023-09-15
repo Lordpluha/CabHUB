@@ -1,0 +1,30 @@
+{
+  "name": "CabHub",
+  "short_name": "CabHub",
+  "start_url": ".",
+  "display": "browser",
+  "background_color": "#fff",
+  "description": "CabHub - Best Taxi: Call and Relax",
+  "categories": ["taxi", "car", "fast"],
+  "icons": [
+    {
+      "src": "https://pngimg.com/d/taxi_logos_PNG15.png",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web"
+    },
+    {
+      "platform": "play",
+      "url": "https://play.google.com/",
+      "id": "com.example.app"
+    },
+    {
+      "platform": "store",
+      "url": "https://www.apple.com/app-store/",
+      "id": "com.example.app"
+    }
+  ]
+}
