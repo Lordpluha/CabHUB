@@ -46,7 +46,7 @@
 			padding: 0 20px !important;
 		}
 		&__article {
-			width: initial !important;
+			min-width: 70%;
 		}
 		&__illustration {
 			margin-right: -150px;
@@ -87,6 +87,7 @@
 		}
 		&__article {
 			padding-right: 0 !important;
+			width: initial;
 		}
 	}
 	.reviews {
@@ -184,17 +185,14 @@
 @media ((orientation: landscape) and
 		((max-width: 510px)
 		or
-		( (510px <= width <= 1024px) and (max-height: 630px) )
+		( (max-width: 1024px) and (max-height: 630px) )
 		or
-		( (1024px <= width <= 1440px) and (630px <= height <= 700px) )
+		( (max-width: 1440px) and (max-height: 700px) )
 		or
-		( (1440px <= width <= 2560px) and (700px <= height <= 880px) )
+		( (max-width: 2560px) and (max-height: 880px) )
 		or
 		( (min-width: 2560px) and (min-aspect-ratio: 21/7) )
-		) )
-		or
-		( (orientation: portrait) and ( (max-width: 425px) and (max-height: 500px) ) )
-		{
+		)) {
 	.header {
 		&__illustration {
 			display: none;
