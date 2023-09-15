@@ -12,15 +12,15 @@
  * @function CpCerts
  * @desc Function for copying certificates from [./src/certs]{@link module:configs/path.path.src} into [./src/dist]{@link module:configs/path.path.build}
  */
-export function CpCerts() {
+export const CpCerts = () =>
 	/**
 	 * @event CpCerts
 	 * @desc Event of copying certificates
 	 * @see [CpCerts]{@link module:tasks/server~CpCerts}
 	 */
-	return app.gulp.src(app.path.src.certs)
+	app.gulp.src(app.path.src.certs)
 		.pipe(app.gulp.dest(app.path.build.certs));
-}
+
 
 /**
  * @function server
@@ -38,7 +38,7 @@ export const server = done => {
 	 * @see [server]{@link module:tasks/server~server}
 	 */
     const ProjectName = app.path.rootFolder,
-		OSPanel = true,
+		OSPanel = false,
 		https = true
 
     const browsersync_conf = {
@@ -85,18 +85,18 @@ export const server = done => {
 			browsersync_conf.serveStatic = [
 				`${app.path.build.php}`,
 				`${app.path.buildFolder}`
-			];
+			]
 		} else {
 			browsersync_conf.serveStatic = [
 				`${app.path.src.html}`,
 				`${app.path.srcFolder}`
-			];
+			]
 		}
 
 	} else {
 		browsersync_conf.server = {
 			baseDir: `${app.path.build.html}`
-		};
+		}
 	}
 
     // Https on/off check
@@ -104,8 +104,7 @@ export const server = done => {
 		browsersync_conf.https = {
 			key: `${app.path.build.key}`,
 			cert:`${app.path.build.cert}`
-		};
-
+		}
 	}
     app.plugins.browsersync.init(browsersync_conf)
 }

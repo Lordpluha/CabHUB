@@ -8,6 +8,7 @@
     "dev": "gulp",
     "full-dev": "gulp --build",
     "prod": "gulp prod --build",
+    "prod-no-fonts": "gulp prod-no-fonts --build",
     "zip": "gulp zip --build",
     "deploy": "gulp deploy --build",
     "docs": "jsdoc --configure jsdoc.json",
@@ -56,8 +57,5 @@
   "dependencies": {
     "focus-manager": "^0.4.1",
     "vanilla-lazyload": "^17.8.4"
-  },
-  "optionalDependencies": {
-    "swiper": "^10.1.0"
   }
 }

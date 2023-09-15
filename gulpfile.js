@@ -73,6 +73,7 @@ import { CpCerts, server } from "./gulp/tasks/server.js";
 import { otfToTtf, ttfToWoff, ttfToWoff2, fontsStyle, fontsCp } from "./gulp/tasks/fonts.js";
 import { ZipBuild } from "./gulp/tasks/zip.js";
 import { FtpUpload } from "./gulp/tasks/deploy.js";
+import copyFiles from "./gulp/tasks/copyOtherFiles.js";
 
 /**
  * @function watcher
@@ -113,9 +114,11 @@ const fullFonts = gulp.series(fontConverter, fonts);
  * @event FilesProcess
  *
  */
-const FilesProcessDev = gulp.parallel(fonts, scss, images, svgSprites, html, js);
-const FilesProcessProd = gulp.parallel(fullFonts, scss, images, svgSprites, html, js);
+const FilesProcessDev = gulp.parallel(fonts, scss, images, svgSprites, html, js, copyFiles);
+const FilesProcessProd = gulp.parallel(fullFonts, scss, images, svgSprites, html, js, copyFiles);
 
+
+const serverProcess = gulp.parallel(watcher, gulp.series(CpCerts, server));
 /**
  * @function dev
  * @async
@@ -123,18 +126,20 @@ const FilesProcessProd = gulp.parallel(fullFonts, scss, images, svgSprites, html
  * @desc Switch to dev mode func
  *
  */
-const dev = gulp.series(cleanBuild, FilesProcessDev, gulp.parallel(watcher, gulp.series(CpCerts, server)));
+const dev = gulp.series(cleanBuild, FilesProcessDev, serverProcess);
 
 /**
  * @function prod
  * @desc Swhitch to production mode func
  */
 const prod = gulp.series(cleanBuild, FilesProcessProd);
+const prodNoFonts = gulp.series(cleanBuild, FilesProcessDev);
 
 /**
  * @desc Production mode UI
  */
 gulp.task('prod', prod);
+gulp.task('prod-no-fonts', prodNoFonts);
 
 /**
  * @desc Developement mode UI
