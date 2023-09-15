@@ -12,7 +12,7 @@ export const VanillaLazyLoadInit = () => {
 	window.lazyFunctions = {
 		pseudo: el => {
 			el.classList.add('pseudo-lz-bg')
-			console.log("[ LL ] - " + el.classList)
+			// console.log("[ LL ] - " + el.classList)
 		}
 	}
 	const lazyLoadInstance = new LazyLoad({
@@ -24,7 +24,7 @@ export const VanillaLazyLoadInit = () => {
 		callback_error: img => {
 			// Use the following line only if your images have the `srcset` attribute
 			img.setAttribute("srcset", fallbackImage)
-				.setAttribute("src", fallbackImage)
+			img.setAttribute("src", fallbackImage)
 		},
 		callback_enter: element => {
 			const lazyFunctionName = element.getAttribute("data-lazy-function"),
