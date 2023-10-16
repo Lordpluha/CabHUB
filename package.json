@@ -51,7 +51,7 @@
     "sass": "^1.66.1",
     "vinyl-ftp": "^0.6.1",
     "webp-converter": "2.2.3",
-    "webpack": "^5.88.2",
+    "webpack": "^5.89.0",
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
