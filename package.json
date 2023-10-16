@@ -56,6 +56,6 @@
   },
   "dependencies": {
     "focus-manager": "^0.4.1",
-    "vanilla-lazyload": "^17.8.4"
+    "vanilla-lazyload": "^17.8.5"
   }
 }
