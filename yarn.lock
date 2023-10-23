@@ -1325,10 +1325,10 @@ clean-css@~5.3.2:
   dependencies:
     source-map "~0.6.0"
 
-clean-jsdoc-theme@^4.2.10:
-  version "4.2.10"
-  resolved "https://registry.yarnpkg.com/clean-jsdoc-theme/-/clean-jsdoc-theme-4.2.10.tgz#a677efaa2a43a19881a84044313032f75a0c1f50"
-  integrity sha512-7+x6RKK3Nt7jGeaJReH7KySkqdA8H+595jRL/LIWiJ7F83NXRCSzkzWDxHWOEmraf+UASa3fD1DBeuz/o0nmiw==
+clean-jsdoc-theme@^4.2.14:
+  version "4.2.14"
+  resolved "https://registry.yarnpkg.com/clean-jsdoc-theme/-/clean-jsdoc-theme-4.2.14.tgz#e9719e908c1409dcc04f8fcd0eb7556db4e4ab8d"
+  integrity sha512-RtFKl0GKS9u3su2gnNH5L+k2g7AOZX1e8FH1zlFQf270LgSJsFFMkxTAR8/qeD0+r6jKTpvPq1JJSfhCtVnjVg==
   dependencies:
     "@jsdoc/salty" "^0.2.4"
     fs-extra "^10.1.0"
