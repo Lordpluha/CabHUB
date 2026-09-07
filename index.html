@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="en">
+    <!--
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 script-src 'self' 'unsafe-inline' 'unsafe-eval';
+                 font-src 'self'  https://fonts.gstatic.com/;
+                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/;
+                 img-src 'self' https://pngimg.com/d/taxi_logos_PNG15.png
+        "
+    >
+    -->
+
+    <title>CabHUB</title>
+
+    <!-- CEO -->
+    <meta name="robots" content="index">
+    <meta name="googlebot-news" content="noindex">
+
+    <meta name="description" content="CabHub - Best Taxi: Call and Relax">
+    <meta name="keywords" content="cars markup layout cabhub taxi best in sity book a car economy standart business class app">
+    <meta name="author" content="https://github.com/Lordpluha">
+    <link rel="manifest" href="./manifest.webmanifest" />
+
+
+    <link rel="icon" href="img/nav/logo.png">
+    <link rel="canonical" href="https://github.com/Lordpluha/CabHUB.layout">
+
+
+    <!-- Open Graph Protocol -->
+    <meta propery="og:title" content="CabHub">
+    <meta propery="og:description" content="CabHub - Best Taxi: Call and Relax">
+    <meta property="og:image" content="img/nav/logo.png">
+    <meta property="og:image:secure_url" content="OG-preview.png">
+    <meta propery="og:image:alt" content="small black taxi car icon on yellow background">
+    <meta propery="og:image:type" content="image/png">
+    <meta propery="og:url" content="https://lordpluha.github.io/CabHUB.layout/">
+    <meta propery="og:site_name" content="CabHub">
+    <meta propery="og:type" content="website">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/preloader.min.css?_v=20260907075541" media="screen" charset="UTF-8">
+    <!-- <link rel="preload" href="css/preloader.min.css?_v=20260907075541" as="style" media="screen" onload="this.onload=null;this.rel='stylesheet'" charset="UTF-8"> -->
+    <!-- Fonts -->
+    <!-- preview fix: Bebas Neue + Lato vendored locally (was a fonts.googleapis.com CDN link) -->
+    <link rel="stylesheet" href="css/google-fonts.css?_v=20260907075541">
+
+    <link rel="preload" as="style" href="css/styles.min.css?_v=20260907075541" onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript>
+        <link rel="stylesheet" href="css/preloader.min.css?_v=20260907075541">
+        <link rel="stylesheet" href="css/styles.min.css?_v=20260907075541">
+
+    </noscript>
+</head>
+
+<body class="lock">
+    <div id="wrapper">
+        <div class="preloader">
+            <div class="container">
+                <div class="sk-cube-grid">
+                    <div class="sk-cube sk-cube1"></div>
+                    <div class="sk-cube sk-cube2"></div>
+                    <div class="sk-cube sk-cube3"></div>
+                    <div class="sk-cube sk-cube4"></div>
+                    <div class="sk-cube sk-cube5"></div>
+                    <div class="sk-cube sk-cube6"></div>
+                    <div class="sk-cube sk-cube7"></div>
+                    <div class="sk-cube sk-cube8"></div>
+                    <div class="sk-cube sk-cube9"></div>
+                </div>
+            </div>
+        </div>
+
+        <div role="dialog" class="order-now" aria-label="order now modal window">
+            <div class="container">
+                <div class="order-now__content article">
+                    <button class="order-now__close" aria-label="close modal button">
+                        <div class="order-now__close-first-div" role="presentation"></div>
+                        <div class="order-now__close-second-div" role="presentation"></div>
+                    </button>
+
+                    <ul class="order-now__contacts" aria-label="official links">
+                        <li class="order-now__phone article__super-title phone">
+                            <a href="tel:+123 4567 8900" aria-label="callcenter phone">+123 4567 8900</a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://www.google.com/maps" target="_blank" aria-label="google maps office location">
+                                <svg class="small-ico">
+                                    <use href="img/icons/icons.svg#footer--socials--location-dot-solid" />
+                                </svg>
+                                +123, Main Street, Your City, New York, USA 789456
+                            </a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="mailto:vladislavteslyukofficial@gmail.com?subject=CabHub%20proj" aria-label="company email" target="_blank">
+                                <svg class="small-ico">
+                                    <use href="img/icons/icons.svg#footer--socials--envelope-solid" />
+                                </svg>
+                                vladislavteslyukofficial@gmail.com
+                            </a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://github.com/Lordpluha" aria-label="github social link" target="_blank">
+                                <svg class="small-ico">
+                                    <use href="img/icons/icons.svg#footer--socials--arrow-pointer-solid" />
+                                </svg>
+                                github.com/Lordpluha
+                            </a>
+                        </li>
+
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://www.facebook.com/" aria-label="facebook social link" target="_blank">
+                                <svg class="small-ico">
+                                    <use href="img/icons/icons.svg#footer--socials--facebook-f" />
+                                </svg>
+                                cabHub.com
+                            </a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://myaccount.google.com/" aria-label="google plus social link" target="_blank">
+                                <svg class="small-ico">
+                                    <use href="img/icons/icons.svg#footer--socials--google-plus-g" />
+                                </svg>
+                                cabHub.com
+                            </a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://twitter.com/VLTesla" aria-label="twitter social link" aria-f target="_blank">
+                                <svg class="small-ico">
+                                    <use href="img/icons/icons.svg#footer--socials--twitter" />
+                                </svg>
+                                cabHub.com
+                            </a>
+                        </li>
+                        <li class="order-now__item">
+                            <a class="order-now__link article__paragraph" href="https://www.instagram.com/def.__init__" aria-label="instagram social link" target="_blank">
+                                <svg class="small-ico">
+                                    <use href="img/icons/icons.svg#footer--socials--instagram" />
+                                </svg>
+                                cabHub.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nav -->
+        <nav class="nav" role="navigation" aria-label="cabhub navigation bar" height="110">
+            <div class="container">
+                <div class="nav__brand brand">
+                    <a class="brand__link" href="index.html" aria-label="cabhub logotype link to home page">
+                        <picture>
+                            <source srcset="img/nav/logo.webp" type="image/webp">
+                                <img class="brand__logo" src="img/nav/logo.png" alt="cabhub logotype" width="161" height="91">
+                        </picture>
+                    </a>
+                </div>
+                <ul class="menu menu--default nav__menu" aria-label="navigation links">
+                    <li class="menu__elem" aria-posinset="1">
+                        <a class="menu__link active" href="#home" aria-label="to home page link">Home</a>
+                    </li>
+                    <li class="menu__elem" aria-posinset="2">
+                        <a class="menu__link" href="#about" aria-label="to about us link">About</a>
+                    </li>
+                    <li class="menu__elem" aria-posinset="3">
+                        <a class="menu__link" href="#why-we" aria-label="to feutures link">Feutures</a>
+                    </li>
+                    <li class="menu__elem" aria-posinset="4">
+                        <a class="menu__link" href="#testimonials" aria-label="to our blog link">Blog</a>
+                    </li>
+                    <li class="menu__elem" aria-posinset="5">
+                        <a class="menu__link open-order-now" aria-label="open modal order now" aria-haspopup="dialog" href="#">Order now</a>
+                    </li>
+                    <li class="menu__elem" aria-posinset="5">
+                        <a class="menu__link" href="#contacts" aria-label="to contacts link">Contacts</a>
+                    </li>
+                    <button class="menu__button" role="listitem" aria-label="open burger button">
+                        <div class="menu__button-first-div" role="presentation"></div>
+                        <div class="menu__button-second-div" role="presentation"></div>
+                        <div class="menu__button-third-div" role="presentation"></div>
+                    </button>
+                </ul>
+            </div>
+        </nav>
+
+
+        <picture class="header-bg ibg">
+            <source srcset="img/header/bg.webp" type="image/webp">
+                <img class="header-bg__img" src="img/header/bg.jpg" alt="background image" role="presentation" width="1600" height="900">
+        </picture>
+
+        <header class="header article" id="home" aria-label="header content">
+            <div class="container">
+                <div class="header__intro article__header">
+                    <a class="header__suptitle article__suptitle open-order-now _anim-elem" href="#" aria-label="open modal window order now" aria-haspopup="dialog">BOOK CAB NOW</a>
+                    <h1 class="header__title article__super-title phone _anim-elem">
+                <a class="header__link" href="tel:+123 4567 8900" aria-label="callcenter phone">+123 4567 8900</a>
+            </h1>
+                    <a class="header__subtitle article__subtitle _anim-elem" href="index.html" aria-label="open official site">CabHUB.ua</a>
+                </div>
+
+                <picture class="header__illustration--picture">
+                    <source srcset="img/header/Car.webp" type="image/webp">
+                        <img class="header__illustration _anim-elem" src="img/header/Car.png" alt="illustration" width="826" height="465">
+                </picture>
+            </div>
+        </header>
+        <!-- Контент -->
+
+        <main class="main" aria-label="cabhub main content">
+            <section class="about article" id="about" aria-label="about us section" tabindex="0">
+                <div class="container" role="presentation">
+                    <article class="about-us about__about-us" aria-label="about us content">
+                        <div class="about-us__intro">
+                            <h1 class="about-us__suptitle article__suptitle _anim-elem" tabindex="0">Best In City</h1>
+                            <h2 class="about-us__title article__title _anim-elem" tabindex="0">Trusted Cab Servies in New York</h2>
+                        </div>
+                        <div class="about-us__content">
+                            <p class="about-us__paragraph article__paragraph _anim-elem" aria-roledescription="about us paragraph" tabindex="0">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam cupiditate corporis vero quo nihil enim eius dolorum esse ipsa, quisquam id odit veritatis delectus cum excepturi labore non adipisci aliquam, natus aut sed dolore! Libero ullam dolorem quasi
+                                culpa optio odio aut dolores qui vel sint? Nostrum, minima exercitationem hic sapiente numquam pariatur amet dicta expedita odit perspiciatis dolor deleniti, vel voluptates dolores dignissimos. Porro sint cupiditate unde
+                                et dolore placeat explicabo culpa quod minus voluptatum iste sunt perspiciatis quidem rem, nam ex eum odit iusto magni. Libero, perspiciatis animi?
+                            </p>
+                        </div>
+                        <a href="#" class="about-us__read-more custom-button custom-button--link _anim-elem" aria-label="about us read more link">Read more</a>
+                    </article>
+
+                    <form action="/" method="POST" class="booking about__booking _anim-elem" id="order_now" aria-label="book a cab form" tabindex="0">
+                        <h1 class="booking__title" role="presentation">
+                            Book a <span class="yellow">cab</span>
+                        </h1>
+                        <div class="booking__content">
+                            <input class="booking__input booking__input--l" name="name" id="name" type="text" placeholder="Name" aria-roledescription="Owner name input" required>
+                            <input class="booking__input booking__input--r" name="phone" id="phone" type="phone" placeholder="Phone" aria-roledescription="Callback phone input" required>
+                            <input class="booking__input booking__input--l" name="date" id="date" type="text" placeholder="When" aria-roledescription="When date input" required>
+                            <!-- text->date -->
+                            <input class="booking__input booking__input--r" name="time" id="time" type="text" placeholder="Time" aria-roledescription="Time input" required>
+                            <!-- text->time -->
+                            <input class="booking__input booking__input--l" name="start" id="start" type="text" placeholder="Start" aria-roledescription="Start time input" required>
+                            <!-- text->time -->
+                            <input class="booking__input booking__input--r" name="end" id="end" type="text" placeholder="End" aria-roledescription="End time input" required>
+                            <!-- text->time -->
+                            <select class="booking__input booking__input--f" name="vehicle" id="vehicle" aria-label="Choose vehicle" aria-roledescription="Car select" required>
+                                <option value="none" hidden selected>Choose Vehicle</option>
+                                <option value="labmorgini">labmorgini</option>
+                                <option value="mercedes">mercedes</option>
+                                <option value="bmw">bmw</option>
+                                <option value="audi">audi</option>
+                            </select>
+                            <input type="submit" value="submit" class="booking__input booking__input--f custom-button" aria-label="submit button">
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="tariffs article" id="tariffs" aria-labelledby="tariffs__header" tabindex="0">
+                <div class="container" role="presentation">
+                    <h1 class="tariffs__header article__header" id="tariffs__header">
+                        <span class="article__suptitle _anim-elem">Our</span>
+                        <span class="article__title _anim-elem">Tariffs</span>
+                    </h1>
+                    <ul class="tariffs__content" aria-label="tariffs list">
+                        <li class="tariff _anim-elem" aria-posinset="1" aria-label="tariff not special offer" tabindex="0">
+                            <!--
+                            <img
+                                src=""
+                                data-src="img/main/tariffs/car.png"
+                                class="lazy ibg tariff__image"
+                                alt="taxi car image"
+                                width="366"
+                                height="206"
+                            >
+                            -->
+                            <picture class="" role="">
+                                <source srcset="" data-srcset="img/main/tariffs/car.webp" type="image/webp" loading=lazy>
+                                    <img src="" data-src="img/main/tariffs/car.png" alt="taxi car image" class="lazy ibg tariff__image" loading=lazy width="366" height="206" aria-roledescription="" ghiw-exclude />
+                            </picture>
+
+                            <h2 class="tariff__title article__suptitle" aria-roledescription="tariff name" tabindex="0">Economy Class</h2>
+                            <p class="tariff__paragraph article__paragraph" aria-roledescription="tariff description" tabindex="0">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque dolor dolores reiciendis. Quibusdam, fugit quae.
+                            </p>
+                            <p class="tariff__cost article__title" aria-roledescription="tariff cost" tabindex="0">$1,5/MI</p>
+                            <a href="#" class="tariff__link custom-button custom-button--link" aria-label="link read more about tariff">Read more</a>
+                        </li>
+
+                        <li class="tariff tariff--special _anim-elem" aria-posinset="2" aria-label="tariff special offer" tabindex="0">
+                            <picture class="" role="">
+                                <source srcset="" data-srcset="img/main/tariffs/car.webp" type="image/webp" loading=lazy>
+                                    <img src="" data-src="img/main/tariffs/car.png" alt="taxi car image" class="lazy ibg tariff__image" loading=lazy width="366" height="206" aria-roledescription="" ghiw-exclude />
+                            </picture>
+
+                            <h2 class="tariff__title article__suptitle" aria-roledescription="tariff name" tabindex="0">Standart Class</h2>
+                            <p class="tariff__paragraph article__paragraph" aria-roledescription="tariff description" tabindex="0">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque dolor dolores reiciendis. Quibusdam, fugit quae.
+                            </p>
+                            <p class="tariff__cost article__title" aria-roledescription="tariff cost" tabindex="0">$1,5/MI</p>
+                            <a href="#" class="tariff__link custom-button custom-button--link" aria-label="link read more about tariff">Read more</a>
+                        </li>
+
+                        <li class="tariff _anim-elem" aria-posinset="3" aria-label="tariff not special offer" tabindex="0">
+                            <picture class="" role="">
+                                <source srcset="" data-srcset="img/main/tariffs/car.webp" type="image/webp" loading=lazy>
+                                    <img src="" data-src="img/main/tariffs/car.png" alt="taxi car image" class="lazy ibg tariff__image" loading=lazy width="366" height="206" aria-roledescription="" ghiw-exclude />
+                            </picture>
+
+                            <h2 class="tariff__title article__suptitle" aria-roledescription="tariff name" tabindex="0">Business Class</h2>
+                            <p class="tariff__paragraph article__paragraph" aria-roledescription="tariff description" tabindex="0">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque dolor dolores reiciendis. Quibusdam, fugit quae.
+                            </p>
+                            <p class="tariff__cost article__title" aria-roledescription="tariff cost" tabindex="0">$1,5/MI</p>
+                            <a href="#" class="tariff__link custom-button custom-button--link" aria-label="link read more about tariff">Read more</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="lazy why-we article" data-bg="img/main/why-we/bg.jpg" id="why-we" aria-label="why you must choose us" tabindex="0">
+                <div class="container" role="presentation">
+                    <h1 class="why-we__header article__header" tabindex="0">
+                        <span class="why-we__suptitle article__suptitle _anim-elem">We do best</span>
+                        <span class="why-we__title article__title _anim-elem">Than you wish</span>
+                    </h1>
+
+                    <ul class="lazy why-we__content" data-lazy-function="pseudo" role="list" aria-label="our advantages">
+                        <li class="why-we__item why-we__item--star _anim-elem" aria-labelledby="why-we__article-title1" tabindex="0">
+                            <h2 class="why-we__article-title article__subtitle" id="why-we__article-title1">Home pickup</h2>
+                            <p class="why-we__paragraph article__paragraph" tabindex="0">
+                                Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
+                            </p>
+                        </li>
+
+                        <li class="why-we__item why-we__item--clock _anim-elem" aria-labelledby="why-we__article-title2" tabindex="0">
+                            <h2 class="why-we__article-title article__subtitle" id="why-we__article-title2">Fast booking</h2>
+                            <p class="why-we__paragraph article__paragraph" tabindex="0">
+                                Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
+                            </p>
+                        </li>
+
+                        <li class="why-we__item why-we__item--castle _anim-elem" aria-labelledby="why-we__article-title3" tabindex="0">
+                            <h2 class="why-we__article-title article__subtitle" id="why-we__article-title3">Bonuses for ride</h2>
+                            <p class="why-we__paragraph article__paragraph" tabindex="0">
+                                Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
+                            </p>
+                        </li>
+
+                        <li class="why-we__item why-we__item--gear _anim-elem" aria-labelledby="why-we__article-title4" tabindex="0">
+                            <h2 class="why-we__article-title article__subtitle" id="why-we__article-title4">GPS searching</h2>
+                            <p class="why-we__paragraph article__paragraph" tabindex="0">
+                                Quisque sollicitudin feugiat risus, eu posuere ex euismod eu. Phasellus hendrerit, massa efficitur.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="why-we__inner">
+                        <a href="#" class="why-we__link custom-button custom-button--link custom-button--yellow _anim-elem" aria-label="link why you must choose us">Read more</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="download-app article" id="download-app" aria-labelledby="download-app__header" tabindex="0">
+                <div class="container" role="presentation">
+                    <h1 class="download-app__header article__header" id="download-app__header" tabindex="0">
+                        <span class="download-app__suptitle article__suptitle _anim-elem">Download</span>
+                        <span class="download-app__title article__title _anim-elem">Best cab service</span>
+                    </h1>
+
+                    <div class="download-app__content" aria-label="download app content">
+                        <article class="download-app__article" aria-labelledby="download-app__subtitle">
+                            <h2 class="download-app__subtitle article__subtitle _anim-elem" id="download-app__subtitle" tabindex="0">
+                                Downlaod the Cab voucher app free! Get Exciting New Offers
+                            </h2>
+                            <p class="download-app__paragpraph article__paragraph _anim-elem" tabindex="0" aria-roledescription="about our app">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ipsum sunt ratione distinctio, possimus harum porro sapiente adipisci rerum tenetur. Illo tenetur eligendi quis amet?
+                            </p>
+                            <ul class="download-app__links" role="list" aria-label="download our app links">
+                                <li class="download-app__elem _anim-elem" role="listitem" aria-posinset="1">
+                                    <a href="https://play.google.com/" target="_blank" class="download-app__link" aria-label="download on google play">
+                                        <!--
+                                        <img
+                                            class="lazy"
+                                            src=""
+                                            data-src="img/main/download-app/google-play.png"
+                                            alt="download on google play"
+                                            loading=lazy
+                                            role="presentation"
+                                        >
+                                        -->
+                                        <picture class="" role="presentation">
+                                            <source srcset="" data-srcset="img/main/download-app/google-play.webp" type="image/webp" loading=lazy>
+                                                <img src="" data-src="img/main/download-app/google-play.png" alt="download on google play" class="lazy" loading=lazy width="210" height="65" aria-roledescription="" ghiw-exclude />
+                                        </picture>
+                                    </a>
+                                </li>
+                                <li class="download-app__elem _anim-elem" role="listitem" aria-posinset="2">
+                                    <a href="https://www.apple.com/app-store/" target="_blank" class="download-app__link" aria-label="download on app store">
+                                        <!--
+                                        <img
+                                            class="lazy"
+                                            src=""
+                                            data-src="img/main/download-app/app-store.png"
+                                            alt="download on app store"
+                                            loading=lazy
+                                            role="presentation"
+                                        >
+                                        -->
+                                        <picture class="" role="presentation">
+                                            <source srcset="" data-srcset="img/main/download-app/app-store.webp" type="image/webp" loading=lazy>
+                                                <img src="" data-src="img/main/download-app/app-store.png" alt="download on app store" class="lazy" loading=lazy width="210" height="65" aria-roledescription="" ghiw-exclude />
+                                        </picture>
+                                    </a>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <picture class="download-app__illustration-picture" role="presentation">
+                            <source srcset="" data-srcset="img/main/download-app/illustration.webp" type="image/webp" loading=lazy>
+                                <img src="" data-src="img/main/download-app/illustration.png" alt="app preview" class="lazy download-app__illustration" loading=lazy width="426" height="466" aria-roledescription="" ghiw-exclude />
+                        </picture>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lazy testimonials article" data-bg="./img/main/testimonials/bg.jpg" id="testimonials" aria-labelledby="testimonials__header" tabindex="0">
+                <div class="container" role="presentation">
+                    <h1 class="testimonials__header article__header" id="testimonials__header">
+                        <span class="testimonials__suptitle article__suptitle _anim-elem">Happy Client's</span>
+                        <span class="testimonials__title article__title _anim-elem">Testimonials</span>
+                    </h1>
+
+                    <div class="testimonials__content" aria-label="testimonials content">
+                        <div class="testimonials__reviews reviews" role="list" aria-label="reviewer`s testimonials and comments" tabindex="0">
+                            <article class="reviews__review review article _anim-elem" role="listitem" aria-posinset="1" aria-label="comment" tabindex="0">
+                                <p class="review__paragraph article__paragrpaph" data-author="John Doe" aria-roledescription="comment message" tabindex="0">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus provident aliquam asperiores amet molestias nobis, eveniet numquam enim incidunt quo cumque non reprehenderit tempora aliquid!
+                                </p>
+                                <div class="review__creator-bio creator-bio" aria-label="author info" tabindex="0">
+                                    <!-- <img
+                                        class="lazy creator-bio__avatar avatar"
+                                        src=""
+                                        data-src="img/main/testimonials/avatar.jpg"
+                                        alt="avatar"
+                                        loading=lazy
+                                        aria-roledescription="author avatar"
+                                        role="presentation"
+                                    > -->
+                                    <picture class="" role="presentation">
+                                        <source srcset="" data-srcset="img/main/testimonials/avatar.webp" type="image/webp" loading=lazy>
+                                            <img src="" data-src="img/main/testimonials/avatar.jpg" alt="avatar" class="lazy creator-bio__avatar avatar" loading=lazy width="" height="" aria-roledescription="author avatar" ghiw-exclude />
+                                    </picture>
+                                    <p class="creator-bio__name article__subtitle" aria-roledescription="author name" tabindex="0">John Doe</p>
+                                    <p class="creator-bio__job article__paragraph" aria-roledescription="author job" tabindex="0">Business man</p>
+                                </div>
+                            </article>
+                            <article class="reviews__review review article _anim-elem" role="listitem" aria-posinset="2" aria-label="comment" tabindex="0">
+                                <p class="review__paragraph article__paragrpaph" data-author="John Doe" aria-roledescription="comment message" tabindex="0">
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus provident aliquam asperiores amet molestias nobis, eveniet numquam enim incidunt quo cumque non reprehenderit tempora aliquid!
+                                </p>
+                                <div class="review__creator-bio creator-bio" aria-label="author info" tabindex="0">
+                                    <!-- <img
+                                        class="lazy creator-bio__avatar avatar"
+                                        src=""
+                                        data-src="img/main/testimonials/avatar.jpg"
+                                        alt="avatar"
+                                        loading=lazy
+                                        aria-roledescription="author avatar"
+                                        role="presentation"
+                                    > -->
+                                    <picture class="" role="presentation">
+                                        <source srcset="" data-srcset="img/main/testimonials/avatar.webp" type="image/webp" loading=lazy>
+                                            <img src="" data-src="img/main/testimonials/avatar.jpg" alt="avatar" class="lazy creator-bio__avatar avatar" loading=lazy width="" height="" aria-roledescription="author avatar" ghiw-exclude />
+                                    </picture>
+                                    <p class="creator-bio__name article__subtitle" aria-roledescription="author name" tabindex="0">John Doe</p>
+                                    <p class="creator-bio__job article__paragraph" aria-roledescription="author job" tabindex="0">Business man</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contacts article" id="contacts" aria-label="contact us" tabindex="0">
+                <div class="container" role="presentation">
+                    <div class="contacts__content article__header">
+                        <p class="contacts__suptitle article__suptitle _anim-elem" tabindex="0">We are Ready to Take Your Call 24 Hours, 7 Days!</p>
+                        <h2 class="contacts__title article__super-title phone _anim-elem" role="presentation">
+                            <a class="contacts__link" href="tel:+123 4567 8900" aria-label="hotline phone" tabindex="0">
+                                +123 4567 8900
+                            </a>
+                        </h2>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="lazy footer article" data-lazy-function="pseudo" aria-label="footer" tabindex="0">
+            <div class="container" role="presentation">
+                <div class="footer__content" aria-label="footer content" role="list">
+                    <div class="footer__elem _anim-elem" aria-labelledby="footer__title1" role="listitem" aria-posinset="1" tabindex="0">
+                        <h1 class="footer__title article__subtitle" id="footer__title1">About Cab Hub</h1>
+                        <p class="footer__paragraph article__paragraph" aria-roledescription="about cab hub paragraph" tabindex="0">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit accusamus earum, nostrum incidunt nemo impedit repellat aliquid tempora corrupti? Repudiandae debitis cum omnis nulla quam.
+                        </p>
+                        <ul class="footer__socials" role="list" aria-label="social links" tabindex="0">
+                            <li class="footer__item" role="listitem" aria-posinset="1">
+                                <a href="https://www.facebook.com/" class="footer__link" aria-label="official facebook link">
+                                    <svg class="small-ico">
+                                        <use href="" class="lazy" data-href="img/icons/icons.svg#footer--socials--facebook-f" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="footer__item" role="listitem" aria-posinset="2">
+                                <a href="https://myaccount.google.com/" class="footer__link" aria-label="official google plus link">
+                                    <svg class="small-ico">
+                                        <use href="img/icons/icons.svg#footer--socials--google-plus-g" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="footer__item" role="listitem" aria-posinset="3">
+                                <a href="https://twitter.com/VLTesla" class="footer__link" aria-label="official twitter link">
+                                    <svg class="small-ico">
+                                        <use href="img/icons/icons.svg#footer--socials--twitter" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="footer__item" role="listitem" aria-posinset="4">
+                                <a href="https://www.instagram.com/def.__init__" class="footer__link" aria-label="official instagram link">
+                                    <svg class="small-ico">
+                                        <use href="img/icons/icons.svg#footer--socials--instagram" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__elem _anim-elem" aria-labelledby="footer__title2" role="listitem" aria-posinset="2" tabindex="0">
+                        <h1 class="footer__title article__subtitle" id="footer__title2">Download</h1>
+                        <p class="footer__paragraph article__paragraph" aria-roledescription="about download app" tabindex="0">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo vel perspiciatis itaque ipsa incidunt ut.
+                        </p>
+                        <ul class="footer__links" role="list" aria-label="download app links" tabindex="0">
+                            <li class="footer__item" role="listitem" aria-posinset="1">
+                                <a href="https://play.google.com/" target="_blank" class="footer__link article__paragraph" aria-label="download android app">Android Users <svg class="middle-ico"><use href="img/icons/icons.svg#footer--links--android"/></svg></a>
+                            </li>
+                            <li class="footer__item" role="listitem" aria-posinset="2">
+                                <a href="https://www.apple.com/app-store/" target="_blank" class="footer__link article__paragraph" aria-label="download ios app">IOS Users <svg class="middle-ico"><use href="img/icons/icons.svg#footer--links--apple"/></svg></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__elem _anim-elem" role="listitem" aria-labelledby="footer__title3" aria-posinset="3" tabindex="0">
+                        <h1 class="footer__title article__subtitle" id="footer__title3">Contacts</h1>
+                        <ul class="footer__contacts" role="list" aria-label="official links" tabindex="0">
+                            <li class="footer__item" role="listitem" aria-posinset="1">
+                                <svg class="small-ico" role="presentation">
+                                    <use href="img/icons/icons.svg#footer--socials--location-dot-solid" />
+                                </svg>
+                                <a href="#" class="footer__link article__paragraph" aria-label="our office location">+123, Main Street, Your City, New York, USA 789456</a>
+                            </li>
+                            <li class="footer__item" role="listitem" aria-posinset="2">
+                                <svg class="small-ico" role="presentation">
+                                    <use href="img/icons/icons.svg#footer--socials--mobile-screen-button-solid" />
+                                </svg>
+                                <a href="tel:+123 4567 8900" class="footer__link article__paragraph" aria-label="hotline phone">+123 4567 8900</a>
+                            </li>
+                            <li class="footer__item" role="listitem" aria-posinset="3">
+                                <svg class="small-ico" role="presentation">
+                                    <use href="img/icons/icons.svg#footer--socials--envelope-solid" />
+                                </svg>
+                                <a href="mailto:vladislavteslyukofficial@gmail.com?subject=CabHub%20proj" target="_blank" class="footer__link article__paragraph" aria-label="our official email">vladislavteslyukofficial@gmail.com</a>
+                            </li>
+                            <li class="footer__item" role="listitem" aria-posinset="4">
+                                <svg class="small-ico" role="presentation">
+                                    <use href="img/icons/icons.svg#footer--socials--arrow-pointer-solid" />
+                                </svg>
+                                <a href="https://github.com/Lordpluha" target="_blank" class="footer__link article__paragraph" aria-label="our github">github.com/Lordpluha</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script defer src="js/app.min.js?_v=20260907075541"></script>
+
+</html>

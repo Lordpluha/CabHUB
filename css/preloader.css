@@ -1,0 +1,70 @@
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, grey, 80%, red);
+  z-index: 1001;
+  opacity: 1;
+}
+
+.preloader.loaded {
+  opacity: 0;
+  z-index: 0;
+}
+
+.preloader .container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.preloader .sk-cube-grid {
+  width: 7em;
+  height: 7em;
+}
+
+.preloader .sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #333;
+  float: left;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+
+.preloader .sk-cube-grid .sk-cube1,
+.preloader .sk-cube-grid .sk-cube5,
+.preloader .sk-cube-grid .sk-cube9 {
+  animation-delay: 0.2s;
+}
+
+.preloader .sk-cube-grid .sk-cube2,
+.preloader .sk-cube-grid .sk-cube6 {
+  animation-delay: 0.3s;
+}
+
+.preloader .sk-cube-grid .sk-cube3 {
+  animation-delay: 0.4s;
+}
+
+.preloader .sk-cube-grid .sk-cube4,
+.preloader .sk-cube-grid .sk-cube8 {
+  animation-delay: 0.1s;
+}
+
+.preloader .sk-cube-grid .sk-cube7 {
+  animation-delay: 0s;
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    transform: scale3D(1, 1, 1);
+  }
+
+  35% {
+    transform: scale3D(0, 0, 1);
+  }
+}
